@@ -1,0 +1,1 @@
+### ideas on structure
