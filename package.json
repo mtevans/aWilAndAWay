@@ -7,9 +7,6 @@
     "doc": "docs",
     "test": "test"
   },
-  "scripts": {
-    "postinstall": "./node_modules/.bin/webpack"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mtevans/aWilAndAWay.git"
@@ -34,10 +31,10 @@
     "webpack": "^1.13.1"
   },
   "engines": {
-  "node": "6.1.0",
-  "npm": "3.8.6"
-},
+    "node": "6.1.0",
+    "npm": "3.8.6"
+  },
   "scripts": {
     "postinstall": "./node_modules/.bin/webpack"
-  },
+  }
 }
