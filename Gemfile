@@ -28,6 +28,7 @@ gem 'annotate'
 
 gem 'faker'
 
+gem 'figaro'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

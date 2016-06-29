@@ -27,6 +27,7 @@ const LoginForm = React.createClass({
     };
     SessionActions.logIn(data);
     hashHistory.push("/");
+    this.props.callback();
   },
 
   render(){
@@ -38,10 +39,10 @@ const LoginForm = React.createClass({
             className="login-input" />
 				</label>
         <label> Password:
-          <input type="password" value={this.state.pasword} onChange={this._onChange("password")}
+          <input type="password" value={this.state.password} onChange={this._onChange("password")}
             className="login-input" />
         </label>
-        <input type="submit" value="Sign In" />
+        <input type="submit" value="Sign In"/>
       </form>
     )
   }

@@ -1,0 +1,21 @@
+
+
+
+.splash {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.jumbotron {
+  width: 100%;
+  height: 700px;
+  background: url(http://res.cloudinary.com/dfld7chk4/image/upload/v1467173555/jumbotron_mnuafe.png);
+  background-size: cover;
+  background-position: bottom;
+  text-align: center;
+  position: relative;
+}

@@ -5,7 +5,7 @@ const Link = require('react-router').Link;
 const ReactRouter = require('react-router');
 const hashHistory = ReactRouter.hashHistory;
 const Header = require('./header.jsx')
-
+const Jumbotron = require('./jumbotron.jsx');
 
 
 const Homepage = React.createClass({
@@ -13,8 +13,15 @@ const Homepage = React.createClass({
     return (
       <div className='homepage'>
         <header className='header'><Header /></header>
-        <p>Homepage</p>
+        <div className="content">
 
+          <div className="splash">
+            <Jumbotron/>
+          </div>
+          
+        </div>
+        <p>Homepage</p>
+        { this.props.children}
       </div>
 
     )

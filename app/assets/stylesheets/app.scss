@@ -1,0 +1,55 @@
+// RESET
+
+html, body, section, article, header, footer, h1, h2, h3, h4,
+h5, h6, p, a, ul, li, button, img, div, pre {
+  margin: 0;
+  border: 0;
+  padding: 0;
+
+  font: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  color: inherit;
+  font-family: 'Lato', sans-serif;
+
+  background: transparent;
+
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+header {
+  color: #383838 ;
+  background-color: transparent;
+  font-family: Tahoma, sans-serif;
+  height: 70px;
+  display: flex;
+  font-size: 16px;
+  align-items: center;
+  justify-content: flex-end;
+
+
+
+  a {
+    padding: 0 10px;
+    border-right: 1px solid black;
+    cursor: pointer;
+  }
+
+  .logger{
+    border-right: 0px;
+  }
+
+  .header-right{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+}

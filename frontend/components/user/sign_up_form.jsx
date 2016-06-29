@@ -29,7 +29,7 @@ const SignUpForm = React.createClass({
       name: this.state.name
     };
     SessionActions.signUp(data);
-    hashHistory.push("/");
+    this.props.callback();
   },
 
   render(){

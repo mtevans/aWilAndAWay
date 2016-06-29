@@ -1,8 +1,9 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 const ReactRouter = require('react-router');
-const hashHistory = ReactRouter.hashHistory;
+const Modal = require("react-modal");
 
+const hashHistory = ReactRouter.hashHistory;
 const Router = ReactRouter.Router;
 const Route = ReactRouter.Route;
 const IndexRoute = ReactRouter.IndexRoute;
@@ -23,9 +24,10 @@ window.SessionStore = SessionStore
 
 const appRouter = (
   <Router history={hashHistory}>
-    <Route path="/" component={Homepage} />
-    <Route path="/login" component={ LoginForm } />
-    <Route path="/signup" component={ SignUpForm } />
+    <Route path="/" component={Homepage}>
+      <Route path="/login" component={ LoginForm } />
+      <Route path="/signup" component={ SignUpForm } />
+    </Route>
   </Router>
 );
 
@@ -33,6 +35,7 @@ const appRouter = (
 
 
 document.addEventListener("DOMContentLoaded", function(){
+  Modal.setAppElement(document.body);
   ReactDOM.render( appRouter ,
     document.getElementById('content')
   );
