@@ -7,13 +7,13 @@ const SessionApiUtil = require('../util/session_api_util.js');
 const SessionActions = {
   signUp(formData){
     SessionApiUtil.signUp(formData,
-      this.receiveCurrentUser
+      this.receiveCurrentUser, this.receiveErrors
       );
   },
 
   logIn(formData){
     SessionApiUtil.logIn(formData,
-      this.receiveCurrentUser);
+      this.receiveCurrentUser, this.receiveErrors);
   },
 
   logOut() {
@@ -31,7 +31,14 @@ const SessionActions = {
     Dispatcher.dispatch({
       actionType: SessionConstants.LOGOUT
     });
-  }
+  },
+
+  receiveErrors(authErrors) {
+    Dispatcher.dispatch({
+      actionType: SessionConstants.RECEIVE_AUTH_ERRORS,
+      authErrors: authErrors
+    });
+  },
 }
 
 

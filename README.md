@@ -1,4 +1,4 @@
-URL: aWillAndAWay.io
+URL: http://awillandaway.herokuapp.com/
 
 ## Minimum Viable Product
 
@@ -95,5 +95,6 @@ Use bootstrap to organize front end as developing. Once fundamental Flux archite
   3. With search results, only picture and title come up and then 'about' text comes up when hovering over.
   4. a counter on how many search results there are.
   5. multiple users logged in at the same time.
+  6. add optional image upload for user, show the image as the clickable icon in header that gets them to thier user show page.
 # aWilAndAWay
 # aWilAndAWay

@@ -1,7 +1,10 @@
 "use strict";
 
+
+
+
 const SessionApiUtil = {
-  logIn(user, success, error){
+  logIn(user, success, errorCallback){
     $.ajax({
 			url: '/api/session',
 			type: 'POST',
@@ -9,9 +12,10 @@ const SessionApiUtil = {
       success: function(response){
         success(response);
       },
-      error: function(xhr) {
-        const errors = xhr.responseJSON;
-        error("login", errors);
+      error: function(response) {
+        let errors = response.responseJSON;
+        errorCallback(errors);
+
       }
     });
   },
@@ -23,13 +27,14 @@ const SessionApiUtil = {
       success: function(response){
         success(response);
       },
-      error: function(){
-        console.log("Logout error")
-      },
+      error: function(response) {
+        let errors = response.responseJSON;
+        SessionActions.receiveErrors(errors);
+      }
     });
   },
 
-  signUp(user, success, error){
+  signUp(user, success, errorCallback){
     $.ajax({
       url: '/api/users',
       type: 'POST',
@@ -38,12 +43,13 @@ const SessionApiUtil = {
       success: function (response){
         success(response)
       },
-      error: function (response){
-        success(response)
+      error: function(response) {
+        let errors = response.responseJSON;
+        errorCallback(errors);
       }
     });
-
     },
+
   }
 
 module.exports = SessionApiUtil;

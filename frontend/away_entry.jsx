@@ -8,26 +8,28 @@ const Router = ReactRouter.Router;
 const Route = ReactRouter.Route;
 const IndexRoute = ReactRouter.IndexRoute;
 
-
-const LoginForm = require('./components/user/login_form.jsx');
-const SignUpForm = require('./components/user/sign_up_form.jsx');
+// const LoginForm = require('./components/user/login_form.jsx');
+// const SignUpForm = require('./components/user/sign_up_form.jsx');
 const Homepage = require('./components/home/homepage.jsx');
+const VenueIndex = require('./components/venues/venue_index.jsx')
 
 const SessionApiUtil = require('./util/session_api_util.js');
 const SessionActions = require('./actions/session_actions.js');
 const SessionStore = require('./stores/session_store.js');
+const VenueActions = require('./actions/venues_actions.js');
+const VenueStore = require('./stores/venues_store.js');
 
 
-window.SessionActions = SessionActions;
-window.SessionStore = SessionStore
-
+window.VenueActions = VenueActions;
+window.VenueStore = VenueStore;
+window.SessionStore= SessionStore;
 
 const appRouter = (
   <Router history={hashHistory}>
     <Route path="/" component={Homepage}>
-      <Route path="/login" component={ LoginForm } />
-      <Route path="/signup" component={ SignUpForm } />
+
     </Route>
+    <Route path="/index" component={VenueIndex} />
   </Router>
 );
 

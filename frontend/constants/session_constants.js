@@ -1,5 +1,6 @@
 
 module.exports ={
   LOGIN: "LOGIN",
-  LOGOUT: "LOGOUT"
+  LOGOUT: "LOGOUT",
+  RECEIVE_AUTH_ERRORS: "RECEIVE_AUTH_ERRORS"
 }

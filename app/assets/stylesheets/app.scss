@@ -26,10 +26,10 @@ li {
 }
 
 header {
-  color: #383838 ;
-  background-color: transparent;
+  color: black ;
+  background-color: white;
   font-family: Tahoma, sans-serif;
-  height: 70px;
+  height: 60px;
   display: flex;
   font-size: 16px;
   align-items: center;
@@ -52,4 +52,16 @@ header {
     justify-content: space-between;
     flex-direction: row;
   }
+}
+
+footer {
+  color: black;
+  background-color: purple;
+  font-family: Tahoma, sans-serif;
+  height: 50px;
+  display: flex;
+  font-size: 16px;
+  align-items: center;
+  justify-content: flex-end;
+
 }
