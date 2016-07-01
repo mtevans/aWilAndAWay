@@ -20,6 +20,11 @@ const SessionActions = {
     SessionApiUtil.logOut(this.removeCurrentUser);
   },
 
+  createSubscription(data){
+    SessionApiUtil.createSubscription(data,
+       this.receiveCurrentUser, this.receiveCreationErrors);
+  },
+
   receiveCurrentUser(currentUser) {
     Dispatcher.dispatch({
       actionType: SessionConstants.LOGIN,
@@ -39,6 +44,16 @@ const SessionActions = {
       authErrors: authErrors
     });
   },
+
+  receiveCreationErrors(creationErrors) {
+    debugger;
+    Dispatcher.dispatch({
+      actionType: SessionConstants.RECEIVE_CREATION_ERRORS,
+      creationErrors: creationErrors
+    });
+  },
+
+
 }
 
 

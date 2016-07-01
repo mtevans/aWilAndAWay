@@ -51,7 +51,6 @@ const LoginForm = React.createClass({
       password: this.state.password,
     };
     SessionActions.logIn(data);
-    hashHistory.push("/");
   },
 
   render(){

@@ -9,4 +9,5 @@ class Api::VenuesController < ApplicationController
     @venue = Venue.find(params[:id])
     render "api/venues/show"
   end
+  
 end

@@ -50,6 +50,26 @@ const SessionApiUtil = {
     });
     },
 
+  createSubscription(data, success, errorCallback){
+
+    $.ajax({
+      url: `/api/subscriptions`,
+      type: 'post',
+      dataType: 'json',
+      data: {subscription: data},
+      success: function(response){
+        success(response)
+      },
+      error: function(response) {
+        debugger
+        let errors = response.status;
+        errorCallback(errors);
+      }
+    });
+
+  }
+
+
   }
 
 module.exports = SessionApiUtil;

@@ -7,6 +7,9 @@ const SessionConstants = require('../constants/session_constants.js');
 
 let _authErrors = {};
 let _currentUser = {};
+let _creationErrors = [];
+
+
 
 const SessionStore = new Store(Dispatcher);
 
@@ -38,10 +41,27 @@ SessionStore.__onDispatch = function(payload){
     case SessionConstants.RECEIVE_AUTH_ERRORS:
       _authErrors = payload.authErrors;
       this.__emitChange();
-    break;
+      break;
+    case SessionConstants.RECEIVE_CREATION_ERRORS:
+        _creationErrors = payload.creationErrors;
+        this.__emitChange();
+      break;
     }
 };
 
+SessionStore.collectSubscriptionIds = function(){
+  let idArray= [];
+  if (SessionStore.isUserLoggedIn()) {
+  _currentUser.subscriptions.forEach(subscription => {
+    return idArray.push(subscription.occasion_id)
+  })
+}
+  return idArray;
+}
+
+SessionStore.creationErrors = function(){
+  return _creationErrors;
+}
 
 SessionStore.authErrors = function() {
   let array = [];

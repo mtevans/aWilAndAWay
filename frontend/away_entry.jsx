@@ -23,6 +23,8 @@ const VenueStore = require('./stores/venues_store.js');
 window.VenueActions = VenueActions;
 window.VenueStore = VenueStore;
 window.SessionStore= SessionStore;
+window.SessionActions = SessionActions;
+
 
 const appRouter = (
   <Router history={hashHistory}>

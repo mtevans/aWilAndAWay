@@ -17,6 +17,7 @@ const Homepage = React.createClass({
 
           <div className="splash">
             <Jumbotron/>
+
           </div>
 
         </div>

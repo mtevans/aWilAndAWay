@@ -20,4 +20,11 @@ class Venue < ActiveRecord::Base
   :url, :organizer_id, presence: true
   validates :title, uniqueness: true
   # will need associations here
+
+  has_many :occasions,
+    class_name: :Occasion,
+    primary_key: :id,
+    foreign_key: :venue_id
+
+    
 end

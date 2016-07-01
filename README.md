@@ -70,7 +70,7 @@ component.
 
 
 ### Phase 2: Flux Architecture, Venue index, show (2 days)
-Use bootstrap to organize front end as developing. Once fundamental Flux architecture is established create venue store (not sure about whether to have occasion stores or venue stores or both???) and necessary API action to allow CRUD functionality on subscriptions through the Venue=>Occasion show page. Then create React components for VenueIndex, VenueIndexItem. Implement a map for each event and index with Google's Map Api.
+Use bootstrap to organize front end as developing. Once fundamental Flux architecture is established create venue store and necessary API action to allow CRUD functionality on subscriptions through the Venue=>Occasion show page. Then create React components for VenueIndex, VenueIndexItem. Implement a map for each event and index with Google's Map Api.
 
 [Details][phase-two]
 

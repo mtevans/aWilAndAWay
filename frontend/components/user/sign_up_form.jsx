@@ -56,12 +56,11 @@ const SignUpForm = React.createClass({
     SessionActions.signUp(data);
   },
   render(){
-    debugger;
     let authErrors = this.state.authErrors;
     if(authErrors.length !== 0){
       authErrors = authErrors.map( error => {
         if(error[0] === "has already been taken"){
-        return <h3 className="email error">A user with the email {this.state.email} already exist with us</h3> ;
+        return <h3 className="email error">A user with the email {this.state.email} already exists with us</h3> ;
         }
         return <h3 className="passord error">Your password {error}</h3>
       })

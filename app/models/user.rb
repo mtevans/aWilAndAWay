@@ -21,6 +21,15 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
   before_validation :ensure_session_token
 
+  has_many :subscriptions,
+    primary_key: :id,
+    foreign_key: :volunteer_id,
+    class_name: :Subscription,
+    dependent: :destroy
+
+  has_many :occasions,
+    through: :subscriptions,
+    source: :occasion
 
   def self.find_by_credentials(email, password)
     @user = User.find_by(email: email)

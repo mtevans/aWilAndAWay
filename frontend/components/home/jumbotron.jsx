@@ -7,7 +7,7 @@ var Jumbotron = React.createClass({
     return (
       <div className="jumbotron">
         <div className="jumbotron-tag">
-        
+          <Link to="/index">Explore</Link>
         </div>
       </div>
     );

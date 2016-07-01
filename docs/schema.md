@@ -30,8 +30,8 @@ end_time           | date        | not null
 column name        | data type   | details
 -------------------|-------------|-----------------------
 id                 | integer     | not null, primary key
-volunteer_id       | string      | not null
-occasion_id        | string      | not null
+volunteer_id       | integer      | not null
+occasion_id        | integer      | not null
 
 
 
