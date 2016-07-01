@@ -21,11 +21,15 @@ const Header = React.createClass ({
   },
 
   componentDidMount(){
-    SessionStore.addListener(this._onChange);
+    this.listener = SessionStore.addListener(this._onChange);
   },
 
   _onChange(){
     this.setState({loggedIn: SessionStore.isUserLoggedIn() } )
+  },
+
+  componentWillUnmount(){
+    this.listener.remove();
   },
 
   logout(){

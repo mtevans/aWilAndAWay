@@ -14,7 +14,9 @@ const VenueOccasionShow = React.createClass({
     this.subscriptionListener = SessionStore.addListener(this.handleSubscriptionChange);
   },
 
-
+  componentWillUnmount(){
+    this.subscriptionListener.remove();
+  },
 
   handleSubscriptionChange(){
     this.setState({SubscriptionsIds: SessionStore.collectSubscriptionIds()})
@@ -51,7 +53,7 @@ const VenueOccasionShow = React.createClass({
     let OccasionDisplay = occasions.map(occasion => {
       let that = this
       let button = <button onClick={this.handleSubscription.bind(null, occasion.id)}>Volunteer</button> ;
-  
+
         if(that.state.SubscriptionsIds.includes(occasion.id)){
           button = <button>Cancel</button>
         };
