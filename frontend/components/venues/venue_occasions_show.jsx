@@ -51,7 +51,7 @@ const VenueOccasionShow = React.createClass({
     let OccasionDisplay = occasions.map(occasion => {
       let that = this
       let button = <button onClick={this.handleSubscription.bind(null, occasion.id)}>Volunteer</button> ;
-        debugger;
+  
         if(that.state.SubscriptionsIds.includes(occasion.id)){
           button = <button>Cancel</button>
         };

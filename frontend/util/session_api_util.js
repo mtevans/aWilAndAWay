@@ -61,7 +61,7 @@ const SessionApiUtil = {
         success(response)
       },
       error: function(response) {
-        debugger
+      
         let errors = response.status;
         errorCallback(errors);
       }

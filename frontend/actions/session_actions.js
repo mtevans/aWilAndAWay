@@ -46,7 +46,7 @@ const SessionActions = {
   },
 
   receiveCreationErrors(creationErrors) {
-    debugger;
+
     Dispatcher.dispatch({
       actionType: SessionConstants.RECEIVE_CREATION_ERRORS,
       creationErrors: creationErrors
