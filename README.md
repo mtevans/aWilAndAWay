@@ -1,4 +1,4 @@
-URL: http://awillandaway.herokuapp.com/
+URL: http://awillandaway.herokuapp.com/  it's very broken at the moment, as in nothing happens when you click it.
 
 ## Minimum Viable Product
 
@@ -60,28 +60,33 @@ There will be an "venue" which will have a description of what one is volunteeri
 
 
 ### Phase 1: User Authentication, Event Model and JSON API (1.5 days)
-Setup basic flux arichtecture(i.e. the app.jsx file) using React Router to allow for sign in, sign out, and sign up functions.
-Using BCrypt, implement a basic user authentication system.
-Should be single page, and have pop up windows.
-Signup/login will change the buttons in the header to that users email and sign out.  All user/session actions will bring us to a basic page containing the app's root React
+- [ ] Setup basic flux arichtecture(i.e. the app.jsx file) using React Router to allow for sign   in, sign out, and sign up functions.
+- [ ]  Using BCrypt, implement a basic user authentication system.
+- [ ] Should be single page, and have pop up windows.
+- [ ] Signup/login will change the buttons in the header to that users email and sign out.  All     user/session actions will bring us to a basic page containing the app's root React
 component.
 
 [Details][phase-one]
 
 
 ### Phase 2: Flux Architecture, Venue index, show (2 days)
-Use bootstrap to organize front end as developing. Once fundamental Flux architecture is established create venue store and necessary API action to allow CRUD functionality on subscriptions through the Venue=>Occasion show page. Then create React components for VenueIndex, VenueIndexItem. Implement a map for each event and index with Google's Map Api.
+- [ ] populate index page with venues.
+- [ ] allow user to click on index page and go through steps of signing up through a modal
+- [ ] have volunteer button switch to cancel if they've already volunteered for that occasion.
+- [ ] click cancel and have a user delete that session, button switch back to volunteer.
+- [ ] Implement a map for each event and index with Google's Map Api.
 
 [Details][phase-two]
 
+### Phase 3: Volunteer and cancel your subscriptions. (1 days)
+- [ ]  Go to users show page and click and cancel events.
 
 ### Phase 3: Occasion and Venue searching and Users Pages (3 days)
   Need to talk to Gage about best way to do searching, my guess is you search by occasion, or venue, and then search goes to an sql search that joins (occasion and venue) and returns the necessary venue, from which the user can click on, see what it's about, and if interested click to see the times(occasions), and should see their time there amongst all the others. User be should also be able have a list of the Occasions that they have volunteered for and ability to cancel their commitment to them.
 
 [Details][phase-three]
 
-### Phase 4: Volunteer and cancel your subscriptions. (3 days)
-  Able to go to show page of event and sign up to occasions, see relevant changes on users show page.
+
 
 [Details][phase-four]
 
