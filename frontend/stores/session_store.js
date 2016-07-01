@@ -14,6 +14,7 @@ let _creationErrors = [];
 const SessionStore = new Store(Dispatcher);
 
 const _logIn = function(user) {
+
   _currentUser = user;
   // when a user logs in, this clear the errors.
   _authErrors = [];
@@ -49,7 +50,7 @@ SessionStore.__onDispatch = function(payload){
     }
 };
 
-SessionStore.collectSubscriptionIds = function(){
+SessionStore.collectOccassionIds = function(){
   let idArray= [];
   if (SessionStore.isUserLoggedIn()) {
   _currentUser.subscriptions.forEach(subscription => {
@@ -59,8 +60,19 @@ SessionStore.collectSubscriptionIds = function(){
   return idArray;
 }
 
+
 SessionStore.creationErrors = function(){
   return _creationErrors;
+}
+
+SessionStore.findSubscriptionId = function(occasion_id){
+  let returnId;
+  _currentUser.subscriptions.forEach(subscription => {
+    if(subscription.occasion_id === occasion_id){
+      returnId = subscription.id;
+    }
+  });
+  return returnId;
 }
 
 SessionStore.authErrors = function() {

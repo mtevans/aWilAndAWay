@@ -7,7 +7,7 @@ class Api::SubscriptionsController < ApplicationController
     @currentuser = current_user
 
     if Subscription.create(subscription_params)
-      render "api/users/showpage"
+      render "api/users/user_update_page"
     else
       render json: {base: ["You've already volunteered for this event"]}, status:400
     end
@@ -15,9 +15,10 @@ class Api::SubscriptionsController < ApplicationController
 
 
   def destroy
+    @currentuser = current_user
     @subscription = Subscription.find(params[:id])
     @subscription.destroy
-      render "api/users/showpage"
+    render "api/users/user_update_page"
   end
 
   private

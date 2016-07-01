@@ -61,14 +61,28 @@ const SessionApiUtil = {
         success(response)
       },
       error: function(response) {
-      
+
         let errors = response.status;
         errorCallback(errors);
       }
     });
+  },
 
+  deleteSubscription(id, success, errorCallback){
+
+    $.ajax({
+      url: `/api/subscriptions/${id}`,
+      type: 'delete',
+      dataType: 'json',
+      success: function(response){
+        success(response)
+      },
+      error: function(response) {
+        let errors = response.status;
+        errorCallback(errors);
+      }
+    });
   }
-
 
   }
 

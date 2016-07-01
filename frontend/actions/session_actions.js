@@ -25,6 +25,11 @@ const SessionActions = {
        this.receiveCurrentUser, this.receiveCreationErrors);
   },
 
+  deleteSubscription(id){
+    SessionApiUtil.deleteSubscription(id, this.receiveCurrentUser,
+     this.receiveCreationErrors);
+  },
+
   receiveCurrentUser(currentUser) {
     Dispatcher.dispatch({
       actionType: SessionConstants.LOGIN,

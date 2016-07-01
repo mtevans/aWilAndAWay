@@ -6,6 +6,29 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+User.create!(
+  name: "Steve",
+  email: "Steve@example.com",
+  password: "password",
+)
+
+User.create!(
+  name: "Steph",
+  email: "Steph@example.com",
+  password: "password",
+)
+
+User.create!(
+  name: "Mike",
+  email: "Mike@example.com",
+  password: "password",
+)
+
+User.create!(
+  name: "Eric",
+  email: "Eric@example.com",
+  password: "password",
+)
 
 Venue.create!(
   title: "Food Bank",
@@ -14,7 +37,7 @@ Venue.create!(
   address: "123 folsom drive",
   zip_code: "94111",
   email: "bigSTEVE@gmail.com",
-  organizer_id: "2"
+  organizer_id: 1
 )
 
 
@@ -25,36 +48,78 @@ Venue.create!(
   address: "526 Hickory stree",
   zip_code: "94102",
   email: "PunchinPeter@BigCityBoxing.com",
-  organizer_id: "4"
+  organizer_id: 2
 )
 
 
 Venue.create!(
   title: "Food Kitchen Server",
   about: "Give food to those in need",
-  description: "We need a really long description here, one that can evoke tears but at the same time sound earthy, caring, not synical. Striking that fine balance between fousing on giving back and sounding smug",
+  description: "We need a really long description here, like really rediculously, overly verbose description that's going to take up lots of room and test my css skills",
   address: "526 Hickory stree",
   zip_code: "94102",
   email: "PunchinPeter@BigCityBoxing.com",
-  organizer_id: "5"
+  organizer_id: 3
 )
 
 Venue.create!(
   title: "After School tutoring",
   about: "Got a background in maths, help kids get their high school diploma",
-  description: "We need a really long description here, one that can evoke tears but at the same time sound earthy, caring, not synical. Striking that fine balance between fousing on giving back and sounding smug",
+  description: "We need a really long description here, like really rediculously, overly verbose description that's going to take up lots of room and test my css skills",
   address: "827 market street",
   zip_code: "94105",
   email: "PunchinPeter@BigCityBoxing.com",
-  organizer_id: "2"
+  organizer_id: 4
 )
 
 Venue.create!(
   title: "Work with some great kids",
   about: "Spend an hour a week, mentoring a special needs child",
-  description: "We need a really long description here, one that can evoke tears but at the same time sound earthy, caring, not synical. Striking that fine balance between fousing on giving back and sounding smug",
+  description: "We need a really long description here, like really rediculously, overly verbose description that's going to take up lots of room and test my css skills",
   address: "526 Near Starbucks",
   zip_code: "94118",
   email: "PunchinPeter@BigCityBoxing.com",
-  organizer_id: "1"
+  organizer_id: 1
+)
+
+Occasion.create!(
+  organizer_id: 2,
+  venue_id: 2,
+  date: Date.today,
+  start_time: 1400,
+  end_time: 1500,
+)
+
+Occasion.create!(
+  organizer_id: 2,
+  venue_id: 2,
+  date: Date.tomorrow,
+  start_time: 1600,
+  end_time: 1800,
+)
+
+Occasion.create!(
+  organizer_id: 3,
+  venue_id: 3,
+  date: Date.today,
+  start_time: 1400,
+  end_time: 1500,
+)
+
+Occasion.create!(
+  organizer_id: 3,
+  venue_id: 3,
+  date: Date.tomorrow,
+  start_time: 1600,
+  end_time: 1800,
+)
+
+Subscription.create!(
+  volunteer_id: 1,
+  occasion_id: 1,
+)
+
+Subscription.create!(
+  volunteer_id: 1,
+  occasion_id: 2,
 )

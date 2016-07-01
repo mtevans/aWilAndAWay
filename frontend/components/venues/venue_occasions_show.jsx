@@ -7,7 +7,8 @@ let error;
 const VenueOccasionShow = React.createClass({
   getInitialState(){
       return {loggedInState: SessionStore.isUserLoggedIn(),
-              SubscriptionsIds: SessionStore.collectSubscriptionIds()}
+              OccassionIds: SessionStore.collectOccassionIds()
+            }
   },
 
   componentDidMount(){
@@ -19,7 +20,7 @@ const VenueOccasionShow = React.createClass({
   },
 
   handleSubscriptionChange(){
-    this.setState({SubscriptionsIds: SessionStore.collectSubscriptionIds()})
+    this.setState({OccassionIds: SessionStore.collectOccassionIds()})
   },
 
 
@@ -38,11 +39,15 @@ const VenueOccasionShow = React.createClass({
     return hours + ":" + minutes + ampm
   },
 
-  handleSubscription(id){
+  _handleSubscription(id){
     let error;
     if(this.state.loggedInState){
       SessionActions.createSubscription({volunteer_id: SessionStore.currentUser().id, occasion_id: id})
     }
+  },
+
+  _cancelSubscription(id){
+    SessionActions.deleteSubscription(id);
   },
 
   render(){
@@ -52,10 +57,12 @@ const VenueOccasionShow = React.createClass({
 
     let OccasionDisplay = occasions.map(occasion => {
       let that = this
-      let button = <button onClick={this.handleSubscription.bind(null, occasion.id)}>Volunteer</button> ;
+      let button = <button onClick={this._handleSubscription.bind(null, occasion.id)}>Volunteer</button> ;
 
-        if(that.state.SubscriptionsIds.includes(occasion.id)){
-          button = <button>Cancel</button>
+        if(that.state.OccassionIds.includes(occasion.id)){
+          // session store fucntion to find subscription id based off of occasion id.
+
+          button = <button onClick={that._cancelSubscription.bind(null, SessionStore.findSubscriptionId(occasion.id))}>Cancel</button>
         };
       return( <div key={occasion.id}>
               <ul>date: {occasion.date}
