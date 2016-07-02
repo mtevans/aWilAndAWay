@@ -7,6 +7,8 @@ const VenueStore = require('../../stores/venues_store.js');
 const VenueActions = require('../../actions/venues_actions.js');
 const VenueIndexItem = require('./venue_index_item.jsx');
 const Footer = require('../home/footer.jsx');
+const IndexMap = require('./index_map.jsx');
+
 
 const VenueIndex = React.createClass({
   getInitialState(){
@@ -37,11 +39,11 @@ const VenueIndex = React.createClass({
     return(
       <div className="index-page">
         <header className='header'><Header /></header>
-        <container className="query-box"></container>
 
-        <div className="venues-box">
-          <div className="index-page-body">{VenueItems} </div>
-        </div>
+          <div className="index-page-body">
+            <IndexMap venues={this.state.venues}/>
+            {VenueItems}
+          </div>
 
         <footer className="footer"><Footer/></footer>
 

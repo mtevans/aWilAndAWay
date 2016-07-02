@@ -8,7 +8,8 @@ title       | string      | not null, unique
 about       | string      | not null
 description | text        | not null
 address     | integer     | not null
-zip code    | string      | not null
+lat         | float       | not null
+lng         | float       | not null
 email       | string      | not null
 url         | text        | default (default image), not null
 organizer_id| integer     | not null, foreign key (references users), indexed
@@ -60,7 +61,8 @@ category    | string      | not null
 day         | string      | not null
 duration    | float       | not null
 address     | integer     | not null
-zip code    | string      | not null
+lat         | float       | not null
+lng         | float       | not null
 email       | string      | not null
 url         | text        | default (default image), not null
 organizer_id| integer     | not null, foreign key (references users), indexed

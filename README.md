@@ -6,13 +6,13 @@ aWillAndAWay is a website that connects people looking to volunteer for local ch
 There will be an "venue" which will have a description of what one is volunteering for and contact information, there will be an Occasion, as if you volunteer on a monday at 4pm and fridays and 5pm, that's two separate occasions that you are signing up for. This signing up happens through a join table, a subscription, which links a user to an occasion and through that a venue.
 
 
-- [ ] Account authentication using BCRYPT hashing (unless simpler alternative is shown to use before starting.)
-- [ ] Account creation and login
+- [x] Account authentication using BCRYPT hashing (unless simpler alternative is shown to use before starting.)
+- [x] Account creation and login
 - [ ] Occasion/Venue browsing by time, date, location and description
 - [ ] Venue location using Google Map API
-- [ ] User can volunteer and cancel for an occasion they've volunteered for.
-- [ ] User show page has Occasions volunteered for.
-- [ ] Venue show page has button which sends you to Occasion times of that Venue.
+- [x] User can volunteer and cancel for an occasion they've volunteered for.
+- [x] User show page has Occasions volunteered for.
+- [x] Venue show page has button which sends you to Occasion times of that Venue.
 - [ ] Single page implementation and nested associations.
 
 ## Design Docs
@@ -59,28 +59,28 @@ There will be an "venue" which will have a description of what one is volunteeri
 
 
 ### Phase 1: User Authentication, Event Model and JSON API (1.5 days)
-- [ ] Setup basic flux arichtecture(i.e. the app.jsx file) using React Router to allow for sign   in, sign out, and sign up functions.
-- [ ]  Using BCrypt, implement a basic user authentication system.
-- [ ] Should be single page, and have pop up windows.
-- [ ] Signup/login will change the buttons in the header to that users email and sign out.  All     user/session actions will bring us to a basic page containing the app's root React
+- [x] Setup basic flux arichtecture(i.e. the app.jsx file) using React Router to allow for sign   in, sign out, and sign up functions.
+- [x]  Using BCrypt, implement a basic user authentication system.
+- [x] Should be single page, and have pop up windows.
+- [x] Signup/login will change the buttons in the header to that users email and sign out.  All     user/session actions will bring us to a basic page containing the app's root React
 component.
 
 [Details][phase-one]
 
 
 ### Phase 2: Flux Architecture, Venue index, show (2 days)
-- [ ] populate index page with venues.
-- [ ] allow user to click on index page and go through steps of signing up through a modal
-- [ ] have volunteer button switch to cancel if they've already volunteered for that occasion.
-- [ ] click cancel and have a user delete that session, button switch back to volunteer.
+- [x] populate index page with venues.
+- [x] allow user to click on index page and go through steps of signing up through a modal
+- [x] have volunteer button switch to cancel if they've already volunteered for that occasion.
+- [x] click cancel and have a user delete that session, button switch back to volunteer.
 - [ ] Implement a map for each event and index with Google's Map Api.
 
 [Details][phase-two]
 
 ### Phase 3: Volunteer and cancel your subscriptions. (1 days)
-- [ ]  Go to users show page and click and cancel events.
+- [x]  Go to users show page and click and cancel events.
 
-### Phase 3: Occasion and Venue searching and Users Pages (3 days)
+### Phase 4: Occasion and Venue searching and Users Pages (3 days)
   Need to talk to Gage about best way to do searching, my guess is you search by occasion, or venue, and then search goes to an sql search that joins (occasion and venue) and returns the necessary venue, from which the user can click on, see what it's about, and if interested click to see the times(occasions), and should see their time there amongst all the others. User be should also be able have a list of the Occasions that they have volunteered for and ability to cancel their commitment to them.
 
 [Details][phase-three]

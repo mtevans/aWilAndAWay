@@ -4,7 +4,6 @@ const Store = require('flux/utils').Store;
 const Dispatcher = require('../dispatcher/dispatcher.js');
 const SessionConstants = require('../constants/session_constants.js');
 
-
 let _authErrors = {};
 let _currentUser = {};
 let _creationErrors = [];
@@ -28,7 +27,6 @@ const _logOut = function(){
 }
 
 
-
 SessionStore.__onDispatch = function(payload){
   switch (payload.actionType) {
     case SessionConstants.LOGIN:
@@ -50,6 +48,15 @@ SessionStore.__onDispatch = function(payload){
     }
 };
 
+
+SessionStore.SubcribedVenuesAsObj = function(){
+  let VenueObj = {}
+  _currentUser.subscribed_venues.forEach( venue => {
+    VenueObj[venue.id] = venue;
+  })
+  return VenueObj;
+}
+
 SessionStore.collectOccassionIds = function(){
   let idArray= [];
   if (SessionStore.isUserLoggedIn()) {
@@ -58,11 +65,6 @@ SessionStore.collectOccassionIds = function(){
   })
 }
   return idArray;
-}
-
-
-SessionStore.creationErrors = function(){
-  return _creationErrors;
 }
 
 SessionStore.findSubscriptionId = function(occasion_id){
@@ -74,6 +76,11 @@ SessionStore.findSubscriptionId = function(occasion_id){
   });
   return returnId;
 }
+
+SessionStore.creationErrors = function(){
+  return _creationErrors;
+}
+
 
 SessionStore.authErrors = function() {
   let array = [];

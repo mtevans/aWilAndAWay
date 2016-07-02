@@ -1,22 +1,22 @@
 const React = require('react');
-const Link = require('react-router').Link;
 const ReactRouter = require('react-router');
 const hashHistory = ReactRouter.hashHistory;
 const Modal = require("react-modal");
 
-
+const Link = require('react-router').Link;
 const LoginForm = require('../user/login_form.jsx');
 const SignUpForm = require('../user/sign_up_form.jsx');
 const SessionStore = require('../../stores/session_store.js');
 const SessionActions = require('../../actions/session_actions.js');
-
+const UserSchedule = require('../user/user_schedule.jsx');
 
 const Header = React.createClass ({
   getInitialState(){
     return {
       loggedIn: SessionStore.isUserLoggedIn(),
-      modalOpen: false,
-      signIn: false
+      loggerModalOpen: false,
+      signIn: false,
+      userShowModal: false
     }
   },
 
@@ -37,13 +37,23 @@ const Header = React.createClass ({
   },
 
   _handleClick (bool){
-
-    this.setState({modalOpen: true, signIn: bool})
+    this.setState({loggerModalOpen: true, signIn: bool})
   },
 
   onModalClose (){
-    this.setState({modalOpen: false})
+    this.setState({loggerModalOpen: false})
   },
+
+  userModalClose(){
+    this.setState({ userShowModal: false})
+  },
+
+  openUserModal(){
+    this.setState({ userShowModal: true})
+  },
+
+
+
 
   render(){
 
@@ -55,7 +65,7 @@ const Header = React.createClass ({
 
       if (this.state.loggedIn) {
         logger = <Link className="logger"  to={`/`} onClick={this.logout}>Log Out</Link> ;
-          sign = <a >{SessionStore.currentUser().name}</a>;
+          sign = <a onClick={this.openUserModal}>{SessionStore.currentUser().name}</a>;
       };
 
     return (
@@ -65,11 +75,19 @@ const Header = React.createClass ({
           {logger}
         </div>
         <Modal
-          isOpen={this.state.modalOpen}
+          isOpen={this.state.loggerModalOpen}
           onRequestClose={this.onModalClose}>
           {component}
           <button onClick={this.onModalClose}>Close</button>
         </Modal>
+      <Modal isOpen={this.state.userShowModal}
+            onRequestClose={this.userModalClose}>
+
+        <UserSchedule/>
+
+      <button onClick={this.userModalClose}>Close</button>
+      </Modal>
+
       </div>
     )
   }

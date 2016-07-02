@@ -35,7 +35,8 @@ Venue.create!(
   about: "It's a food bank",
   description: "OMG it's a great time, food bank near embarcadero",
   address: "123 folsom drive",
-  zip_code: "94111",
+  lat: 37.789586,
+  lng: -122.395673,
   email: "bigSTEVE@gmail.com",
   organizer_id: 1
 )
@@ -46,7 +47,8 @@ Venue.create!(
   about: "Keep kids off the streets and help out teaching boxing",
   description: "Here at BigCity boxing we're about giving back to our local community and particularly the future generation. Come by and help out and get to know your neighborhood",
   address: "526 Hickory stree",
-  zip_code: "94102",
+  lat: 37.795169,
+  lng: -122.409842,
   email: "PunchinPeter@BigCityBoxing.com",
   organizer_id: 2
 )
@@ -57,7 +59,8 @@ Venue.create!(
   about: "Give food to those in need",
   description: "We need a really long description here, like really rediculously, overly verbose description that's going to take up lots of room and test my css skills",
   address: "526 Hickory stree",
-  zip_code: "94102",
+  lat: 37.800315,
+  lng: -122.417583,
   email: "PunchinPeter@BigCityBoxing.com",
   organizer_id: 3
 )
@@ -67,7 +70,8 @@ Venue.create!(
   about: "Got a background in maths, help kids get their high school diploma",
   description: "We need a really long description here, like really rediculously, overly verbose description that's going to take up lots of room and test my css skills",
   address: "827 market street",
-  zip_code: "94105",
+  lat: 37.803053,
+  lng: -122.411532,
   email: "PunchinPeter@BigCityBoxing.com",
   organizer_id: 4
 )
@@ -77,7 +81,8 @@ Venue.create!(
   about: "Spend an hour a week, mentoring a special needs child",
   description: "We need a really long description here, like really rediculously, overly verbose description that's going to take up lots of room and test my css skills",
   address: "526 Near Starbucks",
-  zip_code: "94118",
+  lat: 37.787090,
+  lng: -122.433017,
   email: "PunchinPeter@BigCityBoxing.com",
   organizer_id: 1
 )

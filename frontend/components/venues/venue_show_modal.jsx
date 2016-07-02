@@ -37,7 +37,6 @@ const VenueShowModal = React.createClass({
             <h1>title: {venue.title}</h1>
             <p>about: {venue.about}</p>
               <p>address: {venue.address}</p>
-              <p>zip_code: {venue.zip_code}</p>
               <p>email: {venue.email}</p>
           </div>
           <text>description: {venue.description}</text>

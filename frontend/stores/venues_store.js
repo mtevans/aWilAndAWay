@@ -13,6 +13,17 @@ VenueStore.find = function(id){
   return _venues[id];
 }
 
+// VenueStore.findBylatitude = function(lat){
+//   VenueStore.all().forEach( venue => {
+//     if()
+//   })
+// }
+
+
+VenueStore.copyOfVenuesObject = function(){
+  return Object.assign({}, _venues);
+}
+
 VenueStore.all = function(){
   let venues = [];
   for (var i in _venues) {

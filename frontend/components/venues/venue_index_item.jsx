@@ -6,13 +6,14 @@ const VenueOccasionShow = require('./venue_occasions_show.jsx');
 
 const VenueIndexItem = React.createClass({
   getInitialState(){
+
     return {
       modalOpen: false,
       occasionsOpen: false
     }
   },
 
-  _handleClick (bool){
+  _handleClick (){
     this.setState({modalOpen: true})
   },
 

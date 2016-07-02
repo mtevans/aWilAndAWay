@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>AWillAndAWay</title>
+  <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyCvcXthYJhbAmJZUvD6Fnn5HQO-e6aqvVU" %>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
@@ -10,6 +11,7 @@
     window.cloudinary_options = {
       cloud_name: '<%= ENV['CLOUD_NAME']%>',
       upload_present: '<%= ENV['UPLOAD_PRESET']%>'
+      
     };
   </script>
 </head>
