@@ -11,7 +11,7 @@ const IndexRoute = ReactRouter.IndexRoute;
 // const LoginForm = require('./components/user/login_form.jsx');
 // const SignUpForm = require('./components/user/sign_up_form.jsx');
 const Homepage = require('./components/home/homepage.jsx');
-const VenueIndex = require('./components/venues/venue_index.jsx')
+const Map = require('./components/venues/map.jsx')
 
 const SessionApiUtil = require('./util/session_api_util.js');
 const SessionActions = require('./actions/session_actions.js');
@@ -31,7 +31,7 @@ const appRouter = (
     <Route path="/" component={Homepage}>
 
     </Route>
-    <Route path="/index" component={VenueIndex} />
+    <Route path="/index" component={Map} />
   </Router>
 );
 
