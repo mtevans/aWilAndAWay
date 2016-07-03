@@ -39,8 +39,19 @@ const Map = React.createClass({
     this.setState({venues: VenueStore.all()});
   },
 
+  _changedModalStatus(targetVenue){
+    let UpdatesVenues = this.state.venues.map(venue => {
+      if(venue.id === targetVenue.id){
+        return targetVenue;
+      } else {
+        return venue
+      }
+    })
+    this.setState({ venues: UpdatesVenues})
+  },
+
   placeMarkers(){
-    this.state.venues.forEach( venue => {
+    this.state.venues.map( venue => {
 
       let marker = new google.maps.Marker({
         position:{lat: venue.lat, lng: venue.lng},
@@ -49,13 +60,15 @@ const Map = React.createClass({
       })
 
       marker.addListener('click', () => {
-        // venue.modalstatus = true
+        venue.modal_status = true
+        this._changedModalStatus(venue)
       });
     })
   },
 
 
   render (){
+
     this.placeMarkers();
 
     // let VenueItems = this.state.venues.map(venue => {
@@ -65,12 +78,11 @@ const Map = React.createClass({
 
     return(
       <div className="index-page">
-        <header className='header'><Header /></header>
+        <header className='index-header'><Header /></header>
         <div className="index-page-body">
           <div className='themap' ref='map'></div>
           <VenueIndex venues={this.state.venues}  />
         </div>
-
         <footer className="footer"><Footer/></footer>
 
       </div>

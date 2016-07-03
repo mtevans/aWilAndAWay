@@ -60,20 +60,24 @@ const Header = React.createClass ({
     let component = (this.state.signIn) ? <LoginForm callback={this.onModalClose}/>:
     <SignUpForm callback={this.onModalClose}/>;
 
-  let logger = <a className="logger"  onClick={this._handleClick.bind(this, true)}>Log In</a> ;
-    let sign =  <a onClick={this._handleClick.bind(this, false)}>Sign Up</a> ;
+  let logger = <a className="logger" id="a"  onClick={this._handleClick.bind(this, true)}>Log In</a> ;
+    let sign =  <a id="b" onClick={this._handleClick.bind(this, false)}>Sign Up</a> ;
 
       if (this.state.loggedIn) {
-        logger = <Link className="logger"  to={`/`} onClick={this.logout}>Log Out</Link> ;
-          sign = <a onClick={this.openUserModal}>{SessionStore.currentUser().name}</a>;
+        logger = <Link className="logger" id="a" to={`/`} onClick={this.logout}>Log Out</Link> ;
+          sign = <a id="b" onClick={this.openUserModal}>{SessionStore.currentUser().name}</a>;
       };
 
     return (
       <div>
-        <div className="header-right">
-          {sign}
-          {logger}
-        </div>
+        <content className="header-content">
+          <img className="header-logo"  src="http://res.cloudinary.com/dfld7chk4/image/upload/v1467517608/featheredhands-transparent-final_tns0sn.png"/>
+          <div className="siteName"> aWillAndAWay</div>
+          <div className="header-right">
+            {sign}
+            {logger}
+          </div>
+        </content>
         <Modal
           isOpen={this.state.loggerModalOpen}
           onRequestClose={this.onModalClose}>

@@ -8,7 +8,7 @@ const VenueIndexItem = React.createClass({
   getInitialState(){
 
     return {
-      modalOpen: false,
+      modalOpen: this.props.venue.modal_status,
       occasionsOpen: false
     }
   },
@@ -36,11 +36,13 @@ const VenueIndexItem = React.createClass({
 
     return (
       <div className= "venue-list-item">
-        <img src={venue.url} className="venue-thumbnail"
-        onClick={this._handleClick}>
-        </img>
-        <p >{venue.title}</p>
-        <p>{venue.about}</p>
+          <img src={venue.url} className="venue-thumbnail"
+          onClick={this._handleClick}>
+          </img>
+        <content className="thumbnail-info">
+          <p >{venue.title}</p>
+          <p>{venue.about}</p>
+        </content>
 
         <Modal
             isOpen={this.state.modalOpen}

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160701223806) do
+ActiveRecord::Schema.define(version: 20160702031730) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 20160701223806) do
     t.datetime "updated_at",                                                                                                   null: false
     t.float    "lat",                                                                                                          null: false
     t.float    "lng",                                                                                                          null: false
+    t.boolean  "modal_status", default: false
   end
 
   add_index "venues", ["about"], name: "index_venues_on_about", using: :btree
