@@ -51,11 +51,13 @@ const resetVenues = function (venues) {
   venues.forEach(function (venue) {
     _venues[venue.id] = venue;
   });
+
   VenueStore.__emitChange();
 };
 
 const setVenue = function(venue){
   _venues[venue.id] = venue;
+  
   VenueStore.__emitChange();
 }
 

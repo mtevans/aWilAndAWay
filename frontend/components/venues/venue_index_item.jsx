@@ -6,7 +6,6 @@ const VenueOccasionShow = require('./venue_occasions_show.jsx');
 
 const VenueIndexItem = React.createClass({
   getInitialState(){
-
     return {
       modalOpen: this.props.venue.modal_status,
       occasionsOpen: false
@@ -14,11 +13,15 @@ const VenueIndexItem = React.createClass({
   },
 
   _handleClick (){
-    this.setState({modalOpen: true})
+    // should be able to refactor using this.setState = true or false.
+    this.props.venue.modal_status = true
+    this.setState({modalOpen: this.props.venue.modal_status})
   },
 
   onModalClose (){
-    this.setState({modalOpen: false, occasionsOpen: false})
+    debugger;
+    this.props.venue.modal_status = false
+    this.setState({modalOpen: this.props.venue.modal_status, occasionsOpen: false})
   },
 
   toggleOccasions(){
@@ -26,6 +29,7 @@ const VenueIndexItem = React.createClass({
   },
 
   render(){
+
     const venue = this.props.venue
     let modalContent;
     if(this.state.occasionsOpen) {
@@ -45,7 +49,7 @@ const VenueIndexItem = React.createClass({
         </content>
 
         <Modal
-            isOpen={this.state.modalOpen}
+            isOpen={this.props.venue.modal_status}
             onRequestClose={this.onModalClose}
             className="venue-modal">
             <div className="venue-modal-content">

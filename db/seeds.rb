@@ -30,17 +30,17 @@
 #   password: "password",
 # )
 #
-# Venue.create!(
-#   title: "Food Bank",
-#   about: "It's a food bank",
-#   description: "OMG it's a great time, food bank near embarcadero",
-#   address: "123 folsom drive",
-#   lat: 37.789586,
-#   lng: -122.395673,
-#   email: "bigSTEVE@gmail.com",
-#   organizer_id: 1,
-#   modal_status: false
-# )
+Venue.create!(
+  title: "Food Bank",
+  about: "It's a food bank",
+  description: "OMG it's a great time, food bank near embarcadero",
+  address: "123 folsom drive",
+  lat: 37.789586,
+  lng: -122.395673,
+  email: "bigSTEVE@gmail.com",
+  organizer_id: 1,
+  modal_status: false
+)
 #
 #
 # Venue.create!(

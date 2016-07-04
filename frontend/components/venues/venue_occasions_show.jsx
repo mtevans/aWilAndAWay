@@ -51,6 +51,7 @@ const VenueOccasionShow = React.createClass({
   },
 
   render(){
+    debugger;
     const venue = this.props.venue;
     const occasions = venue.occasions;
 

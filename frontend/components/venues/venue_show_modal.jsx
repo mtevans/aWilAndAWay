@@ -5,14 +5,14 @@ const VenueActions = require('../../actions/venues_actions.js');
 
 
 const VenueShowModal = React.createClass({
-  getInitialState(){
-    return {
-      venue: VenueStore.find(this.props.venue.id)
-    }
-  },
+  // getInitialState(){
+  //   return {
+  //     venue: VenueStore.find(this.props.venue.id)
+  //   }
+  // },
   componentWillMount(){
     this.venueListener = VenueStore.addListener(this.venueUpdate)
-    VenueActions.getVenue(this.props.venue.id);
+
   },
 
   venueUpdate(){
@@ -24,12 +24,13 @@ const VenueShowModal = React.createClass({
   },
 
   openOccasions(){
+    debugger;
     this.props.toggleOccasions();
   },
 
 
   render(){
-    const venue = this.state.venue;
+    const venue = this.props.venue;
       return(
         <div>
           <img src={venue.url} className="modal-thumbnail"/>

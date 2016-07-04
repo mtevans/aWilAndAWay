@@ -13,6 +13,7 @@ const VenueIndex = require('./venue_index.jsx');
 
 
 const Map = React.createClass({
+
   getInitialState(){
     return {
       venues: []
@@ -36,17 +37,20 @@ const Map = React.createClass({
 
 
   _getVenues(){
+
     this.setState({venues: VenueStore.all()});
   },
 
   _changedModalStatus(targetVenue){
     let UpdatesVenues = this.state.venues.map(venue => {
       if(venue.id === targetVenue.id){
+        targetVenue.modal_status = true;
         return targetVenue;
       } else {
         return venue
       }
     })
+
     this.setState({ venues: UpdatesVenues})
   },
 
@@ -68,7 +72,6 @@ const Map = React.createClass({
 
 
   render (){
-
     this.placeMarkers();
 
     // let VenueItems = this.state.venues.map(venue => {
@@ -78,7 +81,7 @@ const Map = React.createClass({
 
     return(
       <div className="index-page">
-        <header className='index-header'><Header /></header>
+        <header className='header'><Header /></header>
         <div className="index-page-body">
           <div className='themap' ref='map'></div>
           <VenueIndex venues={this.state.venues}  />

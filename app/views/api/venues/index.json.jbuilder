@@ -1,3 +1,4 @@
 json.array! @venues do |venue|
-    json.extract! venue, :id, :title, :about, :lat, :lng, :url, :organizer_id, :modal_status
+    json.extract! venue, :id, :title, :about, :description, :address, :lat, :lng, :email,
+     :url, :organizer_id, :modal_status, :occasions
 end
