@@ -52,6 +52,10 @@ const Header = React.createClass ({
     this.setState({ userShowModal: true})
   },
 
+  redirectHome(){
+    hashHistory.push("/");
+  },
+
 
 
 
@@ -71,7 +75,7 @@ const Header = React.createClass ({
     return (
       <div>
         <content className="header-content">
-          <img className="header-logo"  src="http://res.cloudinary.com/dfld7chk4/image/upload/v1467517608/featheredhands-transparent-final_tns0sn.png"/>
+          <img onClick={this.redirectHome} className="header-logo"  src="http://res.cloudinary.com/dfld7chk4/image/upload/v1467517608/featheredhands-transparent-final_tns0sn.png"/>
           <div className="siteName"> aWillAndAWay</div>
           <div className="header-right">
             {sign}
@@ -80,9 +84,15 @@ const Header = React.createClass ({
         </content>
         <Modal
           isOpen={this.state.loggerModalOpen}
-          onRequestClose={this.onModalClose}>
+          onRequestClose={this.onModalClose}
+          className='headerloggermodal'>
+
           {component}
-          <button onClick={this.onModalClose}>Close</button>
+          <h2>OR</h2>
+          <form className="demo-form">
+              <input type="submit" value="Use Demo Account" class=""/>
+          </form>
+          <button onClick={this.onModalClose}>X</button>
         </Modal>
       <Modal isOpen={this.state.userShowModal}
             onRequestClose={this.userModalClose}>

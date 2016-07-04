@@ -13,7 +13,6 @@ const Homepage = React.createClass({
   render () {
     return (
       <div className='homepage'>
-
         <div className="content">
           <header className='header'><Header /></header>
 

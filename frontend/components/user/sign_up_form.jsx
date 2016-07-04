@@ -69,20 +69,19 @@ const SignUpForm = React.createClass({
     return (
 
       <form className="log-in-form" onSubmit={this.handleSubmit}>
-        <label> Name:
-          <input type="text" value={this.state.name} onChange={this._onChange("name")}
-            className="signup-input" />
-				</label>
-        <label> Email:
-          <input type="text" value={this.state.email} onChange={this._onChange("email")}
-            className="signup-input" />
-				</label>
-        <label> Password:
-          <input type="password" value={this.state.pasword} onChange={this._onChange("password")}
-            className="signup-input" />
-        </label>
-        <input type="submit" value="Submit" />
+        <h2>SIGN UP</h2>
+          <input type="text" placeholder="Name" value={this.state.name} onChange={this._onChange("name")}
+            className="login-input" />
+
+          <input type="text" placeholder="Email"value={this.state.email} onChange={this._onChange("email")}
+            className="login-input" />
+
+
+          <input type="password" placeholder="Password" value={this.state.pasword} onChange={this._onChange("password")}
+            className="login-input" />
+
         {authErrors}
+        <input type="submit" value="Submit" />
       </form>
     )
   }

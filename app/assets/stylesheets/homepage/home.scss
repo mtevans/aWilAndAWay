@@ -1,7 +1,5 @@
 .content {
-  background: url(http://res.cloudinary.com/dfld7chk4/image/upload/v1467505519/San-Francisco_Hero_tjtpbo.jpg);
-  background-size: cover;
-  background-position: bottom;
+
 }
 
 
@@ -21,6 +19,9 @@
   position: relative;
   display: flex;
   justify-content: center;
+  background: url(http://res.cloudinary.com/dfld7chk4/image/upload/v1467255716/splashpage_fe9nkj.jpg);
+  background-size: cover;
+  background-position: bottom;
 }
 
 
@@ -36,29 +37,27 @@
     background-color: transparent;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-
+    a, h2{
+      position: relative;
+      top: 100px;
+    }
     h2{
       font-size: 30px;
       color: black;
       font-weight: 300;
-      position: relative;
-      top: 16px;
+
     }
     a {
-      position: relative;
       width: 160px;
-      margin: auto
     }
+
+
   }
 
   .jumbotron-tag a:hover {
-    color: gold;
-
-  }
-
-  .jumbotron-logo {
-    height: 300px;
-    width: 100%;
-    position: relative;
+    color: cadetblue;
+    font-size: 51px;
   }

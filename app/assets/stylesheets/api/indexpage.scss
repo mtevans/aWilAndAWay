@@ -27,18 +27,18 @@
 
 .themap {
    margin: 10px;
-   width: 100%;
+   width: 80%;
    height: 295px;
    border: 1px solid black;
  }
 
  .venue-items {
    height: 100%;
-   width: 100%;
+   width: 95%;
    display: flex;
    flex-wrap: wrap;
-   justify-content: flex-start;
-   overflow: scroll
+   justify-content: center;
+   overflow: scroll;
  }
 
 

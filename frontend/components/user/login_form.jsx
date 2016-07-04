@@ -68,15 +68,15 @@ const LoginForm = React.createClass({
 
     return (
       <form className="log-in-form" onSubmit={this.handleSubmit}>
+          <h2>LOG IN</h2>
+          <input type="text" placeholder="Email" value={this.state.email} onChange={this._onChange("email")}
+            className="login-input" />
+
+
+          <input type="password" placeholder="Password" value={this.state.password} onChange={this._onChange("password")}
+            className="login-input" />
+
         {authErrors}
-        <label> Email:
-          <input type="text" value={this.state.email} onChange={this._onChange("email")}
-            className="login-input" />
-				</label>
-        <label> Password:
-          <input type="password" value={this.state.password} onChange={this._onChange("password")}
-            className="login-input" />
-        </label>
         <input type="submit" value="Sign In"/>
       </form>
     )
