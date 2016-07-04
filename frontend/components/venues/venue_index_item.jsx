@@ -19,7 +19,6 @@ const VenueIndexItem = React.createClass({
   },
 
   onModalClose (){
-    debugger;
     this.props.venue.modal_status = false
     this.setState({modalOpen: this.props.venue.modal_status, occasionsOpen: false})
   },

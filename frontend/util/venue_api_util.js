@@ -4,10 +4,12 @@
 
 
 const VenueApiUtil = {
-  fetchVenues(successCallback){
+  fetchVenues(bounds ,successCallback){
+    
     $.ajax({
 			url: '/api/venues',
 			type: 'GET',
+      data: {bounds: bounds},
       success: function(response){
         successCallback(response);
       }

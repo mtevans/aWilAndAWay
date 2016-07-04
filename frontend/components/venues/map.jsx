@@ -12,6 +12,15 @@ const Footer = require('../home/footer.jsx');
 const VenueIndex = require('./venue_index.jsx');
 
 
+const _getCoordsObj = function(latLng) {
+  return ({
+    lat: latLng.lat(),
+    lng: latLng.lng()
+  });
+}
+
+
+
 const Map = React.createClass({
 
   getInitialState(){
@@ -23,12 +32,14 @@ const Map = React.createClass({
   componentDidMount(){
     this.venueListener = VenueStore.addListener(this._getVenues);
     VenueActions.fetchVenues();
+
     const mapDOMNode = ReactDOM.findDOMNode(this.refs.map);
     const mapOptions = {
       center: {lat: 37.7758, lng: -122.435}, // this is SF
       zoom: 13
     };
     this.map = new google.maps.Map(mapDOMNode, mapOptions);
+    this.registerListeners();
   },
 
   componentWillUnmount(){
@@ -68,6 +79,23 @@ const Map = React.createClass({
         this._changedModalStatus(venue)
       });
     })
+  },
+
+  registerListeners() {
+    const that = this;
+    google.maps.event.addListener(this.map, 'idle', () => {
+      const mapBounds = that.map.getBounds();
+      const northEast = _getCoordsObj(mapBounds.getNorthEast());
+      const southWest = _getCoordsObj(mapBounds.getSouthWest());
+      //actually issue the request
+      const bounds = { northEast, southWest };
+      VenueActions.fetchVenues(bounds);
+    });
+    google.maps.event.addListener(this.map, 'click', event => {
+      const coords = { lat: event.latLng.lat(), lng: event.latLng.lng() };
+      VenueActions.fetchVenues(coords);
+      // that._handleClick(coords);
+    });
   },
 
 

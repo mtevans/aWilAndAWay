@@ -4,8 +4,9 @@ const VenueApiUtil = require('../util/venue_api_util.js');
 const VenueConstants = require('../constants/venue_constants.js')
 
 const VenueActions = {
-  fetchVenues () {
-    VenueApiUtil.fetchVenues(this.receiveAll);
+  fetchVenues (bounds) {
+
+    VenueApiUtil.fetchVenues(bounds, this.receiveAll);
   },
 
   getVenue (id) {
@@ -13,7 +14,6 @@ const VenueActions = {
   },
 
   receiveAll (venues) {
-
     Dispatcher.dispatch({
       actionType: VenueConstants.VENUES_RECEIVED,
       venues: venues
