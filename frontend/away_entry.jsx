@@ -2,7 +2,6 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 const ReactRouter = require('react-router');
 const Modal = require("react-modal");
-const ReactTooltip = require("react-tooltip");
 
 
 const hashHistory = ReactRouter.hashHistory;
