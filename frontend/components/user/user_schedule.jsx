@@ -12,7 +12,8 @@ const UserSchedule = React.createClass({
       OccassionIds: SessionStore.collectOccassionIds(),
 
       UserVenues: SessionStore.SubcribedVenuesAsObj(),
-      loggedInState: SessionStore.isUserLoggedIn()
+      loggedInState: SessionStore.isUserLoggedIn(),
+      VenueToDisplay: null
     }
   },
 
@@ -59,30 +60,68 @@ const UserSchedule = React.createClass({
     SessionActions.deleteSubscription(id);
   },
 
+  _removeVenue(){
+    event.preventDefault();
+    this.setState({VenueToDisplay: null})
+  },
+
+  _DisplayVenue(venue_id){
+    event.preventDefault();
+    this.setState({VenueToDisplay: VenueStore.find(venue_id)})
+  },
+
+
+
   render(){
     let occasions = this.state.UserOccasions
     let schedule = occasions.map(occasion => {
       let that = this
+      let venueToggleButton = <button onClick={this._DisplayVenue.bind(null, occasion.venue_id)}>MoreDetails</button>;
       let button = <button onClick={this._handleSubscription.bind(null, occasion.id)}>Volunteer</button> ;
         if(that.state.OccassionIds.includes(occasion.id)){
-          button = <button onClick={that._cancelSubscription.bind(null, SessionStore.findSubscriptionId(occasion.id))}>Cancel</button>
+          button = <button onClick={that._cancelSubscription.bind(null,
+                    SessionStore.findSubscriptionId(occasion.id))}>Cancel</button>
         };
-        return( <div key={occasion.id}>
+        if(this.state.VenueToDisplay !== null){
+          venueToggleButton = <button onClick={this._removeVenue}>LessDetails</button>;
+        }
+
+
+        return(
+          <div key={occasion.id}>
             <h1>{that.state.UserVenues[occasion.venue_id].title}</h1>
             <ul>date: {occasion.date}
               <li>Start Time: {that.timeParser(occasion.start_time)}</li>
               <li>End Time: {that.timeParser(occasion.end_time)}</li>
               {button}
-              <button >MoreDetails</button>
+              {venueToggleButton}
             </ul>
           </div>
 
         )
     })
+
+    let DisplayVenue = "";
+      if(this.state.VenueToDisplay){
+        let venue = this.state.VenueToDisplay
+        DisplayVenue= (
+          <div className="VenueDisplay">
+            <img src={venue.url} className="modal-thumbnail"/>
+            <div className="small-details">
+              <h1>title: {venue.title}</h1>
+              <p>about: {venue.about}</p>
+                <p>address: {venue.address}</p>
+                <p>email: {venue.email}</p>
+            </div>
+          </div>
+        )
+    }
+
     return(
       <div>
         <h1>Your User </h1>
       {schedule}
+      {DisplayVenue}
       </div>
     )
   }

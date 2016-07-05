@@ -1,0 +1,45 @@
+.tooltip {
+  position: relative;
+}
+
+.tooltip::before, .tooltip::after {
+  position: absolute;
+  display: block;
+  left: 50%;
+
+  transition: opacity 2s;
+}
+
+.tooltip::after {
+  background-color: red;
+  color: white;
+  content: attr(data-tooltip);
+  padding: 15px;
+  width: 180px;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 5px;
+
+  bottom: 60px;
+  margin-left: -90px;
+}
+
+.tooltip::before {
+  content: "";
+  width: 0;
+	height: 0;
+  background-color: transparent;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+
+	border-top: 10px solid red;
+
+  margin-left: -10px;
+  bottom: 50px;
+}
+
+.tooltip-fadeout::after, .tooltip-fadeout::before {
+  opacity: 0;
+
+  transition: opacity 2s;
+}

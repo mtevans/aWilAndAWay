@@ -11,7 +11,8 @@ const VenueIndex = React.createClass({
       filterList: this.filterCategories(),
       startTime: "0",
       endTime: "2400",
-      date: ""
+      date: "",
+      filterStatus: false
     }
   },
 
@@ -32,16 +33,17 @@ const VenueIndex = React.createClass({
 
 
   _filterTimes(e){
+    event.preventDefault();
 
     let startTime = e.target[0].value.replace(":", "")
     let endTime = e.target[1].value.replace(":", "")
 
-    this.setState({startTime: startTime, endTime: endTime})
+    this.setState({startTime: startTime, endTime: endTime, filterStatus: true})
   },
 
   _handleDateChange(e){
     e.preventDefault();
-    this.setState({date: e.target.value})
+    this.setState({date: e.target.value, filterStatus: true})
   },
 
   _resetFilters(){
@@ -50,7 +52,8 @@ const VenueIndex = React.createClass({
       filterList: this.filterCategories(),
       startTime: "0",
       endTime: "2400",
-      date: ""
+      date: "",
+      filterStatus: false
     });
   },
 
@@ -60,6 +63,8 @@ const VenueIndex = React.createClass({
       let ValidTime = false
       let ValidDate = false
       let that = this
+      let OccasionFilters = {startTime: this.state.startTime, endTime: this.state.endTime,
+         date: this.state.date, filterStatus: this.state.filterStatus}
 
       venue.occasions.forEach(occasion => {
         if ((occasion.start_time >= that.state.startTime) && (occasion.end_time <= that.state.endTime)){
@@ -72,10 +77,13 @@ const VenueIndex = React.createClass({
 
 
 
-      if( venue.display_status === true && this.state.filter.includes(venue.category) && ValidTime === true && ValidDate === true) {
-        return <VenueIndexItem className="venue-index-item" key={venue.id} venue={venue} /> ;
+      if( venue.display_status === true && this.state.filter.includes(venue.category)
+          && ValidTime === true && ValidDate === true) {
+        return <VenueIndexItem className="venue-index-item" key={venue.id} venue={venue}
+                filters={OccasionFilters}/> ;
       }
     });
+
     let filterOptions = this.state.filterList.map(filter =>{
       return <option value={filter} key={filter}>{filter}</option>
     });
@@ -91,7 +99,7 @@ const VenueIndex = React.createClass({
             <h5>Between what times(24hr)?</h5>
             <input type="time" className="start-time" onChange={this._timeSetter}/>
             <input type="time" className="end-time" onChange={this._timeSetter}/>
-            <input type="submit" value="Check Time"/>
+            <input type="submit" value="Check Times"/>
           </form>
           <label> What Day?
             <input type="date" onChange={this._handleDateChange}/>

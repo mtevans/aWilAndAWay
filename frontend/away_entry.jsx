@@ -2,11 +2,14 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 const ReactRouter = require('react-router');
 const Modal = require("react-modal");
+const ReactTooltip = require("react-tooltip");
+
 
 const hashHistory = ReactRouter.hashHistory;
 const Router = ReactRouter.Router;
 const Route = ReactRouter.Route;
 const IndexRoute = ReactRouter.IndexRoute;
+
 
 // const LoginForm = require('./components/user/login_form.jsx');
 // const SignUpForm = require('./components/user/sign_up_form.jsx');

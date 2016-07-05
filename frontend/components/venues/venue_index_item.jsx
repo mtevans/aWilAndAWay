@@ -3,19 +3,19 @@ const Modal = require("react-modal");
 const VenueShowModal = require('./venue_show_modal.jsx');
 const VenueOccasionShow = require('./venue_occasions_show.jsx');
 
-
 const VenueIndexItem = React.createClass({
   getInitialState(){
     return {
       modalOpen: this.props.venue.modal_status,
-      occasionsOpen: false
+      occasionsOpen: false,
+      loggedIn: SessionStore.isUserLoggedIn()
     }
   },
 
   _handleClick (){
     // should be able to refactor using this.setState = true or false.
-    this.props.venue.modal_status = true
-    this.setState({modalOpen: this.props.venue.modal_status})
+      this.props.venue.modal_status = true
+      this.setState({modalOpen: this.props.venue.modal_status})
   },
 
   onModalClose (){
@@ -32,7 +32,7 @@ const VenueIndexItem = React.createClass({
     const venue = this.props.venue
     let modalContent;
     if(this.state.occasionsOpen) {
-        modalContent = <VenueOccasionShow venue={venue} toggleOccasions={this.onModalClose} /> ;
+        modalContent = <VenueOccasionShow venue={venue} filters={this.props.filters} toggleOccasions={this.onModalClose}/> ;
       } else {
         modalContent = <VenueShowModal venue={venue} toggleOccasions={this.toggleOccasions}/> ;
       }
@@ -54,6 +54,7 @@ const VenueIndexItem = React.createClass({
             <div className="venue-modal-content">
               {modalContent}
             <button className="close-button" onClick={this.onModalClose}>Close</button>
+
 
           </div>
         </Modal>
