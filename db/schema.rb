@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160702031730) do
+ActiveRecord::Schema.define(version: 20160704205402) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,18 +51,20 @@ ActiveRecord::Schema.define(version: 20160702031730) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
   create_table "venues", force: :cascade do |t|
-    t.string   "title",                                                                                                        null: false
-    t.string   "about",                                                                                                        null: false
-    t.text     "description",                                                                                                  null: false
-    t.string   "address",                                                                                                      null: false
-    t.string   "email",                                                                                                        null: false
-    t.string   "url",          default: "http://res.cloudinary.com/dfld7chk4/image/upload/v1467237098/defualt_pic_st9qj2.jpg", null: false
-    t.integer  "organizer_id",                                                                                                 null: false
-    t.datetime "created_at",                                                                                                   null: false
-    t.datetime "updated_at",                                                                                                   null: false
-    t.float    "lat",                                                                                                          null: false
-    t.float    "lng",                                                                                                          null: false
-    t.boolean  "modal_status", default: false
+    t.string   "title",                                                                                                          null: false
+    t.string   "about",                                                                                                          null: false
+    t.text     "description",                                                                                                    null: false
+    t.string   "address",                                                                                                        null: false
+    t.string   "email",                                                                                                          null: false
+    t.string   "url",            default: "http://res.cloudinary.com/dfld7chk4/image/upload/v1467237098/defualt_pic_st9qj2.jpg", null: false
+    t.integer  "organizer_id",                                                                                                   null: false
+    t.datetime "created_at",                                                                                                     null: false
+    t.datetime "updated_at",                                                                                                     null: false
+    t.float    "lat",                                                                                                            null: false
+    t.float    "lng",                                                                                                            null: false
+    t.boolean  "modal_status",   default: false
+    t.boolean  "display_status", default: true
+    t.string   "category",                                                                                                       null: false
   end
 
   add_index "venues", ["about"], name: "index_venues_on_about", using: :btree

@@ -19,8 +19,6 @@ const _getCoordsObj = function(latLng) {
   });
 }
 
-
-
 const Map = React.createClass({
 
   getInitialState(){
@@ -36,7 +34,7 @@ const Map = React.createClass({
     const mapDOMNode = ReactDOM.findDOMNode(this.refs.map);
     const mapOptions = {
       center: {lat: 37.7758, lng: -122.435}, // this is SF
-      zoom: 13
+      zoom: 12
     };
     this.map = new google.maps.Map(mapDOMNode, mapOptions);
     this.registerListeners();
@@ -48,7 +46,6 @@ const Map = React.createClass({
 
 
   _getVenues(){
-
     this.setState({venues: VenueStore.all()});
   },
 
@@ -91,21 +88,16 @@ const Map = React.createClass({
       const bounds = { northEast, southWest };
       VenueActions.fetchVenues(bounds);
     });
-    google.maps.event.addListener(this.map, 'click', event => {
-      const coords = { lat: event.latLng.lat(), lng: event.latLng.lng() };
-      VenueActions.fetchVenues(coords);
-      // that._handleClick(coords);
-    });
+    // google.maps.event.addListener(this.map, 'click', event => {
+    //   const coords = { lat: event.latLng.lat(), lng: event.latLng.lng() };
+    //   VenueActions.fetchVenues(coords);
+    //   // that._handleClick(coords);
+    // });
   },
 
 
   render (){
     this.placeMarkers();
-
-    // let VenueItems = this.state.venues.map(venue => {
-    //   return <VenueIndexItem className="venue-index-item" key={venue.id} venue={venue} /> ;
-    // });
-    // {VenueItems}
 
     return(
       <div className="index-page">

@@ -39,7 +39,8 @@ Venue.create!(
   lng: -122.395673,
   email: "bigSTEVE@gmail.com",
   organizer_id: 1,
-  modal_status: false
+  modal_status: false,
+  category: "People With Disabilities"
 )
 
 
@@ -52,7 +53,8 @@ Venue.create!(
   lng: -122.409842,
   email: "PunchinPeter@BigCityBoxing.com",
   organizer_id: 2,
-  modal_status: false
+  modal_status: false,
+  category: "Children & Youth"
 )
 
 
@@ -65,7 +67,8 @@ Venue.create!(
   lng: -122.417583,
   email: "PunchinPeter@BigCityBoxing.com",
   organizer_id: 3,
-  modal_status: false
+  modal_status: false,
+  category: "Children & Youth"
 )
 
 Venue.create!(
@@ -77,7 +80,8 @@ Venue.create!(
   lng: -122.411532,
   email: "PunchinPeter@BigCityBoxing.com",
   organizer_id: 4,
-  modal_status: false
+  modal_status: false,
+  category: "Children & Youth"
 )
 
 Venue.create!(
@@ -89,7 +93,8 @@ Venue.create!(
   lng: -122.433017,
   email: "PunchinPeter@BigCityBoxing.com",
   organizer_id: 1,
-  modal_status: false
+  modal_status: false,
+  category: "Children & Youth"
 )
 
 Occasion.create!(
@@ -144,7 +149,8 @@ Venue.create!(
   lng: -122.395673,
   email: "bigSTEVE@gmail.com",
   organizer_id: 1,
-  modal_status: false
+  modal_status: false,
+  category: "Seniors"
 )
 Venue.create!(
   title: "Foodeeee Bank",
@@ -155,7 +161,8 @@ Venue.create!(
   lng: -122.395673,
   email: "bigSTEVE@gmail.com",
   organizer_id: 1,
-  modal_status: false
+  modal_status: false,
+  category: "Seniors"
 )
 Venue.create!(
   title: "Foodeeeee Bank",
@@ -166,7 +173,8 @@ Venue.create!(
   lng: -122.395673,
   email: "bigSTEVE@gmail.com",
   organizer_id: 1,
-  modal_status: false
+  modal_status: false,
+  category: "Seniors"
 )
 Venue.create!(
   title: "Foodeeeeee Bank",
@@ -177,5 +185,6 @@ Venue.create!(
   lng: -122.395673,
   email: "bigSTEVE@gmail.com",
   organizer_id: 1,
-  modal_status: false
+  modal_status: false,
+  category: "Seniors"
 )

@@ -18,7 +18,7 @@
 
 class Venue < ActiveRecord::Base
   validates :title, :description, :address, :lat, :lng, :email,
-  :url, :organizer_id, presence: true
+  :url, :organizer_id, :category, presence: true
   validates :title, uniqueness: true
   # will need associations here
 

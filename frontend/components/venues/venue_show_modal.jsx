@@ -24,7 +24,6 @@ const VenueShowModal = React.createClass({
   },
 
   openOccasions(){
-    debugger;
     this.props.toggleOccasions();
   },
 
