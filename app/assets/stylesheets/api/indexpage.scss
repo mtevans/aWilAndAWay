@@ -21,16 +21,57 @@
 }
 
 
-.query-box{
-
-}
-
 .themap {
    margin: 10px;
    width: 80%;
    height: 295px;
    border: 1px solid black;
  }
+
+
+ .searchContent{
+   height: 100%;
+  width: 95%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow: scroll;
+ }
+
+.filter-bar{
+  background: #f7f7f7;
+  display: flex;
+  height: 8.0%;
+  flex-wrap: wrap;
+  overflow: scroll;
+  width: 84%;
+  justify-content: space-around;
+  border-radius: 4px;
+
+  form {
+    align-self: center;
+    position: relative;
+    top: -7px;
+  }
+
+  div, h5{
+    display: flex;
+    align-items: center;
+  }
+
+  p{
+    font-size: 12px;
+  }
+  button {
+    cursor: pointer;
+    cursor: pointer;
+    height: initial;
+    align-self: center;
+    border: 0.5px solid black;
+    border-radius: 3px;
+  }
+}
+
 
  .venue-items {
    height: 100%;

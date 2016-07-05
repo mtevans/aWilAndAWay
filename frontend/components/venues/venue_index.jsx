@@ -88,25 +88,30 @@ const VenueIndex = React.createClass({
       return <option value={filter} key={filter}>{filter}</option>
     });
     return (
-
-      <div className="venue-items">
+      <div className="searchContent">
         <div className="filter-bar">
-          <select onChange={this._handleCategoryChange}>
-            <option value="Select Category">Select Category</option>
-            {filterOptions}
-          </select>
+          <h5>Refine Search</h5>
+          <div>
+            <select onChange={this._handleCategoryChange}>
+              <option value="Select Category">Select Category</option>
+              {filterOptions}
+            </select>
+          </div>
+          <div>
+            <h5>Date</h5>
+            <input type="date" onChange={this._handleDateChange}/>
+          </div>
           <form onSubmit={this._filterTimes}>
-            <h5>Between what times(24hr)?</h5>
+            <p>Between what times(24hr)?</p>
             <input type="time" className="start-time" onChange={this._timeSetter}/>
             <input type="time" className="end-time" onChange={this._timeSetter}/>
             <input type="submit" value="Check Times"/>
           </form>
-          <label> What Day?
-            <input type="date" onChange={this._handleDateChange}/>
-          </label>
           <button onClick={this._resetFilters}>Clear Filters</button>
         </div>
-        {VenueItems}
+        <div className="venue-items">
+          {VenueItems}
+        </div>
       </div>
     )
   },

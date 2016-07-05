@@ -59,6 +59,7 @@ const Header = React.createClass ({
 
 
 
+
   render(){
 
     let component = (this.state.signIn) ? <LoginForm callback={this.onModalClose}/>:
@@ -89,7 +90,8 @@ const Header = React.createClass ({
 
           {component}
           <h2>OR</h2>
-          <form className="demo-form">
+          <form className="demo-form" onSubmit={this.demoLogIn}>
+              <p>Use Steve@example.com    password is password   Demo log-in not working</p>
               <input type="submit" value="Use Demo Account" class=""/>
           </form>
           <button onClick={this.onModalClose}>X</button>
