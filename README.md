@@ -8,12 +8,12 @@ There will be an "venue" which will have a description of what one is volunteeri
 
 - [x] Account authentication using BCRYPT hashing (unless simpler alternative is shown to use before starting.)
 - [x] Account creation and login
-- [ ] Occasion/Venue browsing by time, date, location and description
-- [ ] Venue location using Google Map API
+- [x] Occasion/Venue browsing by time, date, location
+- [x] Venue location using Google Map API
 - [x] User can volunteer and cancel for an occasion they've volunteered for.
 - [x] User show page has Occasions volunteered for.
 - [x] Venue show page has button which sends you to Occasion times of that Venue.
-- [ ] Single page implementation and nested associations.
+- [x] Single page implementation and nested associations.
 
 ## Design Docs
  put in wire frames and schema tables
@@ -73,7 +73,7 @@ component.
 - [x] allow user to click on index page and go through steps of signing up through a modal
 - [x] have volunteer button switch to cancel if they've already volunteered for that occasion.
 - [x] click cancel and have a user delete that session, button switch back to volunteer.
-- [ ] Implement a map for each event and index with Google's Map Api.
+- [x] Implement a map for each event and index with Google's Map Api.
 
 [Details][phase-two]
 
@@ -81,7 +81,11 @@ component.
 - [x]  Go to users show page and click and cancel events.
 
 ### Phase 4: Occasion and Venue searching and Users Pages (3 days)
-  Need to talk to Gage about best way to do searching, my guess is you search by occasion, or venue, and then search goes to an sql search that joins (occasion and venue) and returns the necessary venue, from which the user can click on, see what it's about, and if interested click to see the times(occasions), and should see their time there amongst all the others. User be should also be able have a list of the Occasions that they have volunteered for and ability to cancel their commitment to them.
+- [x] Can search by time
+- [x] Can search by location
+- [x] Can searh by date
+- [x] user show pags has list of things they've voluntered for and can cancel at that stage.
+
 
 [Details][phase-three]
 

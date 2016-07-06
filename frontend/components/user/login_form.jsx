@@ -14,9 +14,6 @@ const LoginForm = React.createClass({
 
   DEMO_PASSWORD: ["p", "a", "s", "s", "w", "o", "r", "d"],
 
-
-
-
   getInitialState() {
     return {
       email: "",
@@ -49,6 +46,7 @@ const LoginForm = React.createClass({
     if (SessionStore.isUserLoggedIn() ){
       this.props.callback();
     };
+    hashHistory.push('/index');
   },
 
   handleSubmit(e){
