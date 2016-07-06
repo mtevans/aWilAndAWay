@@ -10,6 +10,13 @@ const SessionStore = require('../../stores/session_store.js');
 
 const LoginForm = React.createClass({
 
+  DEMO_EMAIL: ["S", "t", "e", "v", "e", "@","e","x","a","m","p","l","e",".","c","o","m"],
+
+  DEMO_PASSWORD: ["p", "a", "s", "s", "w", "o", "r", "d"],
+
+
+
+
   getInitialState() {
     return {
       email: "",
@@ -46,17 +53,58 @@ const LoginForm = React.createClass({
 
   handleSubmit(e){
     e.preventDefault();
-    const data = {
+    let data = {
       email: this.state.email,
       password: this.state.password,
     };
     SessionActions.logIn(data);
   },
 
+  demoLogIn(e) {
+     e.preventDefault();
+
+     this.setState({
+       email: "",
+       password: ""
+     });
+
+     var _email = this.DEMO_EMAIL.slice();
+     this.autoFillEmail(_email);
+   },
+
+   autoFillEmail(_email) {
+     if (_email.length > 0) {
+       setTimeout(function() {
+         this.setState({
+           email: this.state.email + _email.shift()
+         });
+
+         this.autoFillEmail(_email);
+       }.bind(this), 50);
+     } else {
+       var _password = this.DEMO_PASSWORD.slice();
+       this.authoFillPassword(_password);
+     }
+   },
+
+   authoFillPassword(_password) {
+     if (_password.length > 0) {
+       setTimeout(function() {
+         this.setState({
+           password: this.state.password + _password.shift()
+         });
+
+         this.authoFillPassword(_password);
+       }.bind(this), 50);
+     } else {
+       var dummyEvent = { preventDefault: function(){} };
+       setTimeout(this.handleSubmit.bind(this, dummyEvent), 200);
+     }
+   },
+
+
+
   render(){
-
-
-
     let authErrors = this.state.authErrors;
     if(authErrors.length !== 0){
       authErrors.map( error => {
@@ -67,6 +115,7 @@ const LoginForm = React.createClass({
 
 
     return (
+      <div className="form">
       <form className="log-in-form" onSubmit={this.handleSubmit}>
           <h2>LOG IN</h2>
           <input type="text" placeholder="Email" value={this.state.email} onChange={this._onChange("email")}
@@ -79,6 +128,12 @@ const LoginForm = React.createClass({
         {authErrors}
         <input type="submit" value="Sign In"/>
       </form>
+      <h2>OR</h2>
+      <form className="demo-form" onSubmit={this.demoLogIn}>
+
+          <input type="submit" value="Use Demo Account" class=""/>
+      </form>
+    </div>
     )
   }
 });

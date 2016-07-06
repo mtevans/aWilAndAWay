@@ -33,7 +33,7 @@ const VenueIndex = React.createClass({
 
 
   _filterTimes(e){
-    event.preventDefault();
+    e.preventDefault();
 
     let startTime = e.target[0].value.replace(":", "")
     let endTime = e.target[1].value.replace(":", "")

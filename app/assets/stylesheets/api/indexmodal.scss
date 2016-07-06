@@ -16,7 +16,19 @@
 }
 
 .venue-modal-content{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-end;
+  background: #f7f7f7;
+}
 
+.the-modal{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .modal-thumbnail{
@@ -24,21 +36,79 @@
   width: 290px;
 }
 
-
-/*.small-details{
-  position: relative;
-  left: 300px;
-  top: -210px;
-  width: 61%;
+.map {
+  height: 200px;
+  width: 33%;
 }
 
-text {
-  position: relative;
-  top: -100px
+.map-thumbnail-content{
+  display: flex;
+  flex-direction: row;
+
+  .modal-thumbnail{
+    height: 59%;
+    width: 37%;
+  }
 }
 
-.close-button{
+.top-content{
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  h5{
+    text-decoration: underline;
+
+  }
+}
+
+.small-details {
+  display: flex;
+  flex-direction: column;
+  height: 113px;
+  overflow: scroll;
+  h1{
+    font-weight: bold;
+    align-self: center
+  }
+  h1, text {
+    margin-top: 10px;
+  }
+}
+
+.close-button {
   position: relative;
-  top: -30
-  float: left;
-}*/
+  top: -328px;
+  right: 5px;
+}
+
+button {
+  cursor: pointer;
+}
+
+
+.modal-nav-bar{
+  width: 100%;
+  height: 49px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(119, 50, 119, 0.82);
+  color: black;
+  a{
+    cursor: pointer;
+  }
+  a:hover{
+    color: white;
+  }
+}
+
+
+
+.white{
+  color: white;
+}

@@ -56,10 +56,6 @@ const Header = React.createClass ({
     hashHistory.push("/");
   },
 
-
-
-
-
   render(){
 
     let component = (this.state.signIn) ? <LoginForm callback={this.onModalClose}/>:
@@ -69,7 +65,7 @@ const Header = React.createClass ({
     let sign =  <a id="b" onClick={this._handleClick.bind(this, false)}>Sign Up</a> ;
 
       if (this.state.loggedIn) {
-        logger = <Link className="logger" id="a" to={`/`} onClick={this.logout}>Log Out</Link> ;
+        logger = <a className="logger" id="a" onClick={this.logout}>Log Out</a> ;
           sign = <a id="b" onClick={this.openUserModal}>{SessionStore.currentUser().name}</a>;
       };
 
@@ -89,12 +85,8 @@ const Header = React.createClass ({
           className='headerloggermodal'>
 
           {component}
-          <h2>OR</h2>
-          <form className="demo-form" onSubmit={this.demoLogIn}>
-              <p>Use Steve@example.com    password is password   Demo log-in not working</p>
-              <input type="submit" value="Use Demo Account" class=""/>
-          </form>
-          <button onClick={this.onModalClose}>X</button>
+
+          <button className="button-x" onClick={this.onModalClose}>X</button>
         </Modal>
       <Modal isOpen={this.state.userShowModal}
             onRequestClose={this.userModalClose}>

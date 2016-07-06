@@ -80,11 +80,24 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-
-    :last-child{
-      align-self: flex-start;
-    }
 }
+
+.button-x{
+  align-self: baseline;
+}
+
+.form{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width:100%;
+  align-items: center;
+}
+
+.demo-form{
+  align-self: center;
+}
+
 
 .log-in-form, .demo-form{
   display: flex;

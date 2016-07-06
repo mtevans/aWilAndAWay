@@ -67,7 +67,7 @@ const SignUpForm = React.createClass({
     };
 
     return (
-
+      <div className="form">
       <form className="log-in-form" onSubmit={this.handleSubmit}>
         <h2>SIGN UP</h2>
           <input type="text" placeholder="Name" value={this.state.name} onChange={this._onChange("name")}
@@ -83,6 +83,12 @@ const SignUpForm = React.createClass({
         {authErrors}
         <input type="submit" value="Submit" />
       </form>
+      <h2>OR</h2>
+      <form className="demo-form" onSubmit={this.demoLogIn}>
+
+          <input type="submit" value="Use Demo Account" class=""/>
+      </form>
+      </div>
     )
   }
 });

@@ -2,7 +2,7 @@ const React = require('react');
 const VenueStore = require('../../stores/venues_store.js');
 const VenueActions = require('../../actions/venues_actions.js');
 
-
+const VenueMap = require('./venue_map.jsx');
 
 const VenueShowModal = React.createClass({
   // getInitialState(){
@@ -12,7 +12,6 @@ const VenueShowModal = React.createClass({
   // },
   componentWillMount(){
     this.venueListener = VenueStore.addListener(this.venueUpdate)
-
   },
 
   venueUpdate(){
@@ -29,17 +28,34 @@ const VenueShowModal = React.createClass({
 
 
   render(){
+    let gmap;
+    if (this.props.modalOpen){
+      gmap = <VenueMap venue={this.props.venue}/>
+    }
+
     const venue = this.props.venue;
       return(
-        <div>
-          <img src={venue.url} className="modal-thumbnail"/>
-          <div className="small-details">
-            <h1>title: {venue.title}</h1>
-            <p>about: {venue.about}</p>
-              <p>address: {venue.address}</p>
-              <p>email: {venue.email}</p>
+        <div className="the-modal">
+          <div className="map-thumbnail-content">
+            <img src={venue.url} className="modal-thumbnail"/>
+            {gmap}
+            <div className="top-content">
+              <h5>Contact Info</h5>
+              <span>
+                <h5>Address</h5>
+                <p>{venue.address} san franciso near the bart station</p>
+              </span>
+              <span>
+                <h5>E-mail</h5>
+                <p>{venue.email}</p>
+              </span>
+            </div>
           </div>
-          <text>description: {venue.description}</text>
+          <div className="small-details">
+            <h1>{venue.title}</h1>
+
+            <text>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{venue.description}</text>
+          </div>
           <button onClick={this.openOccasions}>Look at Times</button>
         </div>
       )

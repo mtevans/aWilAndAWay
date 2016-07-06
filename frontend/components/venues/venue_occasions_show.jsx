@@ -87,13 +87,11 @@ const VenueOccasionShow = React.createClass({
       }
 
 
-      return( <div key={occasion.id}>
-              <ul>date: {occasion.date}
-                <li>Start Time: {this.timeParser(occasion.start_time)}</li>
-                <li>End Time: {this.timeParser(occasion.end_time)}</li>
+      return( <div className="occasion-item" key={occasion.id}>
+              <h4>Date: {occasion.date}</h4>
+                <p>From {this.timeParser(occasion.start_time)} to {this.timeParser(occasion.end_time)}</p>
                 {button}
-              </ul>
-            </div>
+              </div>
           )
     })
   },
@@ -106,12 +104,12 @@ const VenueOccasionShow = React.createClass({
     let nonMatchOccasions = postFilterOccasions.nonMatches;
 
 
-    let noFilterApplied = <div className="Occasion Results">{this.generateOccassions(venue.occasions)}</div>
-    let filterApplied = (<div className="Occasion Results">
-      <div><h3>Times that match your Criteria</h3>
-      {this.generateOccassions(MatchedOccasions)}</div>
-      <div><h3>Other Times</h3>
-      {this.generateOccassions(nonMatchOccasions)}
+    let noFilterApplied = <div className="occasion-results">{this.generateOccassions(venue.occasions)}</div>
+    let filterApplied = (<div className="occasion-results">
+      <div className="matches"><h3>Times that match your Criteria</h3>
+        {this.generateOccassions(MatchedOccasions)}</div>
+      <div className="non-matches"><h3>Other Times</h3>
+        {this.generateOccassions(nonMatchOccasions)}
       </div>
     </div>
   )
@@ -125,10 +123,10 @@ const VenueOccasionShow = React.createClass({
 
 
     return (
-      <div>
+      <div className="occasion-box">
         <h2>Volunteer Dates and Times</h2>
         {occasionsToShow}
-        <p>welcome to the occasion page</p>
+
       </div>
     )
   }
