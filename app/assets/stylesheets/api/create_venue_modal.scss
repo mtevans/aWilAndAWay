@@ -1,0 +1,43 @@
+.create-modal{
+    border: 1px solid #2a282b;
+    position: relative;
+    background: white;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 4px;
+    outline: none;
+    box-shadow: 2px 10px 40px 0px rgba(0,0,0,0.75);
+    height: 400px;
+    width: 700px;
+    margin: auto;
+    margin-top: 100px
+}
+
+.create-modal-content{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.create-modal-details{
+  height: 100%;
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.modal-image-upload{
+  width: 75%;
+
+}
+ .creation-map{
+   height: 300px;
+   width: 300px;
+ }
+
+.add-image-thumbnail{
+  height: 245px;
+    width: 100%;
+}

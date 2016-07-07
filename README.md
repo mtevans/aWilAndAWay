@@ -84,7 +84,7 @@ component.
 - [x] Can search by time
 - [x] Can search by location
 - [x] Can searh by date
-- [x] user show pags has list of things they've voluntered for and can cancel at that stage.
+- [x] user show pages has list of things they've voluntered for and can cancel at that stage.
 
 
 [Details][phase-three]

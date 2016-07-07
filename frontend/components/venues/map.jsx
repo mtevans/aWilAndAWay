@@ -64,7 +64,7 @@ const Map = React.createClass({
 
   placeMarkers(){
     this.state.venues.map( venue => {
-
+      if (venue.occasions.length > 0){
       let marker = new google.maps.Marker({
         position:{lat: venue.lat, lng: venue.lng},
         map: this.map,
@@ -75,7 +75,9 @@ const Map = React.createClass({
         venue.modal_status = true
         this._changedModalStatus(venue)
       });
+    }
     })
+
   },
 
   registerListeners() {

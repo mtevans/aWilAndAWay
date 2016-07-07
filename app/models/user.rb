@@ -35,6 +35,12 @@ class User < ActiveRecord::Base
     through: :subscriptions,
     source: :venue
 
+  has_many :venues,
+    class_name: :Venue,
+    primary_key: :id,
+    foreign_key: :organizer_id
+
+
 
   def self.find_by_credentials(email, password)
     @user = User.find_by(email: email)

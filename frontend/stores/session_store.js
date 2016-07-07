@@ -3,6 +3,7 @@ const React = require('react');
 const Store = require('flux/utils').Store;
 const Dispatcher = require('../dispatcher/dispatcher.js');
 const SessionConstants = require('../constants/session_constants.js');
+const VenueConstants = require('../constants/venue_constants.js')
 
 let _authErrors = {};
 let _currentUser = {};
@@ -26,6 +27,9 @@ const _logOut = function(){
   SessionStore.__emitChange();
 }
 
+const updateUserVenue = function(venue){
+  _currentUser.venues.push(venue)
+}
 
 SessionStore.__onDispatch = function(payload){
   switch (payload.actionType) {
@@ -43,6 +47,10 @@ SessionStore.__onDispatch = function(payload){
       break;
     case SessionConstants.RECEIVE_CREATION_ERRORS:
         _creationErrors = payload.creationErrors;
+        this.__emitChange();
+      break;
+    case VenueConstants.VENUE_RECEIVED:
+        updateUserVenue(payload.venue);
         this.__emitChange();
       break;
     }

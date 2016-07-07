@@ -6,8 +6,15 @@ class Api::VenuesController < ApplicationController
     if(bounds)
       @venues = Venue.in_bounds(bounds)
     end
-    
+
     render "api/venues/index"
+  end
+
+  def create
+    @venue = Venue.new(venue_params)
+    if @venue.save!
+      render "api/venues/show"
+    end
   end
 
   def show
@@ -19,6 +26,11 @@ private
 
   def bounds
     params[:bounds]
+  end
+
+  def venue_params
+    params.require(:venue).permit(:title, :about, :description, :email,
+     :address, :lat, :lng, :category, :url, :organizer_id)
   end
 
 end

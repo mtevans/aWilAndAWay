@@ -13,13 +13,6 @@ VenueStore.find = function(id){
   return _venues[id];
 }
 
-// VenueStore.findBylatitude = function(lat){
-//   VenueStore.all().forEach( venue => {
-//     if()
-//   })
-// }
-
-
 VenueStore.copyOfVenuesObject = function(){
   return Object.assign({}, _venues);
 }
@@ -45,6 +38,20 @@ VenueStore.__onDispatch = function(payload){
   }
 }
 
+VenueStore.timeParser = function(integer){
+  let string = integer.toString();
+  let hours = string.slice(0,2);
+  let minutes = string.slice(2,4);
+  let ampm = "am";
+  if(hours > 11){
+    ampm = "pm";
+  }
+  if(hours > 12){
+    hours = hours - 12
+  }
+  return hours + ":" + minutes + ampm
+}
+
 const resetVenues = function (venues) {
   _venues = {};
 
@@ -57,7 +64,7 @@ const resetVenues = function (venues) {
 
 const setVenue = function(venue){
   _venues[venue.id] = venue;
-  
+
   VenueStore.__emitChange();
 }
 

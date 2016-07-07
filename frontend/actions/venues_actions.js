@@ -5,12 +5,19 @@ const VenueConstants = require('../constants/venue_constants.js')
 
 const VenueActions = {
   fetchVenues (bounds) {
-
     VenueApiUtil.fetchVenues(bounds, this.receiveAll);
   },
 
   getVenue (id) {
     VenueApiUtil.getVenue(id, this.receiveVenue);
+  },
+
+  createVenue(data){
+    VenueApiUtil.createVenue(data, this.receiveVenue)
+  },
+
+  createOccasion(data){
+    VenueApiUtil.createOccasion(data, this.receiveVenue)
   },
 
   receiveAll (venues) {

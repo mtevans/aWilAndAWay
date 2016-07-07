@@ -35,20 +35,6 @@ const UserSchedule = React.createClass({
     })
   },
 
-  timeParser(integer){
-    let string = integer.toString();
-    let hours = string.slice(0,2);
-    let minutes = string.slice(2,4);
-    let ampm = "am";
-    if(hours > 11){
-      ampm = "pm";
-    }
-    if(hours > 12){
-      hours = hours - 12
-    }
-    return hours + ":" + minutes + ampm
-  },
-
   _handleSubscription(id){
     let error;
     if(this.state.loggedInState){
@@ -78,6 +64,7 @@ const UserSchedule = React.createClass({
       let that = this
       let venueToggleButton = <button onClick={this._DisplayVenue.bind(null, occasion.venue_id)}>MoreDetails</button>;
       let button = <button onClick={this._handleSubscription.bind(null, occasion.id)}>Volunteer</button> ;
+
         if(that.state.OccassionIds.includes(occasion.id)){
           button = <button onClick={that._cancelSubscription.bind(null,
                     SessionStore.findSubscriptionId(occasion.id))}>Cancel</button>
@@ -91,8 +78,8 @@ const UserSchedule = React.createClass({
           <div key={occasion.id}>
             <h1>{that.state.UserVenues[occasion.venue_id].title}</h1>
             <ul>date: {occasion.date}
-              <li>Start Time: {that.timeParser(occasion.start_time)}</li>
-              <li>End Time: {that.timeParser(occasion.end_time)}</li>
+              <li>Start Time: {VenueStore.timeParser(occasion.start_time)}</li>
+              <li>End Time: {VenueStore.timeParser(occasion.end_time)}</li>
               {button}
               {venueToggleButton}
             </ul>

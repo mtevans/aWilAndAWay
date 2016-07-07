@@ -8,7 +8,9 @@ const SessionActions = require('../../actions/session_actions.js');
 const SessionStore = require('../../stores/session_store.js');
 
 
+
 const SignUpForm = React.createClass({
+
   getInitialState() {
     return {
       email: "",
@@ -77,7 +79,7 @@ const SignUpForm = React.createClass({
             className="login-input" />
 
 
-          <input type="password" placeholder="Password" value={this.state.pasword} onChange={this._onChange("password")}
+          <input type="password" placeholder="Password" value={this.state.password} onChange={this._onChange("password")}
             className="login-input" />
 
         {authErrors}

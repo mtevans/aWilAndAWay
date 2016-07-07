@@ -28,6 +28,11 @@ class Venue < ActiveRecord::Base
     foreign_key: :venue_id
 
 
+  belongs_to :user,
+    class_name: :User,
+    primary_key: :id,
+    foreign_key: :organizer_id
+
   def self.in_bounds(bounds)
 
     self.where("lat < ?", bounds[:northEast][:lat])

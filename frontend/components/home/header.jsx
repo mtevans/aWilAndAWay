@@ -9,6 +9,8 @@ const SignUpForm = require('../user/sign_up_form.jsx');
 const SessionStore = require('../../stores/session_store.js');
 const SessionActions = require('../../actions/session_actions.js');
 const UserSchedule = require('../user/user_schedule.jsx');
+const CreateVenueForm = require('../venues/create_venue_form.jsx');
+const ManageVenues = require('../venues/manage_venues.jsx');
 
 const Header = React.createClass ({
   getInitialState(){
@@ -16,12 +18,17 @@ const Header = React.createClass ({
       loggedIn: SessionStore.isUserLoggedIn(),
       loggerModalOpen: false,
       signIn: false,
-      userShowModal: false
+      userShowModal: false,
+      manageVenuesModal: false
     }
   },
 
   componentDidMount(){
     this.listener = SessionStore.addListener(this._onChange);
+  },
+
+  toggleManageVenuesModal(){
+    this.setState({manageVenuesModal: !(this.state.manageVenuesModal)})
   },
 
   _onChange(){
@@ -56,6 +63,7 @@ const Header = React.createClass ({
     hashHistory.push("/");
   },
 
+
   render(){
 
     let component = (this.state.signIn) ? <LoginForm callback={this.onModalClose}/>:
@@ -63,10 +71,14 @@ const Header = React.createClass ({
 
   let logger = <a className="logger" id="a"  onClick={this._handleClick.bind(this, true)}>Log In</a> ;
     let sign =  <a id="b" onClick={this._handleClick.bind(this, false)}>Sign Up</a> ;
+      let create= "";
+      let manageVenues = "";
 
       if (this.state.loggedIn) {
         logger = <a className="logger" id="a" onClick={this.logout}>Log Out</a> ;
           sign = <a id="b" onClick={this.openUserModal}>{SessionStore.currentUser().name}</a>;
+          create = <CreateVenueForm toggleManageVenuesModal={this.toggleManageVenuesModal}/>
+          manageVenues = <a onClick={this.toggleManageVenuesModal}>Manage Events</a>
       };
 
     return (
@@ -75,6 +87,8 @@ const Header = React.createClass ({
           <img onClick={this.redirectHome} className="header-logo"  src="http://res.cloudinary.com/dfld7chk4/image/upload/v1467517608/featheredhands-transparent-final_tns0sn.png"/>
           <div className="siteName"> aWillAndAWay</div>
           <div className="header-right">
+            {manageVenues}
+            {create}
             {sign}
             {logger}
           </div>
@@ -90,11 +104,13 @@ const Header = React.createClass ({
         </Modal>
       <Modal isOpen={this.state.userShowModal}
             onRequestClose={this.userModalClose}>
-
         <UserSchedule/>
-
-      <button onClick={this.userModalClose}>Close</button>
+        <button onClick={this.userModalClose}>Close</button>
       </Modal>
+    <Modal isOpen={this.state.manageVenuesModal}
+            onRequestClose={this.toggleManageVenuesModal}>
+      <ManageVenues toggleManageVenuesModal={this.toggleManageVenuesModal}/>
+    </Modal>
 
       </div>
     )

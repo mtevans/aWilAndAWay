@@ -5,7 +5,7 @@
 
 const VenueApiUtil = {
   fetchVenues(bounds ,successCallback){
-    
+
     $.ajax({
 			url: '/api/venues',
 			type: 'GET',
@@ -25,6 +25,28 @@ const VenueApiUtil = {
       }
     });
   },
+
+  createVenue(data, successCallback){
+    $.ajax({
+      url: `/api/venues`,
+      type: 'post',
+      data: {venue: data},
+      success: function(response){
+        successCallback(response);
+      }
+    });
+  },
+
+  createOccasion(data, successCallback){
+    $.ajax({
+      url: `/api/occasions`,
+      type: 'post',
+      data: {occasion: data},
+      success: function(response){
+        successCallback(response);
+      }
+    });
+  }
 
 
 };
