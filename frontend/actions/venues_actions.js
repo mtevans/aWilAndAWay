@@ -28,6 +28,7 @@ const VenueActions = {
   },
 
   receiveVenue (venue) {
+    debugger
     Dispatcher.dispatch({
       actionType: VenueConstants.VENUE_RECEIVED,
       venue: venue

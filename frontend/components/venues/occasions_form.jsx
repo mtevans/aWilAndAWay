@@ -21,7 +21,7 @@ const OccasionsForm = React.createClass({
     if (venue.occasions !== undefined && venue.occasions.length > 0){
       let occ;
       occ = venue.occasions.map(occasion => {
-       return ( <ul>date: {occasion.date}
+       return ( <ul key={occasion.id}>date: {occasion.date}
          <li>Start Time: {VenueStore.timeParser(occasion.start_time)}</li>
          <li>End Time: {VenueStore.timeParser(occasion.end_time)}</li>
        </ul> )
@@ -49,8 +49,8 @@ const OccasionsForm = React.createClass({
    this.setState({end_time: endTime})
  },
 
-  createOccasion(){
-    
+  createOccasion(e){
+    e.preventDefault()
     VenueActions.createOccasion(this.state)
   },
 
@@ -66,7 +66,7 @@ const OccasionsForm = React.createClass({
 
   render(){
     return(
-      <div>
+      <div className="form-occasions">
         <h1>Create a new Volunteer Time for {this.props.venue.title}</h1>
         {this.displayForm()}
         {this.displayOccasions()}

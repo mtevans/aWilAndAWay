@@ -10,7 +10,9 @@ end
 
 
 private
+
   def occasion_params
     params.require(:occasion).permit(:date, :start_time, :end_time, :venue_id, :organizer_id)
   end
+
 end

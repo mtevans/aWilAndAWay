@@ -28,7 +28,9 @@ const _logOut = function(){
 }
 
 const updateUserVenue = function(venue){
+  debugger
   _currentUser.venues.push(venue)
+
 }
 
 SessionStore.__onDispatch = function(payload){
@@ -50,6 +52,7 @@ SessionStore.__onDispatch = function(payload){
         this.__emitChange();
       break;
     case VenueConstants.VENUE_RECEIVED:
+    debugger
         updateUserVenue(payload.venue);
         this.__emitChange();
       break;
@@ -108,7 +111,9 @@ SessionStore.currentUser = function(){
 
 SessionStore.isUserLoggedIn = function() {
   // the !! returns the same truthiness, but makes it purely a boolean of true or false.
-  return !!_currentUser.id;
+  if (_currentUser === undefined){
+    return false
+  } else {  return !!_currentUser.id}
 };
 
 

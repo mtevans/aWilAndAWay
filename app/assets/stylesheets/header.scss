@@ -1,18 +1,15 @@
 header {
   color: black ;
   font-family: Tahoma, sans-serif;
-  height: 60px;
-  font-size: 16px;
-  border-bottom: 1px solid white;
+  height: 78px;
+  font-size: 112%;
+  background: white;
 
   img, a {
     cursor: pointer;
+    margin-left: 10px;
   }
 
-  a {
-    padding: 0 10px;
-    border-right: 0.3px solid black;
-  }
 
   div{
     height: 100%
@@ -29,40 +26,60 @@ header {
   background: white;
 
   a:hover{
-    font-size: 22px;
+    font-size: 18px;
     // background: #e4d5d5;
     // border-radius: 10px;
     // border: 0px
   }
 }
 
+.manager{
+  display: flex;
+}
+
 .header-logo{
-  height: 100%;
-  width: 8%;
+  height: 83%;
+  width: 25%;
   position: relative;
+  top: 5px;
 }
 
 .header-right{
-
-  width: 20%;
-  height: 37%;
-  font-size: 20px;
+  width: 50%;
+  height: 30%;
   display: flex;
   flex-direction: initial;
   justify-content: flex-end;
+  margin-right: 1%;
+
+  a:hover{
+    font-size: 20px;
+    position: relative;
+    top: -0.5px;
+
+  }
+  .logger:hover{
+    right: -0.5px;
+  }
+
+  
+}
+
+
+.log-in-n-out{
+  display: flex;
+  justify-content: space-between;
 }
 
 .siteName{
-  font-size: 40px;
-  position: relative;
-  right: -6%;
-  top: 6px;
-  text-shadow: 2px 2px white;
+  display: flex;
+  width: 44%;
 }
 
-.logger{
-  border-left: 0.3px solid black;
-  border-right: 0px
+.site-title{
+  width: 72%;
+  position: relative;
+  top: -3px;
 }
 
 

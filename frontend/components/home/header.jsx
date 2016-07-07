@@ -84,13 +84,23 @@ const Header = React.createClass ({
     return (
       <div>
         <content className="header-content">
-          <img onClick={this.redirectHome} className="header-logo"  src="http://res.cloudinary.com/dfld7chk4/image/upload/v1467517608/featheredhands-transparent-final_tns0sn.png"/>
-          <div className="siteName"> aWillAndAWay</div>
+          <div className="siteName">
+            <img onClick={this.redirectHome} className="header-logo"  src="http://res.cloudinary.com/dfld7chk4/image/upload/v1467517608/featheredhands-transparent-final_tns0sn.png"/>
+            <img onClick={this.redirectHome} className='site-title' src="http://res.cloudinary.com/dfld7chk4/image/upload/v1467917702/A_Will_A_Way-logo_k9ouoe.png">
+            </img>
+          </div>
+
+
+
           <div className="header-right">
-            {manageVenues}
-            {create}
-            {sign}
-            {logger}
+            <div className="manager">
+              {manageVenues}
+              {create}
+            </div>
+            <div classname="manager">
+              {sign}
+              {logger}
+            </div>
           </div>
         </content>
         <Modal

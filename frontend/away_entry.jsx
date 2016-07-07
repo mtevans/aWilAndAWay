@@ -45,4 +45,5 @@ document.addEventListener("DOMContentLoaded", function(){
   ReactDOM.render( appRouter ,
     document.getElementById('content')
   );
+  SessionActions.receiveCurrentUser(window.currentUser)
 });
