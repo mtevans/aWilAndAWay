@@ -83,7 +83,7 @@ const createVenueForm = React.createClass({
 
     return(
       <div>
-       <a onClick={this.toggleCreateModal}>Create Event</a>
+       <a onClick={this.toggleCreateModal}>Create&nbsp;Event</a>
 
         <Modal isOpen={this.state.createModal}
                 onRequestClose={this.toggleCreateModal}

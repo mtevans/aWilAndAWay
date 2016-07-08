@@ -49,6 +49,7 @@ const SignUpForm = React.createClass({
   demoLogIn(e){
     e.preventDefault();
     SessionActions.logIn({email: "Steve@example.com", password: "password"})
+    hashHistory.push('/index')
   },
 
 
@@ -60,6 +61,7 @@ const SignUpForm = React.createClass({
       name: this.state.name
     };
     SessionActions.signUp(data);
+    hashHistory.push('/index')
   },
   render(){
     let authErrors = this.state.authErrors;
