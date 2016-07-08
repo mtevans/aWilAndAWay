@@ -1,4 +1,3 @@
-require 'byebug'
 class Api::VenuesController < ApplicationController
 
   def index
