@@ -151,8 +151,38 @@
     margin-top: 10px
 }
 
-// @media only screen and (max-width: 1050px) {
-//   .filter-bar{
-//     background: black;
-//   }
-// }
+@media only screen and (max-width: 1050px) {
+  .filter-bar{
+    background: black;
+    height: 25%;
+    flex-wrap: wrap;
+    overflow: scroll;
+    width: 68%;
+    max-width: 327px;
+    justify-content: space-around;
+    border-radius: 4px;
+    position: relative;
+    left: 0;
+    bottom: 0;
+
+    h4{
+      position: relative;
+      left: 8%;
+    }
+    button{
+      position: relative;
+      right: 13px;
+      top: 43px;
+    }
+  }
+
+  .venue-items{
+    top: 0%;
+    position: inherit;
+  }
+
+  .themap{
+    right: 0%;
+    height: 240px;
+  }
+}

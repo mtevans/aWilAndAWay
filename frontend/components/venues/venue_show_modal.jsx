@@ -23,7 +23,7 @@ const VenueShowModal = React.createClass({
   },
 
   openOccasions(){
-    this.props.toggleOccasions();
+    this.props.toggleWhite();
   },
 
 

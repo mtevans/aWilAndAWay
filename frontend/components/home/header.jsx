@@ -116,10 +116,11 @@ const Header = React.createClass ({
             onRequestClose={this.userModalClose}
             className='schedule-modal'>
         <UserSchedule/>
-        <button className="schedule-close" onClick={this.userModalClose}>X</button>
+        <button className='schedule-close' onClick={this.userModalClose}>X</button>
         </Modal>
     <Modal isOpen={this.state.manageVenuesModal}
-            onRequestClose={this.toggleManageVenuesModal}>
+            onRequestClose={this.toggleManageVenuesModal}
+            className='manager-modal'>
       <ManageVenues toggleManageVenuesModal={this.toggleManageVenuesModal}/>
     </Modal>
 

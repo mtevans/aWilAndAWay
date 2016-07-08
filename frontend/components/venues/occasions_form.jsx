@@ -18,12 +18,12 @@ const OccasionsForm = React.createClass({
   displayOccasions(){
 
     let venue = VenueStore.find(this.props.venue.id)
+    
     if (venue.occasions !== undefined && venue.occasions.length > 0){
       let occ;
       occ = venue.occasions.map(occasion => {
-       return ( <ul key={occasion.id}>date: {occasion.date}
-         <li>Start Time: {VenueStore.timeParser(occasion.start_time)}</li>
-         <li>End Time: {VenueStore.timeParser(occasion.end_time)}</li>
+       return ( <ul key={occasion.id}>Date: {occasion.date}
+         <li>From {VenueStore.timeParser(occasion.start_time)} to {VenueStore.timeParser(occasion.end_time)}</li>
        </ul> )
      });
      return occ
@@ -55,11 +55,17 @@ const OccasionsForm = React.createClass({
   },
 
    displayForm(){
+
+     let venue = VenueStore.find(this.props.venue.id);
      let form = <form onSubmit={this.createOccasion} className="occasion-form">
                  <input type="date" onChange={this._handleDateChange}/>
-                 <input type="time" className="start-time" onChange={this._startTimeSetter}/>
-                 <input type="time" className="end-time" onChange={this._endTimeSetter}/>
-                 <input type="submit" value="Post" />
+                 <br/>
+                 <p>From (time) <input type="time" className="start-time" onChange={this._startTimeSetter}/>
+                 to <input type="time" className="end-time" onChange={this._endTimeSetter}/></p>
+                <br/>
+                <input className="occasion-submit" type="submit" value="Post" />
+                <p className="number-of-occasions">
+                   &nbsp;{venue.occasions.length} Volunteer times created so far</p>
                </form>
       return form
    },
@@ -67,9 +73,11 @@ const OccasionsForm = React.createClass({
   render(){
     return(
       <div className="form-occasions">
-        <h1>Create a new Volunteer Time for {this.props.venue.title}</h1>
+        <h1>Create a new Volunteer Time for: <br/> {this.props.venue.title}</h1>
         {this.displayForm()}
-        {this.displayOccasions()}
+        <div className="occasions-list">
+          {this.displayOccasions()}
+        </div>
       </div>
     )
   }

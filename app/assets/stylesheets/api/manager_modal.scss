@@ -1,0 +1,128 @@
+.manager-modal{
+    border: 1px solid #2a282b;
+    position: relative;
+    background: white;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 4px;
+    outline: none;
+    box-shadow: 2px 10px 40px 0px rgba(0, 0, 0, 0.75);
+    height: 400px;
+    width: 650px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.manage-venues-content{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+  background: rgba(146, 85, 146, 0.39);
+}
+
+.VenueDisplay{
+  width: 87%;
+  margin-top: 20px;
+  padding-left: 1px;
+  align-content: center;
+  position: relative;
+  left: 45px;
+  button{
+    text-align: center;
+    border: 2px solid white;
+    border-radius: 4px;
+    position: relative;
+    margin-top: 5px;
+    left: 4px;
+  }
+  button:hover{
+    background: rgba(146, 85, 146, 0.39);
+  }
+}
+
+.number-of-occasions{
+  font-size: 12px;
+}
+
+.modal-venues{
+  display: flex;
+  overflow: scroll;
+  flex-direction: column;
+  width: 43%;
+  margin-right: 45px;
+  margin-left: 10px;
+  margin-top: 10px;
+  position: relative;
+  top: 31px;
+  height: 88%;
+
+  .title{
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 23px;
+    position: fixed;
+    color: whitesmoke;
+    margin-left: 87px;
+  }
+  .small-detail{
+    color: red;
+    text-decoration: underline;
+    font-size: 11px;
+    text-align: center;
+    margin-bottom: 12px;
+    margin-top: 10px;
+  }
+
+  span{
+
+  }
+}
+
+.occasion-submit{
+  position: relative;
+  width: 94px;
+  font-size: 20px;
+  align-self: center;
+}
+
+.form-occasions{
+  margin-top: 52px;
+  overflow: scroll;
+}
+
+.occasion-form{
+  display: flex;
+flex-direction: column;
+justify-content: space-between;
+height: 130px;
+margin-bottom: 44px;
+}
+
+
+.manage-modal-thumbnail{
+  height: 159px;
+  width: 213px;
+}
+
+
+
+.occasions-list{
+  margin-bottom: 34px;
+  width: 76%;
+  margin-right: 0;
+  text-align: center;
+  align-self: center;
+
+  ul{
+    margin-bottom: 28px;
+    border-radius: 4px;
+    width: 100%;
+    margin-right: 0;
+    background: rgba(146, 85, 146, 0.39);
+    text-align: center;
+    align-self: center;
+    position: relative;
+    left: 34px;
+  }
+}

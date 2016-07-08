@@ -8,7 +8,8 @@ const VenueIndexItem = React.createClass({
     return {
       modalOpen: this.props.venue.modal_status,
       occasionsOpen: false,
-      loggedIn: SessionStore.isUserLoggedIn()
+      loggedIn: SessionStore.isUserLoggedIn(),
+      classWhite: false
     }
   },
 
@@ -20,7 +21,7 @@ const VenueIndexItem = React.createClass({
 
   onModalClose (){
     this.props.venue.modal_status = false
-    this.setState({modalOpen: this.props.venue.modal_status, occasionsOpen: false})
+    this.setState({modalOpen: this.props.venue.modal_status, occasionsOpen: false, classWhite: false })
   },
 
   toggleOccasions(){
@@ -34,15 +35,21 @@ const VenueIndexItem = React.createClass({
     })
   },
 
+  toggleWhite(){
+    this.setState({classWhite: !this.state.classWhite,
+      occasionsOpen: !(this.state.occasionsOpen),
+      modalOpen: !(this.state.modalOpen)})
+  },
+
   generateNavBar(){
-    if (this.state.modalOpen){
+    if (!this.state.classWhite){
       return ( <div className="modal-nav-bar">
                 <a className="white">Description</a>
-                <a onClick={this.switchModals}>Times</a>
+                <a onClick={this.toggleWhite}>Times</a>
               </div> )
     } else {
       return(<div className="modal-nav-bar">
-                <a onClick={this.switchModals}>Description</a>
+                <a onClick={this.toggleWhite}>Description</a>
                 <a className="white" >Times</a>
             </div> )
     }
@@ -53,9 +60,9 @@ const VenueIndexItem = React.createClass({
     const venue = this.props.venue
     let modalContent;
     if(this.state.occasionsOpen) {
-        modalContent = <VenueOccasionShow venue={venue} modalOpen={this.state.modalOpen} filters={this.props.filters} toggleOccasions={this.switchModals}/> ;
+        modalContent = <VenueOccasionShow venue={venue} modalOpen={this.state.modalOpen} filters={this.props.filters} toggleWhite={this.toggleWhite} toggleOccasions={this.switchModals}/> ;
       } else {
-        modalContent = <VenueShowModal venue={venue} modalOpen={this.state.modalOpen} toggleOccasions={this.switchModals}/> ;
+        modalContent = <VenueShowModal venue={venue} modalOpen={this.state.modalOpen} toggleWhite={this.toggleWhite} toggleOccasions={this.switchModals}/> ;
       }
       let navbar  = this.generateNavBar();
     return (

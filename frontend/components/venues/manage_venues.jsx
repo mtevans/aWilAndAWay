@@ -34,11 +34,10 @@ const ManageVenues = React.createClass({
     let display = this.state.venues.map(venue => {
       return(
       <div  key={venue.id} className="VenueDisplay">
-          <img src={venue.url} className="modal-thumbnail"/>
+          <img src={venue.url} className="manage-modal-thumbnail"/>
           <div className="">
-            <h1>title: {venue.title}</h1>
-            <p>about: {venue.about}</p>
-            <p>address: {venue.address}</p>
+            <h1>Title: {venue.title}</h1>
+            <p>Address: {venue.address}</p>
           </div>
           <button onClick={this.triggerForm.bind(null, venue)}>Check/Add Volunteer Times</button>
       </div>)
@@ -56,9 +55,13 @@ const ManageVenues = React.createClass({
     return(
       <div className="manage-venues-content">
         <div className="modal-venues">
-          {this.renderVenues()}
-          {form}
+          <h1 className="title">Below are the Events you've created</h1>
+          <span>
+            <p className='small-detail'>Remember, an Event without any Volunteer Times will not come up in searches</p>
+        {this.renderVenues()}
+        </span>
         </div>
+        {form}
       </div>
     )
   }
