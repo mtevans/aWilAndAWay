@@ -42,11 +42,15 @@ const SignUpForm = React.createClass({
     };
   },
 
-
-
   _onChange(property) {
     return (e) => this.setState({[property]: e.target.value});
   },
+
+  demoLogIn(e){
+    e.preventDefault();
+    SessionActions.logIn({email: "Steve@example.com", password: "password"})
+  },
+
 
   handleSubmit(e){
     e.preventDefault();

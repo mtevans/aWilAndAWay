@@ -10,7 +10,49 @@
     height: 400px;
     width: 700px;
     margin: auto;
-    margin-top: 100px
+    margin-top: 100px;
+
+    input, select{
+      width: 60%;
+      margin: 4px;
+     }
+     p{
+       margin-left: 4px;
+       margin-right: 4px;
+       text-align: center;
+       font-size: 10px
+     }
+
+     textarea{
+       margin-right: 4px;
+       margin-left: 4px;
+       margin-right: 4px;
+       margin-left: 4px;
+       height: 114px;
+     }
+
+     button{
+       cursor: pointer;
+       height: 24px;
+       width: 112px;
+       text-align: center;
+       border-radius: 3px;
+       background: whitesmoke;
+       margin-bottom: 6px;
+       margin-left: 4px;
+     }
+     button:hover{
+       background: rgba(128, 0, 128, 0.42);
+     }
+     .x-button{
+       position: relative;
+       left: 686px;
+       z-index: 1;
+       cursor: pointer;
+     }
+     .x-button:hover{
+       text-decoration: underline;
+     }
 }
 
 .create-modal-content{
@@ -22,22 +64,46 @@
 
 .create-modal-details{
   height: 100%;
-  width: 48%;
+  width: 45%;
   display: flex;
   flex-direction: column;
+  background: rgba(146, 85, 146, 0.39);
 }
 
 
 .modal-image-upload{
-  width: 75%;
+  width: 55%;
 
 }
  .creation-map{
-   height: 300px;
-   width: 300px;
+   height: 51%;
+   width: 100%;
  }
 
 .add-image-thumbnail{
-  height: 245px;
-    width: 100%;
+  width: 100%;
+  height: 195px;
+  position: relative;
+}
+
+
+.create{
+  position: relative;
+  top: 40px;
+  left: 95px;
+  border: 1px solid blueviolet;
+}
+
+.upload{
+  cursor: pointer;
+  height: 24px;
+  width: 112px;
+  text-align: center;
+  border: 1px solid blueviolet;
+  border-radius: 3px;
+  margin-bottom: 6px;
+  margin-top: 7px;
+  margin-left: 4px;
+  position: relative;
+  left: 95px;
 }

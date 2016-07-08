@@ -62,7 +62,7 @@ const UserSchedule = React.createClass({
     let occasions = this.state.UserOccasions
     let schedule = occasions.map(occasion => {
       let that = this
-      let venueToggleButton = <button onClick={this._DisplayVenue.bind(null, occasion.venue_id)}>MoreDetails</button>;
+      let venueToggleButton = <button onClick={this._DisplayVenue.bind(null, occasion.venue_id)}>More Details</button>;
       let button = <button onClick={this._handleSubscription.bind(null, occasion.id)}>Volunteer</button> ;
 
         if(that.state.OccassionIds.includes(occasion.id)){
@@ -70,45 +70,55 @@ const UserSchedule = React.createClass({
                     SessionStore.findSubscriptionId(occasion.id))}>Cancel</button>
         };
         if(this.state.VenueToDisplay !== null){
-          venueToggleButton = <button onClick={this._removeVenue}>LessDetails</button>;
+          venueToggleButton = <button onClick={this._removeVenue}>More Details</button>;
         }
 
 
         return(
-          <div key={occasion.id}>
+          <div className="schedule-item" key={occasion.id}>
             <h1>{that.state.UserVenues[occasion.venue_id].title}</h1>
-            <ul>date: {occasion.date}
-              <li>Start Time: {VenueStore.timeParser(occasion.start_time)}</li>
-              <li>End Time: {VenueStore.timeParser(occasion.end_time)}</li>
+            <h3>Volunteering on {occasion.date}</h3>
+            <h3>From {VenueStore.timeParser(occasion.start_time)} to {VenueStore.timeParser(occasion.end_time)}</h3>
+            <span>
               {button}
               {venueToggleButton}
-            </ul>
+            </span>
           </div>
 
         )
     })
 
-    let DisplayVenue = "";
+
+    let DisplayVenue = <div className="venue-display"></div>;
       if(this.state.VenueToDisplay){
         let venue = this.state.VenueToDisplay
         DisplayVenue= (
-          <div className="VenueDisplay">
-            <img src={venue.url} className="modal-thumbnail"/>
+          <div className="venue-display">
+            <img src={venue.url} className="schedule-modal-thumbnail"/>
             <div className="small-details">
               <h1>title: {venue.title}</h1>
               <p>about: {venue.about}</p>
                 <p>address: {venue.address}</p>
                 <p>email: {venue.email}</p>
             </div>
+            <button onClick={this._removeVenue}>Collapse Details</button>
           </div>
         )
     }
 
+    let themessage = "";
+    if (this.state.UserOccasions.length === 0){
+      themessage = (<h1 className="the-message">You Are Currently Not Signed Up to Volunteer Anywhere</h1>)
+    }
+
+
     return(
-      <div>
-        <h1>Your User </h1>
-      {schedule}
-      {DisplayVenue}
+      <div className="schedule-content">
+        {themessage}
+        <div className='schedule-items'>
+          {schedule}
+        </div>
+        {DisplayVenue}
       </div>
     )
   }

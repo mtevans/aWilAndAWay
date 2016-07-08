@@ -12,7 +12,7 @@ const createVenueForm = React.createClass({
       title: "",
       about: "",
       description: "",
-      email: SessionStore.currentUser().email,
+      email: "",
       address: "",
       lat: "",
       lng: "",
@@ -73,9 +73,9 @@ const createVenueForm = React.createClass({
     let filterOptions = filterCategories.map(filter =>{
       return <option value={filter} key={filter}>{filter}</option>
     });
-    let ImageTitle="";
+    let ImageTitle= <p>             </p>;
     if (this.state.url === defaultURL){
-        ImageTitle= <h2>Your Default image</h2>;
+        ImageTitle= <p>You Currently Have The Default Image</p>;
       }
 
       let map= ""
@@ -90,29 +90,28 @@ const createVenueForm = React.createClass({
                 className='create-modal'>
           <div className="create-modal-content">
             <div className="create-modal-details">
+              <a className= "x-button" onClick={this.toggleCreateModal}>X</a>
               <input type="text" placeholder="Title" value={this.state.title} onChange={this._onChange("title")}/>
-
-              <input type="text" placeholder="Email"value={this.state.email} onChange={this._onChange("email")}/>
-
+              <input type="text" placeholder="Contact Email"value={this.state.email} onChange={this._onChange("email")}/>
               <label>
                 <input type="text" placeholder="About" value={this.state.about} onChange={this._onChange("about")}/>
               </label>
-              <textarea type="textarea" placeholder="Description" value={this.state.description} onChange={this._onChange("description")}/>
+              <textarea type="textarea" placeholder="Provide A Description" value={this.state.description} onChange={this._onChange("description")}/>
               <select onChange={this._handleCategoryChange}>
                 <option value="Select Category">Select Category</option>
                 {filterOptions}
               </select>
-              <button onClick={this.createVenue}>Create!!</button>
+              <p>Click on the map to register your address</p>
+                <h5>Address:{this.state.address}</h5>
+
+              {ImageTitle}
+              <button className="upload" onClick={this.upload}>Change Image</button>
+              <button className="create" onClick={this.createVenue}>Create!!</button>
             </div>
             <div className="modal-image-upload">
-              {ImageTitle}
               {map}
-              <h1>Your Address</h1>
-              <p>{this.state.address}</p>
-
               <img src={this.state.url} className="add-image-thumbnail"/>
-              <button onClick={this.upload}>Change Image</button>
-          </div>
+            </div>
         </div>
         </Modal>
       </div>

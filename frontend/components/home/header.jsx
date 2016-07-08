@@ -76,7 +76,7 @@ const Header = React.createClass ({
 
       if (this.state.loggedIn) {
         logger = <a className="logger" id="a" onClick={this.logout}>Log Out</a> ;
-          sign = <a id="b" onClick={this.openUserModal}>{SessionStore.currentUser().name}</a>;
+          sign = <a id="b" onClick={this.openUserModal}>Schedule</a>;
           create = <CreateVenueForm toggleManageVenuesModal={this.toggleManageVenuesModal}/>
           manageVenues = <a onClick={this.toggleManageVenuesModal}>Manage Events</a>
       };
@@ -112,11 +112,12 @@ const Header = React.createClass ({
 
           <button className="button-x" onClick={this.onModalClose}>X</button>
         </Modal>
-      <Modal isOpen={this.state.userShowModal}
-            onRequestClose={this.userModalClose}>
+        <Modal isOpen={this.state.userShowModal}
+            onRequestClose={this.userModalClose}
+            className='schedule-modal'>
         <UserSchedule/>
-        <button onClick={this.userModalClose}>Close</button>
-      </Modal>
+        <button className="schedule-close" onClick={this.userModalClose}>X</button>
+        </Modal>
     <Modal isOpen={this.state.manageVenuesModal}
             onRequestClose={this.toggleManageVenuesModal}>
       <ManageVenues toggleManageVenuesModal={this.toggleManageVenuesModal}/>
