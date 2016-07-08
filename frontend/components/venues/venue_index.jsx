@@ -1,6 +1,6 @@
 const React = require('react');
 const VenueIndexItem = require('./venue_index_item.jsx');
-
+const Masonry = require('react-masonry-component');
 
 
 
@@ -120,9 +120,9 @@ const VenueIndex = React.createClass({
           <br/>
           <button onClick={this._resetFilters}>Clear Filters</button>
         </div>
-        <div className="venue-items">
+        <Masonry className="venue-items">
           {VenueItems}
-        </div>
+        </Masonry>
       </div>
     )
   },
