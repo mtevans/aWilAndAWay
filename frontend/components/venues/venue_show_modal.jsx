@@ -56,7 +56,7 @@ const VenueShowModal = React.createClass({
 
             <text>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{venue.description}</text>
           </div>
-          <button onClick={this.openOccasions}>Look at Times</button>
+          <button className="look-at-times" onClick={this.openOccasions}>Look at Times</button>
         </div>
       )
   }

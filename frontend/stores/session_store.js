@@ -28,7 +28,6 @@ const _logOut = function(){
 }
 
 const updateUserVenue = function(venue){
-  debugger
   _currentUser.venues.push(venue)
 
 }
@@ -52,7 +51,6 @@ SessionStore.__onDispatch = function(payload){
         this.__emitChange();
       break;
     case VenueConstants.VENUE_RECEIVED:
-    debugger
         updateUserVenue(payload.venue);
         this.__emitChange();
       break;

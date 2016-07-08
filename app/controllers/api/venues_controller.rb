@@ -1,3 +1,4 @@
+require 'byebug'
 class Api::VenuesController < ApplicationController
 
   def index
@@ -12,8 +13,10 @@ class Api::VenuesController < ApplicationController
 
   def create
     @venue = Venue.new(venue_params)
-    if @venue.save!
+    if @venue.save
       render "api/venues/show"
+    else
+      render json: @venue.errors.full_messages, status: 422
     end
   end
 
@@ -30,7 +33,7 @@ private
 
   def venue_params
     params.require(:venue).permit(:title, :about, :description, :email,
-     :address, :lat, :lng, :category, :url, :organizer_id)
+    :address, :lat, :lng, :category, :url, :organizer_id)
   end
 
 end

@@ -3,6 +3,8 @@ const SessionStore = require('../../stores/session_store.js');
 const VenueActions = require('../../actions/venues_actions.js');
 const Modal = require("react-modal");
 const CreationMap = require("./creation_map.jsx");
+const VenueStore = require("../../stores/venues_store.js");
+const ErrorStore = require("../../stores/error_store.js");
 
 const createVenueForm = React.createClass({
 
@@ -18,8 +20,35 @@ const createVenueForm = React.createClass({
       lng: "",
       category: "",
       url: "http://res.cloudinary.com/dfld7chk4/image/upload/v1467237098/defualt_pic_st9qj2.jpg",
-      organizer_id: SessionStore.currentUser().id
+      organizer_id: SessionStore.currentUser().id,
+      creationErrors: ErrorStore.creationErrors()
     };
+  },
+
+  componentDidMount(){
+    this.errorListener = ErrorStore.addListener(this._onErrorsChange);
+    this.venueListener = VenueStore.addListener(this._onVenueChange);
+  },
+
+  _onVenueChange(){
+    if(VenueStore.WasEventCreated()){
+    this.closeModal();
+    this.props.openManageEventsModal();
+  }
+  },
+
+  componentWillUnmount(){
+    this.errorListener.remove();
+    this.venueListener.remove()
+    ErrorStore.clearErrors();
+  },
+
+  _onErrorsChange(){
+    this.setState({creationErrors: ErrorStore.creationErrors()})
+  },
+
+  closeModal(){
+    this.setState({createModal: false})
   },
 
   toggleCreateModal(){
@@ -61,9 +90,19 @@ const createVenueForm = React.createClass({
 
   createVenue(e){
     e.preventDefault();
-    VenueActions.createVenue(this.state)
-    this.toggleCreateModal()
-    this.props.toggleManageVenuesModal();
+    ErrorStore.clearErrors();
+    VenueActions.createVenue({
+      title: this.state.title,
+      about: this.state.about,
+      description: this.state.description,
+      email: this.state.email,
+      lat: this.state.lat,
+      lng: this.state.lng,
+      category: this.state.category,
+      url: this.state.url,
+      organizer_id: this.state.organizer_id,
+      address: this.state.address
+    })
   },
 
   render(){
@@ -81,6 +120,15 @@ const createVenueForm = React.createClass({
       let map= ""
       if(this.state.createModal){ map = <CreationMap updateFromMap={this.updateFromMap}/> }
 
+        let errors = ""
+      if (this.state.creationErrors.length > 0){
+        let errorString = this.state.creationErrors
+        if (errorString.indexOf("Lat") > -1){
+          errorString = errorString.replace("\"Lat can\'t be blank\",", "")
+          errorString = errorString.replace("\"Lng can\'t be blank\",", "")
+        }
+         errors = <p>{errorString}</p>
+      }
     return(
       <div>
        <a onClick={this.toggleCreateModal}>Create&nbsp;Event</a>
@@ -106,6 +154,7 @@ const createVenueForm = React.createClass({
 
               {ImageTitle}
               <button className="upload" onClick={this.upload}>Change Image</button>
+              {errors}
               <button className="create" onClick={this.createVenue}>Create!!</button>
             </div>
             <div className="modal-image-upload">

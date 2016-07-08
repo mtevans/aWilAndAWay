@@ -27,8 +27,8 @@ const Header = React.createClass ({
     this.listener = SessionStore.addListener(this._onChange);
   },
 
-  toggleManageVenuesModal(){
-    this.setState({manageVenuesModal: !(this.state.manageVenuesModal)})
+  closeManageVenuesModal(){
+    this.setState({manageVenuesModal: false})
   },
 
   _onChange(){
@@ -63,6 +63,9 @@ const Header = React.createClass ({
     hashHistory.push("/");
   },
 
+  openManageEventsModal(){
+    this.setState({manageVenuesModal: true})
+  },
 
   render(){
 
@@ -77,8 +80,8 @@ const Header = React.createClass ({
       if (this.state.loggedIn) {
         logger = <a className="logger" id="a" onClick={this.logout}>Log&nbsp;Out</a> ;
           sign = <a id="b" onClick={this.openUserModal}>Schedule</a>;
-          create = <CreateVenueForm toggleManageVenuesModal={this.toggleManageVenuesModal}/>
-          manageVenues = <a onClick={this.toggleManageVenuesModal}>Manage&nbsp;Events</a>
+          create = <CreateVenueForm openManageEventsModal={this.openManageEventsModal}/>
+          manageVenues = <a onClick={this.openManageEventsModal}>Manage&nbsp;Events</a>
       };
 
     return (
@@ -119,9 +122,10 @@ const Header = React.createClass ({
         <button className='schedule-close' onClick={this.userModalClose}>X</button>
         </Modal>
     <Modal isOpen={this.state.manageVenuesModal}
-            onRequestClose={this.toggleManageVenuesModal}
+            onRequestClose={this.closeManageVenuesModal}
             className='manager-modal'>
-      <ManageVenues toggleManageVenuesModal={this.toggleManageVenuesModal}/>
+          <button className="another-close-button" onClick={this.closeManageVenuesModal}>X</button>
+      <ManageVenues toggleManageVenuesModal={this.closeManageVenuesModal}/>
     </Modal>
 
       </div>

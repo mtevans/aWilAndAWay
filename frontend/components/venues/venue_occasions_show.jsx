@@ -124,8 +124,12 @@ const VenueOccasionShow = React.createClass({
 
     return (
       <div className="occasion-box">
-        <h2>Volunteer Dates and Times</h2>
-        {occasionsToShow}
+
+        <span>
+          <h2>Volunteer Dates and Times</h2>
+            {occasionsToShow}
+        </span>
+        <img src={this.props.venue.url} className="occasion-pic"></img>
 
       </div>
     )

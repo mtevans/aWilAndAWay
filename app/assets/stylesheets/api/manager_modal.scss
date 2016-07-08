@@ -44,6 +44,13 @@
 .number-of-occasions{
   font-size: 12px;
 }
+.another-close-button{
+  position: fixed;
+  margin-left: 634px;
+}
+.another-close-button:hover{
+  text-decoration: underline;
+}
 
 .modal-venues{
   display: flex;
@@ -63,7 +70,7 @@
     font-size: 23px;
     position: fixed;
     color: whitesmoke;
-    margin-left: 87px;
+    margin-left: 109px;
   }
   .small-detail{
     color: red;

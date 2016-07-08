@@ -63,6 +63,7 @@ const SignUpForm = React.createClass({
     SessionActions.signUp(data);
     hashHistory.push('/index')
   },
+  
   render(){
     let authErrors = this.state.authErrors;
     if(authErrors.length !== 0){

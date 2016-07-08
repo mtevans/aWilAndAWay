@@ -26,12 +26,21 @@ const ManageVenues = React.createClass({
 
 
   triggerForm(venue){
-    this.setState({venueOnDeck: venue})
+    this.setState({venueOnDeck: venue});
   },
 
+  collapseDetails(){
+    this.setState({venueOnDeck: null});
+  },
 
   renderVenues(){
+
+
     let display = this.state.venues.map(venue => {
+      let button = (<button onClick={this.triggerForm.bind(null, venue)}>Check/Add Volunteer Times</button>)
+      if(this.state.venueOnDeck){
+         button = (<button onClick={this.collapseDetails}>Collapse Times</button>)
+      }
       return(
       <div  key={venue.id} className="VenueDisplay">
           <img src={venue.url} className="manage-modal-thumbnail"/>
@@ -39,7 +48,7 @@ const ManageVenues = React.createClass({
             <h1>Title: {venue.title}</h1>
             <p>Address: {venue.address}</p>
           </div>
-          <button onClick={this.triggerForm.bind(null, venue)}>Check/Add Volunteer Times</button>
+          {button}
       </div>)
     })
     return display
@@ -50,7 +59,7 @@ const ManageVenues = React.createClass({
   render(){
     let form = ""
     if (this.state.venueOnDeck !== null) {
-      form = <OccasionsForm venue={this.state.venueOnDeck}/>
+      form = <OccasionsForm venue={this.state.venueOnDeck} />
     }
     return(
       <div className="manage-venues-content">

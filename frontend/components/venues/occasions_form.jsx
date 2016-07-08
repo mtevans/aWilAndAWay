@@ -18,12 +18,13 @@ const OccasionsForm = React.createClass({
   displayOccasions(){
 
     let venue = VenueStore.find(this.props.venue.id)
-    
+
     if (venue.occasions !== undefined && venue.occasions.length > 0){
       let occ;
       occ = venue.occasions.map(occasion => {
        return ( <ul key={occasion.id}>Date: {occasion.date}
          <li>From {VenueStore.timeParser(occasion.start_time)} to {VenueStore.timeParser(occasion.end_time)}</li>
+
        </ul> )
      });
      return occ

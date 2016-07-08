@@ -7,10 +7,16 @@ const VenueConstants = require('../constants/venue_constants.js')
 
 let _venues = {}
 
+let EventJustCreated = false
+
 const VenueStore = new Store(Dispatcher);
 
 VenueStore.find = function(id){
   return _venues[id];
+}
+
+VenueStore.WasEventCreated = function(){
+    return EventJustCreated;
 }
 
 VenueStore.copyOfVenuesObject = function(){
@@ -27,6 +33,7 @@ VenueStore.all = function(){
   return venues;
 }
 
+
 VenueStore.__onDispatch = function(payload){
   switch (payload.actionType) {
     case VenueConstants.VENUES_RECEIVED:
@@ -35,7 +42,7 @@ VenueStore.__onDispatch = function(payload){
     case VenueConstants.VENUE_RECEIVED:
       setVenue(payload.venue)
       break;
-  }
+      }
 }
 
 VenueStore.timeParser = function(integer){
@@ -54,7 +61,7 @@ VenueStore.timeParser = function(integer){
 
 const resetVenues = function (venues) {
   _venues = {};
-
+  EventJustCreated = false
   venues.forEach(function (venue) {
     _venues[venue.id] = venue;
   });
@@ -64,7 +71,7 @@ const resetVenues = function (venues) {
 
 const setVenue = function(venue){
   _venues[venue.id] = venue;
-
+  EventJustCreated = true
   VenueStore.__emitChange();
 }
 

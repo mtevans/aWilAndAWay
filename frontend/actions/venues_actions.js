@@ -13,12 +13,20 @@ const VenueActions = {
   },
 
   createVenue(data){
-    VenueApiUtil.createVenue(data, this.receiveVenue)
+    VenueApiUtil.createVenue(data, this.receiveVenue, this.receiveCreationErrors)
   },
 
   createOccasion(data){
-    VenueApiUtil.createOccasion(data, this.receiveVenue)
+    VenueApiUtil.createOccasion(data, this.receiveVenue, this.receiveCreationErrors)
   },
+
+  receiveCreationErrors(creationErrors) {
+    Dispatcher.dispatch({
+      actionType: VenueConstants.RECEIVE_CREATION_ERRORS,
+      creationErrors: creationErrors
+    });
+  },
+
 
   receiveAll (venues) {
     Dispatcher.dispatch({
@@ -28,7 +36,6 @@ const VenueActions = {
   },
 
   receiveVenue (venue) {
-    debugger
     Dispatcher.dispatch({
       actionType: VenueConstants.VENUE_RECEIVED,
       venue: venue

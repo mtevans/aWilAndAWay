@@ -26,24 +26,33 @@ const VenueApiUtil = {
     });
   },
 
-  createVenue(data, successCallback){
+  createVenue(data, successCallback, errorCallback){
     $.ajax({
       url: `/api/venues`,
       type: 'post',
       data: {venue: data},
       success: function(response){
         successCallback(response);
+      },
+      error: function(response) {
+
+        let errors = response.responseText;
+        errorCallback(errors)
       }
     });
   },
 
-  createOccasion(data, successCallback){
+  createOccasion(data, successCallback, errorCallback){
     $.ajax({
       url: `/api/occasions`,
       type: 'post',
       data: {occasion: data},
       success: function(response){
         successCallback(response);
+      },
+      error: function(response) {
+        let errors = response.responseText;
+        errorCallback(errors)
       }
     });
   }
