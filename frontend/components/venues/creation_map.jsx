@@ -32,9 +32,7 @@ const CreationMap = React.createClass({
   getAddress(){
     let lat = this.marker.position.lat();
     let lng = this.marker.position.lng();
-
     var latlng = new google.maps.LatLng(lat, lng);
-      // This is making the Geocode request
       var address;
       var geocoder = new google.maps.Geocoder();
       let that = this
