@@ -113,7 +113,7 @@ Occasion.create!(
 Venue.create!(
   title: "AYSO Soccer Coach",
   about: "Coach some kids for after school soccer",
-  description: "",
+  description: "Come on out and coach some soccer. Exciting group of kids, lots of fun",
   address: "526 Hickory stree",
   lat: 37.810315,
   lng: -122.417583,
