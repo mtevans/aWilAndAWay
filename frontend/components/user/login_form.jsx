@@ -107,7 +107,7 @@ const LoginForm = React.createClass({
     if(authErrors.length !== 0){
       authErrors.map( error => {
 
-        return( <h3>{error} </h3>) ;
+        return( <h3 className='sign-in-errors'>{error}</h3>) ;
       })
     };
 
@@ -124,12 +124,12 @@ const LoginForm = React.createClass({
             className="login-input" />
 
         {authErrors}
-        <input type="submit" value="Sign In"/>
+        <input className="submit" type="submit" value="Sign In"/>
       </form>
       <h2>OR</h2>
       <form className="demo-form" onSubmit={this.demoLogIn}>
 
-          <input type="submit" value="Use Demo Account" class=""/>
+          <input  type="submit" value="Use Demo Account" class=""/>
       </form>
     </div>
     )

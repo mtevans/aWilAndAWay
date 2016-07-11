@@ -139,6 +139,7 @@ const createVenueForm = React.createClass({
           <div className="create-modal-content">
             <div className="create-modal-details">
               <a className= "x-button" onClick={this.toggleCreateModal}>X</a>
+              <h1>Create Event</h1>
               <input type="text" placeholder="Title" value={this.state.title} onChange={this._onChange("title")}/>
               <input type="text" placeholder="Contact Email"value={this.state.email} onChange={this._onChange("email")}/>
               <label>
@@ -150,7 +151,7 @@ const createVenueForm = React.createClass({
                 {filterOptions}
               </select>
               <p>Click on the map to register your address</p>
-                <h5>Address:{this.state.address}</h5>
+                <h5>Address:&nbsp;{this.state.address}</h5>
 
               {ImageTitle}
               <button className="upload" onClick={this.upload}>Change Image</button>

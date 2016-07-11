@@ -56,7 +56,6 @@ const OccasionsForm = React.createClass({
   },
 
    displayForm(){
-
      let venue = VenueStore.find(this.props.venue.id);
      let form = <form onSubmit={this.createOccasion} className="occasion-form">
                  <input type="date" onChange={this._handleDateChange}/>
@@ -65,7 +64,7 @@ const OccasionsForm = React.createClass({
                  to <input type="time" className="end-time" onChange={this._endTimeSetter}/></p>
                 <br/>
                 <input className="occasion-submit" type="submit" value="Post" />
-                <p className="number-of-occasions">
+                <p className="number-of-occasions" >
                    &nbsp;{venue.occasions.length} Volunteer times created so far</p>
                </form>
       return form

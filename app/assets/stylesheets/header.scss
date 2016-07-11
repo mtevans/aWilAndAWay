@@ -7,7 +7,7 @@ header {
 
   img, a {
     cursor: pointer;
-    margin-left: 10px;
+    margin-left: 20px;
   }
 
 
@@ -42,6 +42,7 @@ header {
   width: 21%;
   position: relative;
   top: 5px;
+  margin-left: 10px;
 }
 
 .header-right{
@@ -60,6 +61,9 @@ header {
     right: -0.5px;
   }
 
+  .logger{
+    margin-left: 20px;
+  }
 
 }
 
@@ -98,7 +102,15 @@ header {
 }
 
 .button-x{
+  font-weight: 600;
   align-self: baseline;
+  position: relative;
+  bottom: 18px;
+  left: 16px;
+}
+
+.button-x:hover{
+  text-decoration: underline;
 }
 
 .form{
@@ -120,6 +132,14 @@ header {
   justify-content: center;
   height: 100%;
   align-items: center;
+  .sign-in-errors, h3{
+    font-size: 11px;
+    align-self: baseline;
+    position: relative;
+    color: red;
+    left: 24px;
+    top: 3px;
+  }
 }
 
 .demo-form input{
@@ -127,9 +147,13 @@ header {
 }
 
 .login-input{
-  margin-top: 14px;
+  margin-top: 11px;
   width: 202px;
   height: 31px;
+}
+
+.submit{
+  margin-top: 10px
 }
 
 @media only screen and (max-width: 660px) {
@@ -137,6 +161,6 @@ header {
     width: 0%;
     position: relative;
     top: 0px;
-    
+
   }
 }

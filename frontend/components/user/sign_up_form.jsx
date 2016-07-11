@@ -63,7 +63,7 @@ const SignUpForm = React.createClass({
     SessionActions.signUp(data);
     hashHistory.push('/index')
   },
-  
+
   render(){
     let authErrors = this.state.authErrors;
     if(authErrors.length !== 0){
@@ -86,11 +86,11 @@ const SignUpForm = React.createClass({
             className="login-input" />
 
 
-          <input type="password" placeholder="Password" value={this.state.password} onChange={this._onChange("password")}
+          <input  type="password" placeholder="Password" value={this.state.password} onChange={this._onChange("password")}
             className="login-input" />
 
         {authErrors}
-        <input type="submit" value="Submit" />
+        <input className="submit" type="submit" value="Submit" />
       </form>
       <h2>OR</h2>
       <form className="demo-form" onSubmit={this.demoLogIn}>

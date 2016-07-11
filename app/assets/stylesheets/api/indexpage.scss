@@ -131,7 +131,6 @@
 
 
 .venue-list-item {
-
     height: 270px;
     width: 270px;
     padding: 5px;
@@ -139,16 +138,44 @@
     cursor: pointer;
     float: left;
     background: white;
-    overflow: scroll;
+    overflow: hidden;
     position: relative;
     margin: 10px;
     margin-top: 20px;
-    transition: transform, .5s, height, margin
+    transition: transform, .3s, height, margin
 }
 
 .venue-list-item:hover{
-    height: 310px;
-    margin-top: 10px
+  height: 310px;
+  margin-top: 2px;
+
+.about-elipsed{
+  width: 100%;
+  position: relative;
+  bottom: 23px;
+  right: 3px;
+  margin-left: 4px;
+  font-size: 15px;
+  font-weight: 900;
+  margin-bottom: 5px;
+  }
+}
+
+.about-elipsed{
+  width: 100%;
+  margin-left: 4px;
+  font-size: 15px;
+  font-weight: 900;
+  transition: transform, .2s, position
+}
+
+.index-title{
+  text-align: center;
+  font-size: 22px;
+  color: white;
+  position: relative;
+  bottom: 133px;
+  text-shadow: 1px 1px 1px black;
 }
 
 @media only screen and (max-width: 1050px) {

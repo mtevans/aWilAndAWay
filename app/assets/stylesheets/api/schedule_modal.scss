@@ -1,16 +1,15 @@
 .schedule-modal{
-    border: 1px solid #2a282b;
-    position: relative;
-    background: white;
-    overflow: hidden;
-    -webkit-overflow-scrolling: touch;
-    border-radius: 4px;
-    outline: none;
-    box-shadow: 2px 10px 40px 0px rgba(0, 0, 0, 0.75);
-    height: 400px;
-    width: 700px;
-    margin: auto;
-    margin-top: 100px;
+  border: 1px solid #2a282b;
+  position: relative;
+  background: white;
+  overflow: scroll;
+  border-radius: 4px;
+  outline: none;
+  box-shadow: 2px 10px 40px 0px rgba(0, 0, 0, 0.75);
+  height: 400px;
+  width: 700px;
+  margin: auto;
+  margin-top: 100px;
 }
 
 .schedule-modal-thumbnail{
@@ -22,24 +21,46 @@
 
     // background: rgba(146, 85, 146, 0.39);
 .schedule-content{
-  height: 100%;
   width: 100%;
   display: flex;
-  background: rgba(146, 85, 146, 0.39);
+  background-image: url(http://res.cloudinary.com/dfld7chk4/image/upload/v1468203054/watercolor-grunge-000047-sky-blue-indigo_z7ssep.jpg);
+
+  h1{
+    text-decoration: underline;
+    font-size: 22px;
+    align-self: center;
+    margin-bottom: 6px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  h2{
+    text-decoration: underline;
+    font-size: 19px;
+    align-self: center;
+    margin-bottom: 6px;
+  }
 
   button{
-    border: 1px solid violet;
-   height: 24px;
+   height: 23px;
    text-align: center;
    border-radius: 3px;
-   background: white;
    padding-left: 4px;
    padding-right: 4px;
+   font-size: 12px;
+   width: 85px;
   }
+}
 
-  button:hover{
-    background: #ffd4d4;
-  }
+.smaller-details{
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  width: 100%;
+  overflow: scroll;
+  margin-left: 5px;
+  margin-right: 190px;
+  margin-top: 10px;
 }
 
 .the-message{
@@ -59,17 +80,20 @@
   justify-content: flex-start;
   margin: 13px;
   height: 100%;
-  width: 30%;
+  width: 36%;
   overflow: scroll;
 }
 
 .schedule-item{
   height: 105px;
-  display: flex;
-  margin-bottom: 18px;
-  flex-direction: column;
-  justify-content: space-around;
-  background: rgba(146, 85, 146, 0.2);
+width: 198px;
+display: flex;
+margin-bottom: 18px;
+margin-left: 4px;
+align-self: center;
+flex-direction: column;
+justify-content: space-around;
+box-shadow: 0 2px 9px rgba(19, 100, 100, 0.7);
   span{
     display: flex;
     justify-content: space-between;
@@ -77,14 +101,42 @@
 }
 
 .venue-display{
-  width: 70%;
-  height: 100%;
-  background: rgba(146, 85, 146, 0.2);
+  width: 64%;
+height: 100%;
+background: rgba(146, 85, 146, 0.2);
+  button{
+    border:1px solid #7d99ca;
+    border: 1px solid #7d99ca;
+    width: 141px;
+    position: relative;
+    bottom: 75px;
+     border-radius: 3px;
+     font-size:16px;
+     font-family:arial, helvetica, sans-serif;
+     display:inline-block;
+     text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
+     font-weight:bold;
+     color: #FFFFFF;
+     background-color: #a5b8da;
+     background-image: -webkit-gradient(linear, left top, left bottom, from(#a5b8da), to(#7089b3));
+     background-image: -webkit-linear-gradient(top, #a5b8da, #7089b3);
+     background-image: -moz-linear-gradient(top, #a5b8da, #7089b3);
+     background-image: -ms-linear-gradient(top, #a5b8da, #7089b3);
+     background-image: -o-linear-gradient(top, #a5b8da, #7089b3);
+     background-image: linear-gradient(to bottom, #a5b8da, #7089b3);
+     filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#a5b8da, endColorstr=#7089b3);
+  }
 }
 
+
+
 .schedule-close{
-    position: relative;
-    bottom: 397px;
-    left: 685px;
-    z-index: 1;
+  position: relative;
+  bottom: 670px;
+  left: 685px;
+  cursor: pointer
+}
+
+.schedule-close:hover{
+  text-decoration: underline;
 }

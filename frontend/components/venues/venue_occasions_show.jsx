@@ -74,9 +74,9 @@ const VenueOccasionShow = React.createClass({
       let that = this
       let button;
       if(this.state.loggedInState){
-          button = <button onClick={this._handleSubscription.bind(null, occasion.id)}>Volunteer</button> ;
+          button = <button className="volunteer" onClick={this._handleSubscription.bind(null, occasion.id)}>Volunteer</button> ;
         if(that.state.OccassionIds.includes(occasion.id)){
-          button = <button onClick={that._cancelSubscription.bind(null, SessionStore.findSubscriptionId(occasion.id))}>Cancel</button>
+          button = <button className="cancel" onClick={that._cancelSubscription.bind(null, SessionStore.findSubscriptionId(occasion.id))}>Cancel</button>
         };
       } else {
         button = ( <div>

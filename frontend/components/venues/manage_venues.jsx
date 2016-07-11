@@ -37,9 +37,9 @@ const ManageVenues = React.createClass({
 
 
     let display = this.state.venues.map(venue => {
-      let button = (<button onClick={this.triggerForm.bind(null, venue)}>Check/Add Volunteer Times</button>)
+      let button = (<button className="expand-collapse-button" onClick={this.triggerForm.bind(null, venue)}>Check/Add Volunteer Times</button>)
       if(this.state.venueOnDeck){
-         button = (<button onClick={this.collapseDetails}>Collapse Times</button>)
+         button = (<button className="expand-collapse-button" onClick={this.collapseDetails}>Collapse Times</button>)
       }
       return(
       <div  key={venue.id} className="VenueDisplay">

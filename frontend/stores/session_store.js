@@ -101,6 +101,10 @@ SessionStore.authErrors = function() {
   return array;
 };
 
+SessionStore.clearAuthErrors = function(){
+  _authErrors = {};
+}
+
 
 SessionStore.currentUser = function(){
   // Object.assign just creates duplicate. whole function acts as a reader fuction for _currentUser.

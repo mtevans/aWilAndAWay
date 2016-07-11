@@ -65,14 +65,16 @@ const VenueIndexItem = React.createClass({
         modalContent = <VenueShowModal venue={venue} modalOpen={this.state.modalOpen} toggleWhite={this.toggleWhite} toggleOccasions={this.switchModals}/> ;
       }
       let navbar  = this.generateNavBar();
+      let button =  <button className="close-button" onClick={this.onModalClose}>X</button>
+      if (this.state.occasionsOpen){ button =  <button className="modal-close-button" onClick={this.onModalClose}>X</button>}
     return (
       <div className= "venue-list-item">
           <img src={venue.url} className="venue-thumbnail"
           onClick={this._handleClick}>
           </img>
         <content className="thumbnail-info">
-          <p >{venue.title}</p>
-          <p>{venue.about}</p>
+          <p className="index-title" >{venue.title}</p>
+          <p className="about-elipsed">{venue.about}</p>
         </content>
 
         <Modal
@@ -81,9 +83,8 @@ const VenueIndexItem = React.createClass({
             className="venue-modal">
             <div className="venue-modal-content">
               {modalContent}
-            <button className="close-button" onClick={this.onModalClose}>X</button>
-
-            {navbar}
+              {button}
+              {navbar}
           </div>
         </Modal>
       </div>
