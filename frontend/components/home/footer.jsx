@@ -5,6 +5,9 @@ const Footer = React.createClass({
     return (
       <div className="footer-content">
         <a>About</a>
+        <a>Careers</a>
+        <a>Affiliates</a>
+        <a>Contact Us</a>
       </div>
     )
   }
