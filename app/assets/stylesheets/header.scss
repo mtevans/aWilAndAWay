@@ -94,8 +94,10 @@ header {
     height: 281px;
     width: 540px;
     padding: 20px;
-    background: rgb(255, 255, 255);
+    background: url(http://res.cloudinary.com/dfld7chk4/image/upload/v1468207508/watercolor-grunge-000030-medium-blue_bra7pj.jpg);
     display: flex;
+    color: white;
+    text-shadow: 1px 1px 1px black;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -107,6 +109,7 @@ header {
   position: relative;
   bottom: 18px;
   left: 16px;
+  color: black;
 }
 
 .button-x:hover{

@@ -27,6 +27,10 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  display: flex;
+flex-direction: column;
+align-items: flex-end;
+background: url(http://res.cloudinary.com/dfld7chk4/image/upload/v1468203054/watercolor-grunge-000047-sky-blue-indigo_z7ssep.jpg);
 }
 
 .modal-thumbnail{
@@ -56,10 +60,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    background: #813b8c;
-    color: white;
-    opacity: 0.7;
-    text-shadow: 1.5px 0.8px 0.5px black;
   h5{
     text-decoration: underline;
   }
@@ -75,7 +75,6 @@
   height: 150px;
   width: 100%;
   overflow: scroll;
-  background: whitesmoke;
   h1{
     font-weight: bold;
     align-self: center;
