@@ -3,6 +3,7 @@
 <head>
   <title>AWillAndAWay</title>
   <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyCvcXthYJhbAmJZUvD6Fnn5HQO-e6aqvVU" %>
+  <%= javascript_include_tag "https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyDMqQdIKIT5JVoHKQnVMrAKfZI9E1fz5oU" %>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
@@ -25,9 +26,11 @@
 <link rel="icon"
     type="image/png"
     href="http://res.cloudinary.com/dfld7chk4/image/upload/v1467517608/featheredhands-transparent-final_tns0sn.png">
-    
+
 </head>
 <body>
+
+
 
 <%= yield %>
 
