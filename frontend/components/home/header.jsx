@@ -74,14 +74,14 @@ const Header = React.createClass ({
     let component = (this.state.signIn) ? <LoginForm callback={this.onModalClose}/>:
     <SignUpForm callback={this.onModalClose}/>;
 
-  let logger = <a className="logger" id="a"  onClick={this._handleClick.bind(this, true)}>Demo&#8209;User</a> ;
+  let logger = <a className="logger" id="a"  onClick={this._handleClick.bind(this, true)}>Demo&nbsp;User</a> ;
     let sign =  <a id="b" onClick={this._handleClick.bind(this, false)}>Sign&nbsp;Up</a> ;
       let create= "";
       let manageVenues = "";
 
       if (this.state.loggedIn) {
         logger = <a className="logger" id="a" onClick={this.logout}>Log&nbsp;Out</a> ;
-          sign = <a id="b" onClick={this.openUserModal}>Volunteer&#8209;Times</a>;
+          sign = <a id="b" onClick={this.openUserModal}>Volunteer&nbsp;Times</a>;
           create = <CreateVenueForm openManageEventsModal={this.openManageEventsModal}/>
           manageVenues = <a onClick={this.openManageEventsModal}>Manage&nbsp;Events</a>
       };

@@ -94,10 +94,9 @@ header {
     height: 281px;
     width: 540px;
     padding: 20px;
-    background: url(http://res.cloudinary.com/dfld7chk4/image/upload/v1468207508/watercolor-grunge-000030-medium-blue_bra7pj.jpg);
+    background: white;
     display: flex;
-    color: white;
-    text-shadow: 1px 1px 1px black;
+    color: black;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -147,19 +146,55 @@ header {
 
 .demo-form input{
   position: relative;
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 4px;
+    background: white;
+    border: 1px solid #ccc;
 }
+
+.demo-form input:hover{
+  color: #333;
+  background-color: rgba(189, 180, 180, 0.28);
+  border-color: #adadad;
+}
+
+
 
 .login-input{
   margin-top: 11px;
   width: 202px;
   height: 31px;
+  border: 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.login-input:focus{
+  border-color: #66afe9;
+  outline: 0;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
 }
 
 .submit{
-  margin-top: 10px
+  margin-top: 10px;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 4px;
+  background: white;
+  box-shadow: 0 0 0 white;
+  border: 1px solid #ccc;
 }
 
-@media only screen and (max-width: 660px) {
+.submit:hover{
+  color: #333;
+  background-color: rgba(189, 180, 180, 0.28);
+  border-color: #adadad;
+}
+
+@media only screen and (max-width: 842px) {
   .site-title{
     width: 0%;
     position: relative;

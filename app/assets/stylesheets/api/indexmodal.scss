@@ -11,7 +11,8 @@
   box-shadow: 2px 10px 40px 0px rgba(0,0,0,0.75);
   width: 725px;
   margin: auto;
-  margin-top: 100px
+  margin-top: 100px;
+  transition: transform, .4s, height;
 }
 
 .venue-modal-content{
@@ -30,7 +31,7 @@
   display: flex;
 flex-direction: column;
 align-items: flex-end;
-background: url(http://res.cloudinary.com/dfld7chk4/image/upload/v1468203054/watercolor-grunge-000047-sky-blue-indigo_z7ssep.jpg);
+background: whitesmoke;
 }
 
 .modal-thumbnail{
@@ -39,87 +40,109 @@ background: url(http://res.cloudinary.com/dfld7chk4/image/upload/v1468203054/wat
 }
 
 .map {
-  height: 200px;
-  width: 46%;
+  height: 86px;
+  width: 100%;
+  margin-right: 10px;
+  margin-bottom: 13px;
+  box-shadow: 0 3px 0px -1px #ccc;
 }
 
 .map-thumbnail-content{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 
   .modal-thumbnail{
-    height: 200px;
-    width: 34%;
+  height: 192px;
+  width: 78%;
+  margin-top: 10px;
+  margin-left: 13px;
+  border-radius: 4px;
+  margin-right: 10px;
+  box-shadow: 0 3px 4px 2px gray;
   }
 }
 
 .top-content{
   text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
   h5{
-    text-decoration: underline;
+
   }
   h4{
-    text-decoration: underline;
+
     font-weight: 800;
   }
+  span{
+    display: flex;
+    flex-direction: column;
+    height: 320px;
+    margin-left: 10px;
+    width: 48.5%;
+  }
+}
+
+.email{
+  margin-top: 10px;
+  position: relative;
+  font-size: 12px;
+  align-self: baseline;
+  left: 15px;
+  font-style: italic;
+}
+
+.address{
+  position: relative;
+  align-self: baseline;
+  left: 15px;
+  margin-top: 10px;
 }
 
 .small-details {
   display: flex;
   flex-direction: column;
-  height: 150px;
-  width: 100%;
+  height: 315px;
+  color: #2f2d2f;
+  width: 48%;
+  /* font-family: Trebuchet MS1; */
+  position: relative;
+  top: -5px;
   overflow: scroll;
+  border-left: 1px solid #ccc;
   h1{
     font-weight: bold;
     align-self: center;
     font-size: 18px;
-    text-decoration: underline;
+
   }
   h1, text {
     margin-top: 10px;
   }
 
   text{
-    margin-top: 10px;
     border-radius: 4px;
-    margin-left: 18px;
-    margin-right: 18px;
-    text-align: inherit;
+      margin-left: 18px;
+      margin-right: 10px;
+      height: 230px;
+      text-align: left;
+      padding-top: 4px;
+      width: 93%;
+      font-size: 19px;
+      font-family: Trebuchet MS1;
+      display: flex;
+      align-items: center;
   }
 
+
   button{
-    border:1px solid #7d99ca;
-     -webkit-border-radius: 3px;
-     -moz-border-radius: 3px;
-     border-radius: 3px;
-     font-size:12px;
-     font-family:arial, helvetica, sans-serif;
-     display:inline-block;
-     text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
-     font-weight:bold;
-     color: #FFFFFF;
-     background-color: #a5b8da; background-image: -webkit-gradient(linear, left top, left bottom, from(#a5b8da), to(#7089b3));
-     background-image: -webkit-linear-gradient(top, #a5b8da, #7089b3);
-     background-image: -moz-linear-gradient(top, #a5b8da, #7089b3);
-     background-image: -ms-linear-gradient(top, #a5b8da, #7089b3);
-     background-image: -o-linear-gradient(top, #a5b8da, #7089b3);
-     background-image: linear-gradient(to bottom, #a5b8da, #7089b3);
-     filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#a5b8da, endColorstr=#7089b3);
+
   }
   button:hover{
-    border:1px solid #5d7fbc;
-    background-color: #819bcb; background-image: -webkit-gradient(linear, left top, left bottom, from(#819bcb), to(#536f9d));
-    background-image: -webkit-linear-gradient(top, #819bcb, #536f9d);
-    background-image: -moz-linear-gradient(top, #819bcb, #536f9d);
-    background-image: -ms-linear-gradient(top, #819bcb, #536f9d);
-    background-image: -o-linear-gradient(top, #819bcb, #536f9d);
-    background-image: linear-gradient(to bottom, #819bcb, #536f9d);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#819bcb, endColorstr=#536f9d);
+
   }
 }
 
@@ -127,24 +150,31 @@ background: url(http://res.cloudinary.com/dfld7chk4/image/upload/v1468203054/wat
   margin-right: 14px;
   border: 1px solid;
   font-size: 16px;
-  height: 26px;
-  width: 116px;
+  height: 32px;
+  width: 133px;
   text-align: center;
   position: relative;
-  border-radius: 4px;
+  border-radius: 9px;
   align-self: flex-end;
-  top: 31px;
+  border: 0.5px solid #de75de;
+  top: 25px;
+  right: -13px;
+  background: white;
+  box-shadow: 0px 2px 2px 2px #ccc;
 }
 
 .look-at-times:hover{
-  background: rgba(119, 50, 119, 0.82);
+    box-shadow: inset 0 0 5px #ccc;
 }
 
+.look-at-times:focus{
+    box-shadow: inset 0px -1px 12px rgba(0, 0, 0, 0.42)
+}
 
 
 .close-button {
   position: relative;
-  top: -349px;
+  top: -418px;
   right: 2px;
   font-weight: 600;
 }
@@ -160,26 +190,45 @@ button {
 
 .modal-nav-bar{
   width: 100%;
-  height: 49px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  background-color: rgba(119, 50, 119, 0.82);
-  color: black;
-  margin-top: -18px;
+    height: 49px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    color: black;
+    margin-top: -18px;
+    border-top: 1px solid #ccc;
   a{
-    cursor: pointer;
-    font-size: 19px;
-    font-weight: 500;
+    cursor:pointer;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    border: 1px solid #ccc;
   }
   a:hover{
-    color: white;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background: rgba(117, 50, 109, 0.38);
+    height: 100%;
+    box-shadow: inset 0 1px 2px 2px gray;
+    border: 1px solid #ccc;
   }
 }
 
 
 
 .white{
-  color: white;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    box-shadow: inset 0 1px 2px 2px gray;
+    border: 1px solid #ccc;
 }

@@ -37,25 +37,19 @@ const VenueShowModal = React.createClass({
       return(
         <div className="the-modal">
           <div className="map-thumbnail-content">
-            <img src={venue.url} className="modal-thumbnail"/>
             {gmap}
             <div className="top-content">
-              <h4>Contact Info</h4>
               <span>
-                <h5>Address</h5>
-                <p>{venue.address}</p>
-              </span>
-              <span>
-                <h5>E-mail</h5>
-                <p>{venue.email}</p>
-              </span>
-            </div>
-          </div>
-          <div className="small-details">
-            <h1>{venue.title}</h1>
+                <img src={venue.url} className="modal-thumbnail"/>
+                <p className="email">{venue.email}</p>
 
-            <text>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{venue.description}</text>
-            <button className="look-at-times" onClick={this.openOccasions}>Look at Times</button>
+                <p className="address">{venue.address}</p>
+              </span>
+              <div className="small-details">
+                <text>{venue.description}</text>
+                <button className="look-at-times" onClick={this.openOccasions}>Look at Times</button>
+              </div>
+            </div>
           </div>
         </div>
       )

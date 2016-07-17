@@ -2,6 +2,7 @@ const React = require('react');
 const SessionStore = require('../../stores/session_store.js');
 const SessionActions = require('../../actions/session_actions.js');
 const ReactTooltip = require("react-tooltip");
+const DateHelper = require("../../util/date_helper_util.js");
 
 let error;
 
@@ -86,11 +87,20 @@ const VenueOccasionShow = React.createClass({
                 )
       }
 
-
       return( <div className="occasion-item" key={occasion.id}>
-              <h4>Date: {occasion.date}</h4>
-                <p>From {this.timeParser(occasion.start_time)} to {this.timeParser(occasion.end_time)}</p>
-                {button}
+                <div className="date-third">
+                    <time datetime={occasion.date} className="date-as-calendar">
+                      <span className="month">{DateHelper.monthAllocation(parseInt(occasion.date.slice(5,7)))}</span>
+                        <span className="day">{occasion.date.slice(-2)}</span>
+                        <span className="year">{occasion.date.slice(0,4)}</span>
+                    </time>
+                </div>
+                <div className="time-third">
+                  <p>{this.timeParser(occasion.start_time)}&nbsp;-&nbsp;{this.timeParser(occasion.end_time)}</p>
+              </div>
+                <div className="button-third">
+                  {button}
+                </div>
               </div>
           )
     })
@@ -110,6 +120,7 @@ const VenueOccasionShow = React.createClass({
         {this.generateOccassions(MatchedOccasions)}</div>
       <div className="non-matches"><h3>Other Times</h3>
         {this.generateOccassions(nonMatchOccasions)}
+        <p className="no-more-times">there are no other times for this charity at the moment</p>
       </div>
     </div>
   )

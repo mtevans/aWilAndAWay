@@ -14,7 +14,9 @@
   height: 870px;
   flex-direction: row;
   justify-content: space-around;
-  background: url(http://res.cloudinary.com/dfld7chk4/image/upload/v1467248171/SanFrancisco_0_ptyqri.jpg);
+  // background: url(http://res.cloudinary.com/dfld7chk4/image/upload/v1467248171/SanFrancisco_0_ptyqri.jpg);
+  background: whitesmoke;
+  // background: #E2FCED;
   background-size: cover;
   background-position: bottom;
   overflow: scroll;
@@ -27,7 +29,7 @@
   height: 295px;
   right: 11%;
   position: relative;
-  border: 1px solid black;
+  box-shadow: 0px 2px 4px 4px #ccc;
  }
 
 
@@ -53,7 +55,7 @@
   position: relative;
   left: 30.5%;
   bottom: 35%;
-
+  box-shadow: 2px 5px 4px #ccc;
   h4{
     text-decoration: underline;
     text-align: center;
@@ -74,6 +76,7 @@
     input {
       width: 64%;
       align-self: center;
+      
     }
     .start-time, .end-time {
       width: 45%
@@ -141,6 +144,7 @@
     position: relative;
     margin: 10px;
     margin-top: 20px;
+    box-shadow: 0 8px 18px -6px black;
     transition: transform, .3s, height, margin
 }
 
