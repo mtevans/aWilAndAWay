@@ -1,108 +1,86 @@
-URL: http://awillandaway.herokuapp.com/#/?_k=erhdcc   sign in as new user and click on the boxing gym to see functionality.
-## Minimum Viable Product
 
-aWillAndAWay is a website that connects people looking to volunteer for local charities or communities as well as those looking for volunteers. The idea is to have a single page app for all functionality.
+# A Will And A Way
+[AWillAndAWay][WillandAWay]
 
-There will be an "venue" which will have a description of what one is volunteering for and contact information, there will be an Occasion, as if you volunteer on a monday at 4pm and fridays and 5pm, that's two separate occasions that you are signing up for. This signing up happens through a join table, a subscription, which links a user to an occasion and through that a venue.
+[WillandAWay]: http://awillandaway.herokuapp.com
+
+AWillAndAWay is a web application that matches volunteers with charities. It uses Ruby and rails on the backend, a PostgreSQL database, and a React.js with a Flux architectural framework on the frontend.
+## Features & Implementation
 
 
-- [x] Account authentication using BCRYPT hashing (unless simpler alternative is shown to use before starting.)
-- [x] Account creation and login
-- [x] Occasion/Venue browsing by time, date, location
-- [x] Venue location using Google Map API
-- [x] User can volunteer and cancel for an occasion they've volunteered for.
-- [x] User show page has Occasions volunteered for.
-- [x] Venue show page has button which sends you to Occasion times of that Venue.
-- [x] Single page implementation and nested associations.
+### Just One Page
+AWillAndAWay is a single page app that keeps all of its content on page through the React Router. As a user navigates the website, all relevant data such as their credentials, their volunteer schedule, as well as any Charity pages they've created are managed in local stores. All of this information is managed through a Rails API serving JSON.
 
-## Design Docs
- put in wire frames and schema tables
+### Sign Up
 
-## API endpoints
-``` ruby
-  Rails.application.routes.draw do
-    root to : "static_pages#root"
-    namespace :api, defaults: {format: :json} do
-      resources :venues, only: [:index, :show]
-      resources :occasion, only: [:index :show]
-      resource :user, only: [:show, :create, :destroy]
-      resource :session, only: [:create, :destroy]
-    end
-  end
+![tag screenshot](/docs/signup.png)
+
+### Log In
+![tag screenshot](/docs/login.png)
+
+### Home Page
+When a user is logged in.
+
+![tag screenshot](/docs/homepage.png)
+
+### Index Page
+When a user is not logged in. Only difference is the header, check homepage screenshot from above for difference.
+
+
+![tag screenshot](/docs/indexpage.png)
+
+### Filtering Through charities
+
+The primary search feature is done through zooming in and out through the google maps display. Every time a user zooms, a search is done through the Store of all the charities whose coordinates are still within the confines of the map coordinates.
+
+Further filtering can be done through time, date and charity category.
+
+![tag screenshot](/docs/filter.png)
+
+### Volunteering for a charity
+
+There are four tables in the database, Venues, Occasions, Subscriptions and Users.
+
+The Venues table contains information about what the charity is about, contact information such as location and contact e-mail address, as well as a description of what the charity is about.
+
+An Occasion is the time and date at which the charity is offering volunteer opportunities.
+
+A Subscription is like a ticket, it's the join table that connects a user to an occasion, and it is through associations on the backend that we can  link a User to an Occasion and Venue.
+
+When a user volunteers for a charity the database just creates a new subscription holding the occasion id and the user id.
+
+
+### Creating a Venue
+A user can register their address by zooming in on a location and placing a marker. From which we can use google maps geocoder to extract their address from the coordinates of the marker
+
+```js
+getAddress(){
+  let lat = this.marker.position.lat();
+  let lng = this.marker.position.lng();
+  var latlng = new google.maps.LatLng(lat, lng);
+    var address;
+    var geocoder = new google.maps.Geocoder();
+    let that = this
+    geocoder.geocode({ 'latLng': latlng }, (results, status) =>{
+        if (status !== google.maps.GeocoderStatus.OK) {
+            alert(status);
+        }
+        if (status == google.maps.GeocoderStatus.OK) {
+            this.props.updateFromMap({
+              address: results[0].formatted_address,
+                lat: this.marker.position.lat(),
+                lng: this.marker.position.lng()
+              })
+...closing brackets              
 ```
 
-## Components
-  - app  
-    - Venue
-      - VenueIndex
-      - VenueIndexItem
-    - navigator
+![tag screenshot](/docs/details/createvenue.png)
 
-    - header
-      - signin
-      - signout
-      - sign up
-      - userItem
-      - logo
-    - favorites
-      - favorite index
-      - favorite item
-    - splash
-      - splash_image
-      - splash logo
-      - explore
-    - home_description
-    - footer
+### Schedule
+  A user can see the title of the charity they have sign up for as well as what times they sign up for. For more details on the Charity they can click on the more details button which will show the contact info and picture for the charity. A user can also cancel at this stage to.
 
 
-## Implementation Timeline
+![tag screenshot](/docs/Schedule.png)
 
-
-### Phase 1: User Authentication, Event Model and JSON API (1.5 days)
-- [x] Setup basic flux arichtecture(i.e. the app.jsx file) using React Router to allow for sign   in, sign out, and sign up functions.
-- [x]  Using BCrypt, implement a basic user authentication system.
-- [x] Should be single page, and have pop up windows.
-- [x] Signup/login will change the buttons in the header to that users email and sign out.  All     user/session actions will bring us to a basic page containing the app's root React
-component.
-
-[Details][phase-one]
-
-
-### Phase 2: Flux Architecture, Venue index, show (2 days)
-- [x] populate index page with venues.
-- [x] allow user to click on index page and go through steps of signing up through a modal
-- [x] have volunteer button switch to cancel if they've already volunteered for that occasion.
-- [x] click cancel and have a user delete that session, button switch back to volunteer.
-- [x] Implement a map for each event and index with Google's Map Api.
-
-[Details][phase-two]
-
-### Phase 3: Volunteer and cancel your subscriptions. (1 days)
-- [x]  Go to users show page and click and cancel events.
-
-### Phase 4: Occasion and Venue searching and Users Pages (3 days)
-- [x] Can search by time
-- [x] Can search by location
-- [x] Can searh by date
-- [x] user show pages has list of things they've voluntered for and can cancel at that stage.
-
-
-[Details][phase-three]
-
-
-
-[Details][phase-four]
-
-### Phase 4: Set up demo user and edit css to refine user experience (1.5 days)
-
-
-
-#BONUS
-  1. if lots of time to spare: allow a user to create a Venue with multiple Occasions and delete and edit if from their user page, and see which users have signed up to it on the Occasion Show page.
-  2. add comments on Venue page.
-  3. With search results, only picture and title come up and then 'about' text comes up when hovering over.
-  4. a counter on how many search results there are.
-  5. multiple users logged in at the same time.
-  6. add optional image upload for user, show the image as the clickable icon in header that gets them to thier user show page.
-# aWilAndAWay
-# aWilAndAWay
+## Future Directions for the Project
+Aside from more css styling there is still much more that can be done from the standpoint of a user managing volunteer opportunities for their charity. Features such as seeing who has signed up for your charity as well as basic edit and delete features for a the Charity Venue and Volunteer timing it's offering.
