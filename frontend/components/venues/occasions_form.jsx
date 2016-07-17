@@ -22,8 +22,8 @@ const OccasionsForm = React.createClass({
     if (venue.occasions !== undefined && venue.occasions.length > 0){
       let occ;
       occ = venue.occasions.map(occasion => {
-       return ( <ul key={occasion.id}>Date: {occasion.date}
-         <li>From {VenueStore.timeParser(occasion.start_time)} to {VenueStore.timeParser(occasion.end_time)}</li>
+       return ( <ul key={occasion.id}>{occasion.date}
+         <li>{VenueStore.timeParser(occasion.start_time)}&nbsp;-&nbsp;{VenueStore.timeParser(occasion.end_time)}</li>
 
        </ul> )
      });
@@ -58,10 +58,10 @@ const OccasionsForm = React.createClass({
    displayForm(){
      let venue = VenueStore.find(this.props.venue.id);
      let form = <form onSubmit={this.createOccasion} className="occasion-form">
-                 <input type="date" onChange={this._handleDateChange}/>
+                 <input className= "dateinput" type="date" onChange={this._handleDateChange}/>
                  <br/>
-                 <p>From (time) <input type="time" className="start-time" onChange={this._startTimeSetter}/>
-                 to <input type="time" className="end-time" onChange={this._endTimeSetter}/></p>
+                 <p>Time:&nbsp;<input type="time" className="start-time" onChange={this._startTimeSetter}/>
+                 &nbsp;-&nbsp;<input type="time" className="end-time" onChange={this._endTimeSetter}/></p>
                 <br/>
                 <input className="occasion-submit" type="submit" value="Post" />
                 <p className="number-of-occasions" >
@@ -73,7 +73,8 @@ const OccasionsForm = React.createClass({
   render(){
     return(
       <div className="form-occasions">
-        <h1>Create a new Volunteer Time for: <br/> {this.props.venue.title}</h1>
+        <charity>{this.props.venue.title}</charity>
+        <h1>Create Volunteer Time</h1>
         {this.displayForm()}
         <div className="occasions-list">
           {this.displayOccasions()}

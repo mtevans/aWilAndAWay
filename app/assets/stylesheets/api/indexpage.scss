@@ -46,7 +46,7 @@
   color: white;
   opacity: 0.7;
   display: flex;
-  height: 34%;
+  height: 34.4%;
   flex-wrap: wrap;
   overflow: scroll;
   width: 232px;
@@ -54,7 +54,7 @@
   border-radius: 4px;
   position: relative;
   left: 30.5%;
-  bottom: 35%;
+  bottom: 35.3%;
   box-shadow: 2px 5px 4px #ccc;
   h4{
     text-decoration: underline;
@@ -76,7 +76,7 @@
     input {
       width: 64%;
       align-self: center;
-      
+
     }
     .start-time, .end-time {
       width: 45%
@@ -160,6 +160,7 @@
   margin-left: 4px;
   font-size: 15px;
   font-weight: 900;
+  text-align: center;
   margin-bottom: 5px;
   }
 }
@@ -169,7 +170,8 @@
   margin-left: 4px;
   font-size: 15px;
   font-weight: 900;
-  transition: transform, .2s, position
+  text-align: center;
+  transition: transform, .2s, position;
 }
 
 .index-title{

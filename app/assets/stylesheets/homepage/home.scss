@@ -55,13 +55,12 @@
     }
     a {
       width: 160px;
+      border: solid;
+      border-radius: 4px;
+      box-shadow: 0 2px 2px 2px #ccc;
     }
-
-
   }
 
   .jumbotron-tag a:hover {
-    color: cadetblue;
-    text-decoration: underline;
+    box-shadow: 0 0 0 0 black
   }
-  

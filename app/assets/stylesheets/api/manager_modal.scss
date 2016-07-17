@@ -22,62 +22,62 @@
 width: 100%;
 height: 100%;
 flex-direction: row;
-background-image: url(http://res.cloudinary.com/dfld7chk4/image/upload/v1468207508/watercolor-grunge-000030-medium-blue_bra7pj.jpg);
+background: white;
+}
+
+charity{
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
 }
 
 .VenueDisplay{
-  width: 87%;
-  margin-top: 20px;
-  padding-left: 1px;
-  align-content: center;
-  position: relative;
-  left: 45px;
-  button{
-    text-align: center;
-    border-radius: 4px;
+  width: 92%;
+    display: flex;
+    margin-top: 20px;
+    align-content: center;
     position: relative;
+    align-items: center;
+    flex-direction: column;
+  button{
     margin-top: 7px;
+    width: 89%;
+    text-align: center;
+    border: 0.5px solid #ccc;
+    height: 28px;
+    box-shadow: 0 1px 1px 1px;
+    font-size: 15px;
+    border-radius: 4px;
+    background: white
+  }
+  button:hover{
+    box-shadow: inset 0 0 5px #ccc;
+
+  }
+  button:focus{
+    box-shadow: inset 0 1px 2px 2px gray;
   }
 }
 
 .expand-collapse-button{
-  border:1px solid #7d99ca;
-   -webkit-border-radius: 3px;
-   -moz-border-radius: 3px;
-   border-radius: 3px;
-   font-size: 16px;
-   font-family:arial, helvetica, sans-serif;
-   display:inline-block;
-   text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
-   font-weight:bold;
-   color: #FFFFFF;
-   background-color: #a5b8da;
-   background-image: -webkit-gradient(linear, left top, left bottom, from(#a5b8da), to(#7089b3));
-   background-image: -webkit-linear-gradient(top, #a5b8da, #7089b3);
-   background-image: -moz-linear-gradient(top, #a5b8da, #7089b3);
-   background-image: -ms-linear-gradient(top, #a5b8da, #7089b3);
-   background-image: -o-linear-gradient(top, #a5b8da, #7089b3);
-   background-image: linear-gradient(to bottom, #a5b8da, #7089b3);
-   filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#a5b8da, endColorstr=#7089b3);
+
 }
 
 .expand-collapse-button:hover{
-  border:1px solid #5d7fbc;
-  background-color: #819bcb;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#819bcb), to(#536f9d));
-  background-image: -webkit-linear-gradient(top, #819bcb, #536f9d);
-  background-image: -moz-linear-gradient(top, #819bcb, #536f9d);
-  background-image: -ms-linear-gradient(top, #819bcb, #536f9d);
-  background-image: -o-linear-gradient(top, #819bcb, #536f9d);
-  background-image: linear-gradient(to bottom, #819bcb, #536f9d);
-  filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#819bcb, endColorstr=#536f9d);
+
 }
 
 
-
+.start-time, .end-time{
+  border: 0;
+  border-bottom: 1px solid black;
+  color: rgb(187, 182, 182);
+}
 
 .number-of-occasions{
   font-size: 12px;
+  margin-top: 7px;
+  font-style: italic;
 }
 .another-close-button{
   position: fixed;
@@ -105,7 +105,6 @@ background-image: url(http://res.cloudinary.com/dfld7chk4/image/upload/v14682075
     text-decoration: underline;
     font-size: 23px;
     position: fixed;
-    color: whitesmoke;
     margin-left: 109px;
   }
   .small-detail{
@@ -118,7 +117,12 @@ background-image: url(http://res.cloudinary.com/dfld7chk4/image/upload/v14682075
   }
 
   span{
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1{
+      font-weight: bold;
+    }
   }
 }
 
@@ -132,40 +136,63 @@ background-image: url(http://res.cloudinary.com/dfld7chk4/image/upload/v14682075
 .form-occasions{
   margin-top: 52px;
   overflow: scroll;
+  display: flex;
+  width: 35%;
+  flex-direction: column;
+  h1{
+    font-size: 14px;
+    font-style: italic;
+  }
 }
 
 .occasion-form{
   display: flex;
-flex-direction: column;
-justify-content: space-between;
-height: 130px;
-margin-bottom: 44px;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 215px;
+  margin-bottom: 20px;
 }
 
 
 .manage-modal-thumbnail{
   height: 159px;
   width: 213px;
+  box-shadow: 2px 3px 3px 2px gray;
+  margin-bottom: 13px;
+}
+
+.dateinput{
+  border: 0;
+  border-bottom: 1px solid black;
+  text-align: center;
+  text-indent: 20px;
+  margin-top: 6px;
+  font-size: 14px;
+  font-family: 'Lato', sans-serif;
+  color: rgb(187, 182, 182);
 }
 
 
-
 .occasions-list{
-  margin-bottom: 34px;
-  width: 76%;
-  margin-right: 0;
+  overflow: scroll;
+  width: 97%;
+  display: flex;
   text-align: center;
   align-self: center;
+  margin-top: 11px;
+  position: relative;
+  flex-direction: column;
+
 
   ul{
     margin-bottom: 28px;
     border-radius: 4px;
-    width: 100%;
+    width: 94%;
     margin-right: 0;
-    background: rgba(146, 85, 146, 0.39);
+    /* background: rgba(146, 85, 146, 0.39); */
     text-align: center;
     align-self: center;
     position: relative;
-    left: 34px;
+    box-shadow: 0 1px 1px 1px #ccc;
   }
 }

@@ -44,10 +44,7 @@ const ManageVenues = React.createClass({
       return(
       <div  key={venue.id} className="VenueDisplay">
           <img src={venue.url} className="manage-modal-thumbnail"/>
-          <div className="">
-            <h1>Title: {venue.title}</h1>
-            <p>Address: {venue.address}</p>
-          </div>
+          <h1>{venue.title}</h1>
           {button}
       </div>)
     })

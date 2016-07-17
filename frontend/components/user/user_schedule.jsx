@@ -3,6 +3,7 @@
 const React = require('react');
 const SessionStore = require('../../stores/session_store.js');
 const VenueStore = require('../../stores/venues_store.js');
+const DateHelper = require('../../util/date_helper_util.js');
 
 const UserSchedule = React.createClass({
   getInitialState(){
@@ -76,9 +77,18 @@ const UserSchedule = React.createClass({
 
         return(
           <div className="schedule-item" key={occasion.id}>
-            <h2>{that.state.UserVenues[occasion.venue_id].title}</h2>
-            <h3>Volunteering on {occasion.date}</h3>
-            <h3>From {VenueStore.timeParser(occasion.start_time)} to {VenueStore.timeParser(occasion.end_time)}</h3>
+
+              <div className="calandar-third">
+                <time datetime={occasion.date} className="date-as-calendar">
+                  <span className="month">{DateHelper.monthAllocation(parseInt(occasion.date.slice(5,7)))}</span>
+                  <span className="day">{occasion.date.slice(-2)}</span>
+                  <span className="year">{occasion.date.slice(0,4)}</span>
+                </time>
+              </div>
+            <info>
+              <h2>{that.state.UserVenues[occasion.venue_id].title}</h2>
+              <h3>{VenueStore.timeParser(occasion.start_time)}&nbsp;-&nbsp;{VenueStore.timeParser(occasion.end_time)}</h3>
+            </info>
             <span>
               {button}
               {venueToggleButton}
@@ -97,9 +107,9 @@ const UserSchedule = React.createClass({
             <h1>{venue.title}</h1>
             <img src={venue.url} className="schedule-modal-thumbnail"/>
             <div className="smaller-details">
-              <p>about: {venue.about}</p>
-                <p>address: {venue.address}</p>
-                <p>email: {venue.email}</p>
+              <contact className="location" >{venue.email}</contact>
+              <contact className="location">Address: {venue.address}</contact>
+              <p>{venue.about}</p>
             </div>
             <button onClick={this._removeVenue}>Collapse&#8209;Details</button>
           </div>
