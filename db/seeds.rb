@@ -209,6 +209,135 @@ Venue.create!(
   category: "Homeless & Housing"
 )
 # ----------------------------------------------------- calling it a night-------
+Venue.create!(
+  title: "GED Classroom Volunteer",
+  about: "Work with the homeless to attain their GED",
+  description: "Here at Shackleton House we have a motivated group that's looking to improve their situation and fully integrate back into society. Please come help them in that pursuit by tutoring them to attain their GED",
+  address: "3433 Scott Street, San Francisco, CA 94123",
+  url: "",
+  lat: 37.801627,
+  lng: -122.441541,
+  email: "NorthSideClinic@example.com",
+  organizer_id: 3,
+  modal_status: false,
+  category: "Homeless & Housing"
+)
+
+Venue.create!(
+  title: "Volunteer Nurse",
+  about: "Volunteer with our medical team at our MDA camp",
+  description: "Muscular Dystrophy Association's summer camp program is offered free of charge to our client families who have a child (ages 6 to 17) living with muscular dystrophy and other muscle-debilitating diseases.",
+  address: "679 McAllister Street, San Francisco, CA 9410",
+  url: "",
+  lat: 37.779542,
+  lng: -122.422627,
+  email: "Sarah@example.com",
+  organizer_id: 2,
+  modal_status: false,
+  category: "People With Disabilities"
+)
+
+Venue.create!(
+  title: "Helper",
+  about: "Help special needs children in the pool",
+  description: "We strive to help kids with special needs feel pride and self-confidence while helping to build stronger bodies and friendships. Volunteers work one-on-one with our swimmers in the water under the supervision of a physical therapist.",
+  address: "2542 29th Avenue, San Francisco, CA 94116",
+  url: "",
+  lat: 37.739914,
+  lng: -122.485799,
+  email: "Richard@example.com",
+  organizer_id: 3,
+  modal_status: false,
+  category: "People With Disabilities"
+)
+
+Venue.create!(
+  title: "Hospice Volunteer",
+  about: "Support the elderly and the sick",
+  description: "The volunteer’s role is greatly rewarding and perfect for those interested in working with older adults, working in the healthcare field, or having a general passion of helping others.",
+  address: "1253 Green Street, San Francisco, CA 94109",
+  url: "",
+  lat: 37.797992,
+  lng: -122.419709,
+  email: "Richard@example.com",
+  organizer_id: 3,
+  modal_status: false,
+  category: "People With Disabilities"
+)
+
+Venue.create!(
+  title: "Grant Writer",
+  about: "Research Grant for families who have children with special needs",
+  description: "We are doing great things for families who have children with special needs, but we could do so much more with your help! Help parents get the needed break in raising a child with special needs",
+  address: "1412 Willard Street, San Francisco, CA 94117",
+  url: "",
+  lat: 37.763938,
+  lng: -122.453870,
+  email: "WillardStreetHealth@example.com",
+  organizer_id: 2,
+  modal_status: false,
+  category: "People With Disabilities"
+)
+
+Venue.create!(
+  title: "Bingo Assistant",
+  about: "Volunteer to help assist with our bingo activity",
+  description: "St. Francisc Living Room is looking for volunteers to assist with our bingo. Duties include prepping and closing of the activity, supervising players, calling out the numbers and giving out the prizes. St. Francis Living Room serves as a safe place for low income and homeless seniors to relax and socialize with one another.",
+  address: "388 Texas Street, San Francisco, CA 94107",
+  url: "",
+  lat: 37.761571,
+  lng: -122.395602,
+  email: "BingoBaby@example.com",
+  organizer_id: 3,
+  modal_status: false,
+  category: "Homeless & Housing"
+)
+
+Venue.create!(
+  title: "Watch the Wild",
+  about: "Observe and report what is taking place in your community, from trees and plants to weather and wildlife activity",
+  description: "Observe and report what is taking place in your community, from trees and plants to weather and wildlife activity. In as little as ten minutes, your observations help us to understand how our eco-systems are changing and helps us to adapt for the future.",
+  address: "3664 18th Street, San Francisco, CA 94110",
+  url: "",
+  lat: 37.761631,
+  lng: -122.425202,
+  email: "watchthewild@example.com",
+  organizer_id: 2,
+  modal_status: false,
+  category: "Environment"
+)
+
+Venue.create!(
+  title: "Community Gardening",
+  about: "Transform our neighborhood by beutifying neglected patches of land",
+  description: "Transform our neighborhood by beutifying neglected patches of land. Work alongside a great group of individuals under the supervision of a head gardener.",
+  address: "2107 14th Avenue, San Francisco, CA 94116",
+  url: "",
+  lat: 37.748601,
+  lng: -122.470693,
+  email: "watchthewild@example.com",
+  organizer_id: 2,
+  modal_status: false,
+  category: "Environment"
+)
+
+Venue.create!(
+  title: "Community Gardening",
+  about: "Transform our neighborhood by beutifying neglected patches of land",
+  description: "Transform our neighborhood by beutifying neglected patches of land. Work alongside a great group of individuals under the supervision of a head gardener.",
+  address: "2107 14th Avenue, San Francisco, CA 94116",
+  url: "",
+  lat: 37.748601,
+  lng: -122.470693,
+  email: "watchthewild@example.com",
+  organizer_id: 2,
+  modal_status: false,
+  category: "Environment"
+)
+
+
+
+
 Occasion.create!(
   organizer_id: 1,
   venue_id: 1,
