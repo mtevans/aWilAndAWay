@@ -37,7 +37,7 @@ Venue.create!(
   email: "Steve@example.com",
   organizer_id: 1,
   modal_status: false,
-  category: "Children & Youth"
+  category: "Children & Youth",
 )
 
 
