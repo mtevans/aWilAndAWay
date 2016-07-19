@@ -167,19 +167,6 @@ Venue.create!(
   category: "Homeless & Housing"
 )
 
-Venue.create!(
-  title: "Food Kitchen Aide",
-  about: "Prepare hot meals to be served in our Free Dining Room",
-  description: "Come help our chefs and kitchen staff prepare food for the following day's lunch service in one of Northern California's most distressed neighborhoods",
-  address: "143 Gladeview Way, San Francisco, CA 94131",
-  url: "",
-  lat: 37.752375,
-  lng: -122.450639,
-  email: "FoodKitchen@example.com",
-  organizer_id: 3,
-  modal_status: false,
-  category: "Homeless & Housing"
-)
 
 Venue.create!(
   title: "Dining Room Volunteer",
@@ -242,7 +229,7 @@ Venue.create!(
   about: "Help special needs children in the pool",
   description: "We strive to help kids with special needs feel pride and self-confidence while helping to build stronger bodies and friendships. Volunteers work one-on-one with our swimmers in the water under the supervision of a physical therapist.",
   address: "2542 29th Avenue, San Francisco, CA 94116",
-  url: "",
+  url: "http://res.cloudinary.com/dfld7chk4/image/upload/v1468894985/Helper_oig8up.jpg",
   lat: 37.739914,
   lng: -122.485799,
   email: "Richard@example.com",
@@ -252,11 +239,11 @@ Venue.create!(
 )
 
 Venue.create!(
-  title: "Hospice Volunteer",
+  title: "Hospice Assistant",
   about: "Support the elderly and the sick",
   description: "The volunteer’s role is greatly rewarding and perfect for those interested in working with older adults, working in the healthcare field, or having a general passion of helping others.",
   address: "1253 Green Street, San Francisco, CA 94109",
-  url: "http://res.cloudinary.com/dfld7chk4/image/upload/v1468894985/Helper_oig8up.jpg",
+  url: "http://res.cloudinary.com/dfld7chk4/image/upload/v1468894986/hospiceVolunteer1_qfoejq.jpg",
   lat: 37.797992,
   lng: -122.419709,
   email: "Richard@example.com",
@@ -1039,8 +1026,8 @@ Occasion.create!(
   organizer_id: 3,
   venue_id: 22,
   date: Date.today.advance(:days => 8),
-  start_time: 0900,
-  end_time: 1000,
+  start_time: 1000,
+  end_time: 1100,
 )
 
 Occasion.create!(
