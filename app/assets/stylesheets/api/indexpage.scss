@@ -11,7 +11,7 @@
   flex-wrap: wrap;
   flex-direction: row;
   width: 100%;
-  height: 870px;
+  height: 84%;
   flex-direction: row;
   justify-content: space-around;
   // background: url(http://res.cloudinary.com/dfld7chk4/image/upload/v1467248171/SanFrancisco_0_ptyqri.jpg);
@@ -46,7 +46,7 @@
   color: white;
   opacity: 0.7;
   display: flex;
-  height: 34.4%;
+  height: 300px;
   flex-wrap: wrap;
   overflow: scroll;
   width: 232px;
@@ -54,7 +54,7 @@
   border-radius: 4px;
   position: relative;
   left: 30.5%;
-  bottom: 35.3%;
+  top: -306px;
   box-shadow: 2px 5px 4px #ccc;
   h4{
     text-decoration: underline;
@@ -145,7 +145,7 @@
     margin: 10px;
     margin-top: 20px;
     box-shadow: 0 8px 18px -6px black;
-    transition: transform, .3s, height, margin
+    transition: transform, .3s, height, margin;
 }
 
 .venue-list-item:hover{

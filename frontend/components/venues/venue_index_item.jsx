@@ -43,14 +43,10 @@ const VenueIndexItem = React.createClass({
 
   generateNavBar(){
     if (!this.state.classWhite){
-      return ( <div className="modal-nav-bar">
-                <a className="white">Description</a>
-                <a onClick={this.toggleWhite}>Times</a>
-              </div> )
+      return ( <a></a> )
     } else {
       return(<div className="modal-nav-bar">
-                <a onClick={this.toggleWhite}>Description</a>
-                <a className="white" >Times</a>
+                <a onClick={this.toggleWhite}> Back To Description</a>
             </div> )
     }
   },

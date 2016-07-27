@@ -19,12 +19,12 @@ const Homepage = React.createClass({
           <div className="splash">
             <Jumbotron/>
           </div>
-          <Description/>
-
+        
+          <footer><Footer/></footer>
         </div>
 
-        {this.props.children}
-        <footer><Footer/></footer>
+
+
       </div>
 
     )

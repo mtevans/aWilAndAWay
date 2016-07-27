@@ -3,6 +3,7 @@ const SessionStore = require('../../stores/session_store.js');
 const SessionActions = require('../../actions/session_actions.js');
 const ReactTooltip = require("react-tooltip");
 const DateHelper = require("../../util/date_helper_util.js");
+const VenueMap = require("./venue_map.jsx");
 
 let error;
 
@@ -132,6 +133,8 @@ const VenueOccasionShow = React.createClass({
       occasionsToShow = noFilterApplied;
     }
 
+  let gmap = <VenueMap className="occasion-pic" venue={this.props.venue}/>
+
 
     return (
       <div className="occasion-box">
@@ -140,7 +143,9 @@ const VenueOccasionShow = React.createClass({
           <h2>Volunteer Dates and Times</h2>
             {occasionsToShow}
         </span>
-        <img src={this.props.venue.url} className="occasion-pic"></img>
+        <div className="occasions-map">
+        {gmap}
+        </div>
 
       </div>
     )

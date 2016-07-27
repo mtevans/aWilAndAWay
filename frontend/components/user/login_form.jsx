@@ -124,13 +124,27 @@ const LoginForm = React.createClass({
             className="login-input" />
 
         {authErrors}
-        <input className="submit" type="submit" value="Sign In"/>
+        <div onClick={this.handleSubmit} id='sign-in' className="demo-submit">
+          <span className="label">Log&nbsp;In</span>
+          <span className="icon">
+            <img src="http://res.cloudinary.com/dfld7chk4/image/upload/v1469555334/Log_In-512_i3cmx6.png" className="icon"></img>
+          </span>
+        </div>
       </form>
+      <div className="divider">
       <h2>OR</h2>
-      <form className="demo-form" onSubmit={this.demoLogIn}>
+      </div>
+      <div className="demo-form" onSubmit={this.demoLogIn}>
 
-          <input  type="submit" value="Use Demo Account" class=""/>
-      </form>
+          <div onClick={this.demoLogIn} className="demo-submit">
+            <span className="label">Demo&nbsp;Account</span>
+            <span className="icon">
+              <img src="http://res.cloudinary.com/dfld7chk4/image/upload/v1469555334/Log_In-512_i3cmx6.png" className="icon"></img>
+            </span>
+          </div>
+
+
+    </div>
     </div>
     )
   }

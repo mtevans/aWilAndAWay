@@ -10,6 +10,7 @@
   outline: none;
   box-shadow: 2px 10px 40px 0px rgba(0,0,0,0.75);
   width: 725px;
+  height: 385px;
   margin: auto;
   margin-top: 100px;
   transition: transform, .4s, height;
@@ -17,33 +18,37 @@
 
 .venue-modal-content{
   width: 100%;
+  height: 100%;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   align-items: flex-end;
-
+  background: whitesmoke;
 }
 
 .the-modal{
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  display: flex;
-flex-direction: column;
-align-items: flex-end;
-background: whitesmoke;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background: whitesmoke;
 }
 
 .modal-thumbnail{
-  height: 230px;
-  width: 290px;
+  height: 125px;
+  width: 200px;
+  margin-top: 14px;
+  box-shadow: 0 1px 1px 1px gray;
 }
 
 .map {
-  height: 86px;
+  height: 350px;
   width: 100%;
-  margin-right: 10px;
-  margin-bottom: 13px;
+  margin-top: 14px;
+  margin-right: 20px;
   box-shadow: 0 3px 0px -1px #ccc;
 }
 
@@ -64,12 +69,16 @@ background: whitesmoke;
 
 .top-content{
   text-align: center;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
+display: flex;
+position: relative;
+font-size: 15px;
+flex-wrap: wrap;
+flex-direction: row;
+align-items: center;
+justify-content: flex-start;
+width: 100%;
+height: 100%;
+
   h5{
 
   }
@@ -79,40 +88,44 @@ background: whitesmoke;
   }
   span{
     display: flex;
-    flex-direction: column;
-    height: 320px;
-    margin-left: 10px;
-    width: 48.5%;
+flex-direction: column;
+height: 100%;
+margin-left: 10px;
+width: 57%;
+  }
+  text{
+    position: relative;
+    top: -30px;
+    margin-right: 11px;
   }
 }
 
 .email{
-  margin-top: 10px;
-  position: relative;
-  font-size: 12px;
-  align-self: baseline;
-  left: 15px;
-  font-style: italic;
+  margin-top: 6px;
+position: relative;
+font-size: 12px;
+align-self: baseline;
+left: 2px;
+font-style: italic;
 }
 
 .address{
   position: relative;
   align-self: baseline;
-  left: 15px;
+  left: 206px;
+  width: 188px;
+  top: -105px;
   margin-top: 10px;
 }
 
 .small-details {
   display: flex;
-  flex-direction: column;
-  height: 315px;
-  color: #2f2d2f;
-  width: 48%;
-  /* font-family: Trebuchet MS1; */
-  position: relative;
-  top: -5px;
-  overflow: scroll;
-  border-left: 1px solid #ccc;
+flex-direction: column;
+color: #2f2d2f;
+width: 40%;
+position: relative;
+overflow: scroll;
+
   h1{
     font-weight: bold;
     align-self: center;
@@ -157,8 +170,8 @@ background: whitesmoke;
   border-radius: 9px;
   align-self: flex-end;
   border: 0.5px solid #de75de;
-  top: 25px;
-  right: -13px;
+  top: -7px;
+  right: 122px;
   background: white;
   box-shadow: 0px 2px 2px 2px #ccc;
 }

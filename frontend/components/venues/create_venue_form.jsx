@@ -107,7 +107,7 @@ const createVenueForm = React.createClass({
 
   render(){
 
-    let defaultURL= "http://res.cloudinary.com/dfld7chk4/image/upload/v1467237098/defualt_pic_st9qj2.jpg";
+    let defaultURL= "http://res.cloudinary.com/dfld7chk4/image/upload/c_scale,h_210,w_290/v1467237098/defualt_pic_st9qj2.jpg";
     const filterCategories = ["Children & Youth", "Seniors", "Homeless & Housing", "People With Disabilities", "Environment"]
     let filterOptions = filterCategories.map(filter =>{
       return <option value={filter} key={filter}>{filter}</option>
@@ -131,7 +131,7 @@ const createVenueForm = React.createClass({
       }
     return(
       <div>
-       <a onClick={this.toggleCreateModal}>Create&nbsp;Event</a>
+       <a onClick={this.toggleCreateModal}>New&nbsp;Charity</a>
 
         <Modal isOpen={this.state.createModal}
                 onRequestClose={this.toggleCreateModal}

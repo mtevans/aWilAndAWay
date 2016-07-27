@@ -81,9 +81,9 @@ const Header = React.createClass ({
 
       if (this.state.loggedIn) {
         logger = <a className="logger" id="a" onClick={this.logout}>Log&nbsp;Out</a> ;
-          sign = <a id="b" onClick={this.openUserModal}>Volunteer&nbsp;Times</a>;
+          sign = <a id="b" onClick={this.openUserModal}>My&nbsp;Schedule</a>;
           create = <CreateVenueForm openManageEventsModal={this.openManageEventsModal}/>
-          manageVenues = <a onClick={this.openManageEventsModal}>Manage&nbsp;Events</a>
+          manageVenues = <a onClick={this.openManageEventsModal}>My&nbsp;Charities</a>
       };
 
     return (
@@ -108,22 +108,25 @@ const Header = React.createClass ({
             </div>
           </div>
         </content>
-        <Modal
-          isOpen={this.state.loggerModalOpen}
-          onRequestClose={this.onModalClose}
-          className='headerloggermodal'>
 
-          {component}
+      <Modal
+        isOpen={this.state.loggerModalOpen}
+        onRequestClose={this.onModalClose}
+        className='headerloggermodal'>
 
-          <button className="button-x" onClick={this.onModalClose}>X</button>
-        </Modal>
-        <Modal isOpen={this.state.userShowModal}
-            onRequestClose={this.userModalClose}
-            className='schedule-modal'>
-        <UserSchedule/>
-        <button className='schedule-close' onClick={this.userModalClose}>X</button>
-        </Modal>
-    <Modal isOpen={this.state.manageVenuesModal}
+        {component}
+
+        <button className="button-x" onClick={this.onModalClose}>X</button>
+      </Modal>
+
+      <Modal isOpen={this.state.userShowModal}
+          onRequestClose={this.userModalClose}
+          className='schedule-modal'>
+          <button className='schedule-close' onClick={this.userModalClose}>X</button>
+          <UserSchedule/>
+      </Modal>
+
+      <Modal isOpen={this.state.manageVenuesModal}
             onRequestClose={this.closeManageVenuesModal}
             className='manager-modal'>
           <button className="another-close-button" onClick={this.closeManageVenuesModal}>X</button>
