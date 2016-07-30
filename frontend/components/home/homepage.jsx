@@ -13,7 +13,7 @@ const Homepage = React.createClass({
   render () {
     return (
       <div className='homepage'>
-        <div className="the-content">
+        <div className="content">
           <header className='header'><Header /></header>
 
           <div className="splash">
