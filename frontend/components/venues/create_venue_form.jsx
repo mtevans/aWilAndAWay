@@ -19,7 +19,7 @@ const createVenueForm = React.createClass({
       lat: "",
       lng: "",
       category: "",
-      url: "http://res.cloudinary.com/dfld7chk4/image/upload/v1467237098/defualt_pic_st9qj2.jpg",
+      url: "http://res.cloudinary.com/dfld7chk4/image/upload/v1470114294/Charity_nvrpyd.jpg",
       organizer_id: SessionStore.currentUser().id,
       creationErrors: ErrorStore.creationErrors()
     };
