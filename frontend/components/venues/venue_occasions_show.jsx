@@ -83,7 +83,7 @@ const VenueOccasionShow = React.createClass({
       } else {
         button = ( <div>
                     <button data-tip data-for="error">Volunteer</button>
-                    <ReactTooltip id="error"><span>Log In To <br/>Volunteer</span></ReactTooltip>
+                    <ReactTooltip id="error"><span>Log&nbsp;In&nbsp;To Volunteer</span></ReactTooltip>
                   </div>
                 )
       }
