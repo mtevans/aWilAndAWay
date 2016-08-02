@@ -186,7 +186,7 @@
 @media only screen and (max-width: 1050px) {
   .filter-bar{
     background: black;
-    height: 25%;
+    height: 28%;
     flex-wrap: wrap;
     overflow: scroll;
     width: 68%;
@@ -195,8 +195,7 @@
     border-radius: 4px;
     position: relative;
     left: 0;
-    bottom: 0;
-
+    top: 0;
     h4{
       position: relative;
       left: 8%;

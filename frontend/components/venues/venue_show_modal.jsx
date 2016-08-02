@@ -28,10 +28,8 @@ const VenueShowModal = React.createClass({
 
 
   render(){
-    let gmap;
-    if (this.props.modalOpen){
-      gmap = <VenueMap venue={this.props.venue}/>
-    }
+    let gmap = <VenueMap venue={this.props.venue}/>
+
 
     const venue = this.props.venue;
       return(

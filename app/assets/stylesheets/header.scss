@@ -90,19 +90,18 @@ header {
     position: relative;
     margin: auto;
     top: 100px;
-    border: 1px solid rgb(204, 204, 204);
+    border: 1px solid #cccccc;
     border-radius: 4px;
     height: 281px;
     width: 540px;
     padding: 20px;
-    background: white;
+    background: rgba(255, 255, 255, 0.43);
     display: flex;
     color: black;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    opacity: 0.8;
-
+    opacity: 1;
 }
 
 .button-x{
@@ -139,6 +138,7 @@ header {
 #sign-up{
   width: 175px;
   height: 30px;
+  margin-top: 5px;
 }
 
 .log-in-form, .demo-form{
@@ -170,7 +170,7 @@ header {
   overflow: hidden;
   position: relative;
   cursor: pointer;
-  box-shadow: 0 1px 1px 1px #bd94f5;
+  box-shadow: 0 1px 1px 1px rgba(102, 55, 125, 0.48);
 }
 .divider{
   height: 100%;
@@ -238,7 +238,8 @@ header {
   height: 14px;
   min-height: 28px;
   border: 0;
-  border-bottom: 1px solid #ccc;
+  background: rgba(255, 255, 255, 0.37);
+  border-bottom: 1px solid black;
   text-align: center;
   font-size: 13px;
   margin-top: 11px;
