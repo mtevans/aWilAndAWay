@@ -90,7 +90,7 @@ const Header = React.createClass ({
       <div>
         <content className="header-content">
           <div className="siteName">
-            <img onClick={this.redirectHome} className="header-logo"  src="http://res.cloudinary.com/dfld7chk4/image/upload/v1467517608/featheredhands-transparent-final_tns0sn.png"/>
+            <img onClick={this.redirectHome} className="header-logo"  src="http://res.cloudinary.com/dfld7chk4/image/upload/v1470430265/featheredhands-transparent-final_ftcyph.png"/>
             <img onClick={this.redirectHome} className='site-title' src="http://res.cloudinary.com/dfld7chk4/image/upload/v1467917702/A_Will_A_Way-logo_k9ouoe.png">
             </img>
           </div>
