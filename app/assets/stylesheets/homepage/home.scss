@@ -56,7 +56,7 @@
     }
     h2{
       font-size: 32px;
-      color: #6d63bd;
+      color: #fbc48b;
       margin-top: 20px;
       // text-shadow: 0.5px 0.5px black;
       position: relative;
@@ -67,10 +67,11 @@
       width: 160px;
       border: solid skyblue;
       border-radius: 4px;
-      box-shadow: 0 2px 2px 2px skyblue;
+      box-shadow: 0 1px 1px 1px skyblue;
     }
   }
 
   .jumbotron-tag a:hover {
-    box-shadow: 0 0 0 0 black
+    box-shadow: 0 0 0 0 black;
+    border: 3px solid skyblue;
   }

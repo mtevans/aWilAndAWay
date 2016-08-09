@@ -1,16 +1,25 @@
 .schedule-modal{
   border: 1px solid #2a282b;
-      position: relative;
-      background: white;
-      overflow: scroll;
-      border-radius: 4px;
-      outline: none;
-      box-shadow: 2px 10px 40px 0px rgba(0, 0, 0, 0.75);
-      height: 400px;
-      margin: 0 auto;
-      display: table;
-      margin-top: 100px;
+  position: relative;
+  background-image: url("http://res.cloudinary.com/dfld7chk4/image/upload/e_brightness:23/v1470703906/Children_Youth/a-calendar-agenda.jpg");
+  height: 400px;
+  background-position: 50% 50%;
+  background-size: cover;
+  margin: 0 auto;
+  display: table;
+  margin-top: 100px;
+  border-radius: 2px;
+  box-shadow: 2px 4px 2px #675c5c;
 }
+
+.ReactModal__Content:focus{
+  outline: 0;
+}
+
+.ReactModal__Content{
+  box-shadow: 2px 4px 2px #675c5c;
+}
+
 
 .schedule-modal-thumbnail{
   height: 210px;
@@ -94,15 +103,16 @@
   margin-bottom: 18px;
   margin-left: 4px;
   padding-left: 7px;
+  background: rgba(255, 255, 255, 0.86);
   align-self: center;
   flex-direction: row;
   justify-content: space-around;
   box-shadow: 0 2px 9px rgba(19, 100, 100, 0.7);
   span{
-    display: flex;
-    justify-content: space-between;
+
     display: flex;
     flex-direction: column;
+    justify-content: center;
     width: 25%;
   }
   button{
