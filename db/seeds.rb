@@ -257,7 +257,7 @@ Venue.create!(
   about: "Research Grant for families who have children with special needs",
   description: "We are doing great things for families who have children with special needs, but we could do so much more with your help! Help parents get the needed break in raising a child with special needs",
   address: "1412 Willard Street, San Francisco, CA 94117",
-  url: "http://res.cloudinary.com/dfld7chk4/image/upload/v1468894985/grant-writer_pqc0s9.jpg",
+  url: "http://res.cloudinary.com/dfld7chk4/image/upload/v1470430764/grant-writer_xazrpo.jpg",
   lat: 37.763938,
   lng: -122.453870,
   email: "WillardStreetHealth@example.com",
